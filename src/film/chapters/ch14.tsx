@@ -373,9 +373,10 @@ const build = (ctx: FilmCtx): ChapterSpec => {
 
   // ============================================================ 14.8 the end card and the QR
   const C = T.card;
-  const qrAt = {u: 0.7, v: 0.56, module: 1.5};
+  // two pins per module: a whole number of pins keeps the modules regular, so phones can read it
+  const qrAt = {u: 0.7, v: 0.56, module: 2};
   beat('qr', C.qr, W14.qrField(board, qr.rows, qrAt, flatField(0.62)), fromRight(0.9));
-  move(C.start - 0.3, 1.8, frameOn(board, {uv: [0.5, 0.5], pinsAcross: 150, yaw: 0, pitch: 0, aspect}));
+  move(C.start - 0.3, 1.8, frameOn(board, {uv: [0.5, 0.5], pinsAcross: 170, yaw: 0, pitch: 0, aspect}));
   const [disc] = TX['14.8'].slice(-1);
   ov('end-card', C.start - 0.2, C.end + 0.2, (t) => {
     const k = env(t, C.start, C.fade, 0.5, 0.6);

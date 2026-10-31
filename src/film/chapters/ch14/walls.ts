@@ -147,9 +147,10 @@ export const ruleField = (board: Board): FieldFn => ruleLineField(board, {v: RUL
 
 // ---------------------------------------------------------------- 14.8 the QR code
 /** The QR as pins: a white plate of raised pins with the dark modules sunk. Module size in pins. */
-export const qrField = (board: Board, rows: readonly string[], at: {u: number; v: number; module: number}, ground: FieldFn): FieldFn => {
+export const qrField = (board: Board, rows: readonly string[], at: {u: number; v: number; module: number; quiet?: number; lift?: number}, ground: FieldFn): FieldFn => {
   const n = rows.length;
-  const quiet = 2;
+  const quiet = at.quiet ?? 2;
+  const lift = at.lift ?? 0.4;
   const total = n + 2 * quiet;
   const half = (total * at.module) / 2;
   return (u, v, i) => {
@@ -160,6 +161,6 @@ export const qrField = (board: Board, rows: readonly string[], at: {u: number; v
     const c = Math.floor(lx / at.module) - quiet;
     const r = Math.floor(ly / at.module) - quiet;
     const dark = r >= 0 && c >= 0 && r < n && c < n && rows[r][c] === '1';
-    return dark ? {h: 0, tint: 0.08, paint: 1} : {h: 0.4, tint: [1.15, 1.15, 1.15], paint: 1};
+    return dark ? {h: 0, tint: 0.08, paint: 1} : {h: lift, tint: [1.15, 1.15, 1.15], paint: 1};
   };
 };
