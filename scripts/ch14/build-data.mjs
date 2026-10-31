@@ -6,9 +6,9 @@
 //   src/data/ch14/text.json         every 14.x scene's on-screen lines (from the storyboard script)
 //   src/data/ch14/qr.json           the end card's QR matrix (scripts/ch14/qr.mjs)
 //
-// The film-wide film-ledger.json (all chips, all chapters, rebuilt from fresh clones by
-// verify-ledger.mjs) does not exist yet; until it does, 14.5 shows this chapter's ledger and says
-// so. Run: node scripts/ch14/build-data.mjs [--qr-url=URL]
+// The film-wide film-ledger.json (every source on screen, all chapters) is built by
+// scripts/ledger/build-ledger.mjs and checked from fresh clones by verify-ledger.mjs; 14.5 shows it,
+// with its counts copied into text.json here. Run: node scripts/ch14/build-data.mjs [--qr-url=URL]
 import {createHash} from 'node:crypto';
 import {readFileSync, writeFileSync} from 'node:fs';
 import {dirname, join, relative} from 'node:path';
@@ -63,7 +63,7 @@ for (const e of entries) {
 }
 say(`${entries.length} entries · head ${prev}`);
 const ledger = {
-  note: "Chapter 14's own sources, hash-chained (link = SHA-256(prev + newline + 'type id hash')). Not the film-wide film-ledger.json, which is not built yet.",
+  note: "Chapter 14's own sources, hash-chained (link = SHA-256(prev + newline + 'type id hash')). Part of the film-wide film-ledger.json.",
   scope: 'chapter 14',
   genesis: sha('film-ledger v0'),
   entries,
@@ -73,21 +73,24 @@ const ledger = {
 };
 
 // ---------------------------------------------------------------- the end card's QR
-// The ledger page's URL is fixed at publish (storyboard 14.8); until then this provisional URL.
-const url = arg('qr-url', 'https://github.com/AnwarDebes');
+// The ledger page (storyboard 14.8).
+const url = arg('qr-url', 'https://anwardebes.github.io/ledger/');
 const q = encodeQR(url, 'M');
-const qr = {note: 'Encoded by scripts/ch14/qr.mjs (byte mode, level M). Provisional URL until the ledger page is published.', url, provisional: true, version: q.version, ecl: q.ecl, mask: q.mask, size: q.size, rows: q.modules.map((r) => r.join(''))};
+const qr = {note: "Encoded by scripts/ch14/qr.mjs (byte mode, level M): the page of the film's ledger.", url, provisional: false, version: q.version, ecl: q.ecl, mask: q.mask, size: q.size, rows: q.modules.map((r) => r.join(''))};
 
 // ---------------------------------------------------------------- on-screen text, from the script
 // Every 14.x scene's on-screen lines and the ledger's planned counts, copied from the storyboard's
 // script (research/storyboard/script.json) so nothing is retyped (some names cannot be typed here).
 const script = json(join(ROOT, 'research/storyboard/script.json'));
 const ch14 = script.chapters.find((c) => c.id === '14');
+const film = json(join(ROOT, 'film-ledger.json'));
+const ledgerEntries = film.entries.length;
+const ledgerEntryTypes = Object.fromEntries(['file@commit', 'commit', 'capture', 'api-snapshot'].filter((k) => film.counts[k]).map((k) => [k, film.counts[k]]));
 const text = {
   note: 'Copied from research/storyboard/script.json by scripts/ch14/build-data.mjs.',
-  ledgerEntries: script.ledgerEntries,
-  ledgerEntryTypes: script.ledgerEntryTypes,
-  scenes: Object.fromEntries(ch14.scenes.map((sc) => [sc.id, sc.onScreenText])),
+  ledgerEntries,
+  ledgerEntryTypes,
+  scenes: Object.fromEntries(ch14.scenes.map((sc) => [sc.id, sc.id === '14.5' ? sc.onScreenText.map((x) => x.replace(/^\d+ entries/, ledgerEntries + ' entries')) : sc.onScreenText])),
 };
 
 const out = [

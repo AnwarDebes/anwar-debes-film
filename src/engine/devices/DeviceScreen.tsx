@@ -11,7 +11,8 @@
 import React, {useCallback, useLayoutEffect, useMemo, useRef} from 'react';
 import {useThree} from '@react-three/fiber';
 import {Video} from '@remotion/media';
-import {Freeze, useCurrentFrame, useRemotionEnvironment} from 'remotion';
+import {noteSource} from '../ledger/sources';
+import {Freeze, useCurrentFrame, useRemotionEnvironment, useVideoConfig} from 'remotion';
 import * as THREE from 'three';
 import {RectAreaLightUniformsLib} from 'three/examples/jsm/lights/RectAreaLightUniformsLib.js';
 import {roundedPlate} from './geometry';
@@ -105,6 +106,7 @@ const ScreenFeed: React.FC<{
   const scene = useThree((s) => s.scene);
   const token = useMemo(() => ({}), []);
   const frame = useCurrentFrame();
+  const {fps: noteFps} = useVideoConfig();
   const onVideoFrame = useCallback(
     (f: CanvasImageSource) => {
       const img = f as unknown as {displayWidth?: number; displayHeight?: number; width: number; height: number};
@@ -132,6 +134,7 @@ const ScreenFeed: React.FC<{
     };
   }, [certain, frame, scene, token]);
   if (!source.src) return null;
+  noteSource(frame / noteFps, {kind: 'capture', src: source.src});
   return (
     <Freeze frame={Number.isFinite(last) ? last : 0} active={frame > last}>
       <Video

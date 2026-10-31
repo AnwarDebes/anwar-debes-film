@@ -6,6 +6,7 @@ import type {Align} from './layout';
 import {advance, fontCSS, runTop, type FontSpec} from './metrics';
 import {Tick} from './Tick';
 import {useTime, useUnits} from './units';
+import {noteSource} from '../ledger/sources';
 
 export interface CitationChipProps {
   /** repository name, e.g. "glassbox-lm" */
@@ -101,6 +102,7 @@ export const CitationChip: React.FC<CitationChipProps> = ({
     if (k >= 1) return null;
     alpha *= 1 - easeInCubic(k);
   }
+  noteSource(t, {kind: 'chip', repo, path, line});
   const top = Math.round(y - h / 2);
   // right-aligned chips reserve their final width so the text types rightwards
   const left = Math.round(align === 'left' ? x : x - finalW);

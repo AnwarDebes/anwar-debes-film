@@ -1,0 +1,11 @@
+Script started on 2026-10-31 11:40:14+00:00 [COMMAND="node verify-ledger.mjs" TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="80" LINES="24"]
+film-ledger.json: 541 entries, genesis 8fbcba9a2d38ff9a
+fresh clones: 64 repositories, 67 pinned commits
+file@commit  505/505  match
+commit       5/5      match
+capture      26/26    match
+api-snapshot 5/5      match
+chain        541/541  links recomputed
+head 6578f88114dce6bc539e7ac36218a454391981e8bdb6d1064d3382f201481dc2
+
+Script done on 2026-10-31 11:40:48+00:00 [COMMAND_EXIT_CODE="0"]

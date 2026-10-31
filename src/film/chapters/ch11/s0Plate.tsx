@@ -1,8 +1,9 @@
 import React from 'react';
-import {useVideoConfig} from 'remotion';
+import {useVideoConfig, useCurrentFrame} from 'remotion';
 import {SWEEPS, overField, rectField, type Beat, type FieldFn} from '../../../engine/pins';
 import {pushIn, type CameraKey, type CameraPose} from '../../../engine/camera';
 import {color, font, layout, type as Ty} from '../../../engine/tokens';
+import {noteSource} from '../../../engine/ledger/sources';
 import {easeInOutCubic, easeOutCubic, prog} from '../../../engine/type/ease';
 import type {FilmCtx, TimedNode} from '../../types';
 import {handoffPose, poseOn, screenAtUv} from '../ch07/kit/frame';
@@ -142,6 +143,9 @@ export const CHIP_SLOTS: Array<[number, number]> = [
 
 export const PromiseChip: React.FC<{k: number; H: number; value?: React.ReactNode; status?: boolean; source?: boolean}> = ({k, H, value, status = true, source = true}) => {
   const p = PROMISES[k];
+  const noteFrame = useCurrentFrame();
+  const {fps: noteFps} = useVideoConfig();
+  if (source) noteSource(noteFrame / noteFps, {kind: 'chip', repo: p.repo, path: 'README.md', line: p.readme});
   return (
     <div style={{minWidth: Math.round(0.31 * H), boxSizing: 'border-box', padding: `${Math.round(0.014 * H)}px ${Math.round(0.02 * H)}px`, borderRadius: Math.round(H * layout.cardRadiusH), background: color.card.glass, border: `1px solid ${color.card.rule}`, boxShadow: `0 ${Math.round(0.012 * H)}px ${Math.round(0.04 * H)}px rgba(0,0,0,0.45)`}}>
       <div style={{display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: Math.round(0.02 * H)}}>

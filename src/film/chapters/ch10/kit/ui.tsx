@@ -8,6 +8,7 @@ import type {Word} from '../../../../engine/narration/types';
 import {FilmGuide, GuideTimeline} from '../../../guide';
 import {PixieCard, cardGeometry, presetCell, type PixieWalk} from '../../../../pixie';
 import {PROP_REACH} from '../../../../pixie/presets';
+import {noteSource} from '../../../../engine/ledger/sources';
 
 // Overlay pieces shared by chapters 10 and 13. Every size comes from the frame height H, every
 // time is film time passed in by the scene (from the timeline), and the lower third follows the
@@ -191,6 +192,7 @@ export const SourceRow: React.FC<{t: number; at: number; exitAt?: number; value:
   if (!ready || t < at) return null;
   const k = env(t, at, exitAt, 0.3, 0.3);
   if (k <= 0) return null;
+  noteSource(t, {kind: 'row', source});
   const fs = Math.round(MONO_MIN * H);
   const typed = Math.min(source.length, Math.floor((t - at - 0.1) * 70) + 1);
   const tickK = easeOutCubic(prog(t, at + 0.15 + source.length / 70, 0.25));

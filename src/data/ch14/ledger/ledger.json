@@ -1,5 +1,5 @@
 {
- "note": "Chapter 14's own sources, hash-chained (link = SHA-256(prev + newline + 'type id hash')). Not the film-wide film-ledger.json, which is not built yet.",
+ "note": "Chapter 14's own sources, hash-chained (link = SHA-256(prev + newline + 'type id hash')). Part of the film-wide film-ledger.json.",
  "scope": "chapter 14",
  "genesis": "8fbcba9a2d38ff9a3bff8776a3ded3b75d4e7a45a9f39c19bda883174f13a6aa",
  "entries": [

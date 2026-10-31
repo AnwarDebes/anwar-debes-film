@@ -10,6 +10,7 @@ import {color, font} from '../../engine/tokens';
 import type {PixieCue} from '../../pixie';
 import type {ChapterModule, ChapterSpec, FilmCtx, TimedNode} from '../types';
 import {cues} from './ch14.cues';
+import {NoteCapture} from '../../engine/ledger/sources';
 import {times14} from './ch14/times';
 import * as W14 from './ch14/walls';
 import {mergeParts} from './ch10/kit/spec';
@@ -18,10 +19,15 @@ import {RuleLine} from './ch01/ruleLine';
 import {ruleTimes} from './ch01/plates';
 import {Em} from './ch01/kit';
 import sitePins from '../../data/ch14/code/site-pins.json';
-import ledger from '../../data/ch14/ledger/ledger.json';
+import filmLedger from '../../../film-ledger.json';
+import verifyRun from '../../data/ch14/ledger/verify-run.json';
 import facts from '../../data/ch14/facts.json';
 import qr from '../../data/ch14/qr.json';
 import text from '../../data/ch14/text.json';
+
+// 14.5: the film's own ledger (film-ledger.json, scripts/ledger) and a recorded run of its check,
+// node verify-ledger.mjs on fresh clones (data/ch14/ledger/verify-run.json).
+const ledger = {entries: filmLedger.entries, head: filmLedger.head, scope: 'the whole film', transcript: verifyRun.transcript, cmd: verifyRun.cmd};
 
 // Chapter 14, "Show its work": the last three places complete the line, then the camera leaves
 // the wall once. The 66 places become a map ordered by the walk (solid, dotted and dashed lines,
@@ -30,9 +36,9 @@ import text from '../../data/ch14/text.json';
 // 01.1 returns as glass, and the film ends on the name and a QR code made of pins.
 //
 // On-screen lines are read from the storyboard's script (data/ch14/text.json), the 14.2 facts from
-// the saved GitHub API responses (data/ch14/facts.json), and the ledger shown in 14.5 is chapter
-// 14's own chain built from those files (data/ch14/ledger/ledger.json; the film-wide
-// film-ledger.json and its fresh-clone run are not recorded yet, and the screen says so).
+// the saved GitHub API responses (data/ch14/facts.json), and the ledger shown in 14.5 is the film's
+// own (film-ledger.json, every source on screen, built by scripts/ledger), with a recorded run of
+// node verify-ledger.mjs on fresh clones.
 
 const TX = text.scenes as Record<string, string[]>;
 const line = (scene: string, k: number) => TX[scene][k];
@@ -280,7 +286,8 @@ const build = (ctx: FilmCtx): ChapterSpec => {
         <>
           <WindowFrame x={Math.round(0.2 * W)} y={Math.round(0.17 * H)} width={winW} height={winH} product="anwardebes.github.io" descriptor="live capture · one click on the hero board" t={t} at={S.side} exitAt={S.end - 0.4}>
             <Sequence from={f(capStart)} layout="none">
-              <OffthreadVideo src={staticFile('recordings/home.mp4')} muted style={{position: 'absolute', width: vw, height: vh, left: winW / 2 - 0.753 * vw, top: winH / 2 - 0.41 * vh}} />
+              <NoteCapture t={t} src="recordings/home.mp4" />
+            <OffthreadVideo src={staticFile('recordings/home.mp4')} muted style={{position: 'absolute', width: vw, height: vh, left: winW / 2 - 0.753 * vw, top: winH / 2 - 0.41 * vh}} />
             </Sequence>
           </WindowFrame>
           <Mono t={t} at={S.side + 0.3} exitAt={S.end - 0.4} text="site ripple" x={0.2 * W + winW / 2} y={0.73 * H} align="center" sizeH={0.024} tone={color.text.key} bg />
@@ -323,13 +330,13 @@ const build = (ctx: FilmCtx): ChapterSpec => {
     const lines = ledger.transcript.map((s, k) => ({at: L.clones + 0.6 + k * 0.28, text: s.length > 66 ? `${s.slice(0, 63)}…` : s, kind: 'out' as const}));
     return (
       <>
-        <Term t={t} at={L.clones - 0.2} exitAt={L.end - 0.3} x={0.069 * W} y={0.06 * H} width={0.5 * W} sizeH={0.02} title="chapter 14's sources · recorded build" titleCaps={false} lines={[{at: L.clones, text: ledger.cmd, kind: 'cmd'}, ...lines]} />
+        <Term t={t} at={L.clones - 0.2} exitAt={L.end - 0.3} x={0.069 * W} y={0.06 * H} width={0.5 * W} sizeH={0.02} title={line('14.5', 2)} titleCaps={false} lines={[{at: L.clones, text: ledger.cmd, kind: 'cmd'}, ...lines]} />
         <GlassCard t={t} at={L.hash} exitAt={L.end - 0.3} x={0.6 * W} y={0.06 * H} width={0.33 * W} label="head hash (computed at build)">
           <div style={{fontFamily: font.mono, fontSize: 0.026 * H, color: color.text.key}}>{headShort}</div>
           <div style={{marginTop: 0.01 * H, fontFamily: font.mono, fontSize: 0.02 * H, color: color.text.chipDim}}>{`${ledger.entries.length} entries · ${ledger.scope} · hash-chained, not signed`}</div>
         </GlassCard>
         {matches ? <Stamp kind="VERIFIED" at={L.match} t={t} exitAt={L.end - 0.3} x={0.765 * W} y={0.3 * H} /> : null}
-        <Mono t={t} at={L.published} exitAt={L.end - 0.3} text={'film-wide film-ledger.json and the fresh-clone run: not recorded yet'} x={0.069 * W} y={0.5 * H} sizeH={0.022} tone={color.signal.amber} bg />
+        <Mono t={t} at={L.published} exitAt={L.end - 0.3} text={line('14.5', 4)} x={0.069 * W} y={0.5 * H} sizeH={0.022} tone={color.text.key} bg />
         <Chips t={t} side="right" y0={0.5} chips={[{repo: 'trace', path: 'tracekit/ledger.py', line: '208-236', at: L.hashed + 0.3, exitAt: L.end - 0.3}]} />
       </>
     );

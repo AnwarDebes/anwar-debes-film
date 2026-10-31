@@ -1,11 +1,11 @@
 {
  "note": "Copied from research/storyboard/script.json by scripts/ch14/build-data.mjs.",
- "ledgerEntries": 599,
+ "ledgerEntries": 541,
  "ledgerEntryTypes": {
-  "file@commit": 573,
-  "commit": 11,
-  "capture": 11,
-  "api-snapshot": 4
+  "file@commit": 505,
+  "commit": 5,
+  "capture": 26,
+  "api-snapshot": 5
  },
  "scenes": {
   "14.0": [
@@ -40,7 +40,7 @@
    "even this wall is one of the 66"
   ],
   "14.5": [
-   "599 entries · one chain",
+   "541 entries · one chain",
    "file@commit · commit · api-snapshot · capture",
    "fresh clones · node verify-ledger.mjs · head hash as printed",
    "head hash (computed at build): {LEDGER_HEAD}",

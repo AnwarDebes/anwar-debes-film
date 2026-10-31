@@ -1,5 +1,6 @@
 import React from 'react';
 import {OffthreadVideo, Sequence, staticFile} from 'remotion';
+import {NoteCapture} from '../../../engine/ledger/sources';
 import {emblemField, STEEL, SWEEPS, type Beat, type FieldFn, type LiveFieldFn, type PinSample} from '../../../engine/pins';
 import {pushIn} from '../../../engine/camera';
 import {color} from '../../../engine/tokens';
@@ -124,6 +125,7 @@ export const scenes12 = (env: Env, T: Times12, ruler: {entries: RulerEntry[]; no
     render: (t) => (
       <WindowFrame x={Math.round(0.47 * W)} y={Math.round(0.16 * H)} width={winW} height={winH} product="SleepArchitect" descriptor="anwardebes.github.io/SleepArchitect · live capture" t={t} at={P.window} exitAt={P.windowExit} rotateY={-6} rotateX={1.5}>
         <Sequence from={capFrom} layout="none">
+          <NoteCapture t={t} src="recordings/ch12-sleeparchitect.mp4" />
           <OffthreadVideo src={staticFile('recordings/ch12-sleeparchitect.mp4')} muted playbackRate={rate} style={{position: 'absolute', left: 0, top: 0, width: '100%', height: '100%', objectFit: 'cover'}} />
         </Sequence>
       </WindowFrame>

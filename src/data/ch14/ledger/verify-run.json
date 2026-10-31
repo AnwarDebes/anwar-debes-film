@@ -1,0 +1,16 @@
+{
+ "note": "A recorded run of node verify-ledger.mjs: every cited repository cloned fresh from GitHub, every source re-hashed, the chain recomputed. The terminal capture is verify-run.typescript (script -T timing in verify-run.timing); 14.5 replays these lines.",
+ "cmd": "node verify-ledger.mjs",
+ "recordedAt": "2026-10-31T11:40:14Z",
+ "exit": 0,
+ "transcript": [
+  "film-ledger.json: 541 entries, genesis 8fbcba9a2d38ff9a",
+  "fresh clones: 64 repositories, 67 pinned commits",
+  "file@commit  505/505  match",
+  "commit       5/5      match",
+  "capture      26/26    match",
+  "api-snapshot 5/5      match",
+  "chain        541/541  links recomputed",
+  "head 6578f88114dce6bc539e7ac36218a454391981e8bdb6d1064d3382f201481dc2"
+ ]
+}
