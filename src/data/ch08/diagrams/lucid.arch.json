@@ -1,0 +1,88 @@
+{
+  "id": "lucid",
+  "title": "LUCID",
+  "repo": "github.com/AnwarDebes/lucid",
+  "commit": "4db5549cd4b5745b6f77b8c58f683076237671f1",
+  "about": "The agent's loop, read from lucidkit, in the order one step runs it (the next frame starts the loop again, lucidkit/runner.py:66): every edge is a call site cited by file and line.",
+  "nodes": [
+    {
+      "id": "perceive",
+      "label": "perceive",
+      "kind": "module",
+      "path": "lucidkit/perception.py",
+      "sub": "objects · HUD mask · signature",
+      "loc": 157
+    },
+    {
+      "id": "model",
+      "label": "world model",
+      "kind": "data",
+      "path": "lucidkit/agent.py",
+      "sub": "Memory: moves · fatal pairs"
+    },
+    {
+      "id": "plan",
+      "label": "plan",
+      "kind": "model",
+      "path": "lucidkit/agent.py",
+      "sub": "BFS over learned moves"
+    },
+    {
+      "id": "act",
+      "label": "act",
+      "kind": "service",
+      "path": "lucidkit/runner.py",
+      "sub": "ACTION1-7 on the live API",
+      "loc": 94
+    }
+  ],
+  "edges": [
+    {
+      "from": "perceive",
+      "to": "model",
+      "label": "what moved",
+      "evidence": [
+        {
+          "file": "lucidkit/agent.py",
+          "line": 297,
+          "code": "disp = P.moved_object(before.grid, after.grid, hud)"
+        }
+      ],
+      "straight": true
+    },
+    {
+      "from": "model",
+      "to": "plan",
+      "label": "known moves",
+      "evidence": [
+        {
+          "file": "lucidkit/agent.py",
+          "line": 230,
+          "code": "known_moves = {a: self.mem.displacement(a) for a in safe if a != 6}"
+        }
+      ],
+      "straight": true
+    },
+    {
+      "from": "plan",
+      "to": "act",
+      "label": "first step",
+      "evidence": [
+        {
+          "file": "lucidkit/agent.py",
+          "line": 240,
+          "code": "a = bfs_first_action((cy, cx), (gy, gx), known_moves, self.mem.obstacles, tol=tol)"
+        }
+      ],
+      "straight": true
+    }
+  ],
+  "paths": {
+    "loop": [
+      "perceive",
+      "model",
+      "plan",
+      "act"
+    ]
+  }
+}

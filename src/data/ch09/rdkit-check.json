@@ -1,0 +1,29 @@
+{
+ "kind": "capture",
+ "what": "RDKit Chem.GetMolFrags on mol_22 after-SMILES (graphtm-cbr paper/case_studies.md:16)",
+ "repoCommit": "graphtm-cbr@7e85d23",
+ "smilesSource": [
+  "graphtm-cbr/paper/case_studies.md:16",
+  "graphtm-cbr/results/case_studies_1778918915.json:5"
+ ],
+ "python": "3.12.6",
+ "rdkit": "2026.09.1",
+ "date": "2026-10-29",
+ "transcript": [
+  {
+   "in": "from rdkit import Chem",
+   "out": ""
+  },
+  {
+   "in": "Chem.GetMolFrags(Chem.MolFromSmiles(\"C.Cn1c(N)nc2c3ncc(-c4ccccc4)nc3ccc21\"))",
+   "out": "((0,), (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21))"
+  },
+  {
+   "in": "len(_)",
+   "out": "2"
+  }
+ ],
+ "fragments": 2,
+ "captureFile": "src/data/ch09/rdkit-getmolfrags-mol_22.txt",
+ "sha256": "d305a69d53f27b0266fb4672c30ac0c114c98d67561c3791e2c5e40def97d3e8"
+}

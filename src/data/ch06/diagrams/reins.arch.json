@@ -1,0 +1,29 @@
+{
+  "id": "reins",
+  "title": "REINS",
+  "repo": "github.com/AnwarDebes/reins",
+  "commit": "6f0cf551db70cf628683ed80958360110e27a6e2",
+  "about": "reinskit, read module by module: every edge is a call site in the code, cited by file and line; arrows point the way the data moves.",
+  "nodes": [
+    {"id": "agent", "label": "Agent tool call", "kind": "data", "path": "reinskit/adapters.py", "sub": "OpenAI or Anthropic format"},
+    {"id": "engine", "label": "ShieldEngine", "kind": "service", "path": "reinskit/engine.py", "loc": 61},
+    {"id": "enact", "label": "Capabilities, costs", "kind": "module", "path": "reinskit/enact.py", "loc": 194},
+    {"id": "guard", "label": "BehaviorGuard", "kind": "module", "path": "reinskit/behavior_guard.py", "sub": "simulate() on a copy", "loc": 111},
+    {"id": "shield", "label": "Shield.decide", "kind": "model", "path": "reinskit/shield.py", "sub": "least-cost safe edit", "loc": 179},
+    {"id": "ledger", "label": "InterventionLedger", "kind": "module", "path": "reinskit/ledger.py", "sub": "hash-chained certificate", "loc": 301},
+    {"id": "verify", "label": "verify_shield", "kind": "step", "path": "reinskit/ledger.py", "sub": "model-free re-check"}
+  ],
+  "edges": [
+    {"from": "agent", "to": "engine", "label": "observe", "evidence": [{"file": "reinskit/engine.py", "line": 47, "code": "return self.observe_action(self.adapter.parse(call, provider))"}]},
+    {"from": "engine", "to": "shield", "label": "decide", "evidence": [{"file": "reinskit/engine.py", "line": 50, "code": "dec = self.shield.decide(action)"}]},
+    {"from": "enact", "to": "shield", "label": "candidates", "evidence": [{"file": "reinskit/shield.py", "line": 96, "code": "for edit in self.caps.candidate_edits(action):"}]},
+    {"from": "guard", "to": "shield", "label": "simulate", "evidence": [{"file": "reinskit/shield.py", "line": 114, "code": "safe = [c for c in cands if self.guard.simulate(c.out_events)]"}]},
+    {"from": "engine", "to": "ledger", "label": "append", "evidence": [{"file": "reinskit/engine.py", "line": 51, "code": "self.ledger.append(dec, dec.input_events)"}]},
+    {"from": "ledger", "to": "verify", "label": "certificate", "evidence": [{"file": "reinskit/ledger.py", "line": 213, "code": "entries = InterventionLedger.entries_from_dict(ledger_dict)"}]},
+    {"from": "verify", "to": "shield", "label": "replay", "evidence": [{"file": "reinskit/ledger.py", "line": 278, "code": "dec = replay.decide(action)"}]}
+  ],
+  "paths": {
+    "call": ["agent", "engine", "shield"],
+    "audit": ["engine", "ledger", "verify", "shield"]
+  }
+}

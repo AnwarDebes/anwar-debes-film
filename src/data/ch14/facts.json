@@ -1,0 +1,26 @@
+{
+ "note": "Read from the saved GitHub API responses in ledger/api (snapshot 2026-10-29) by scripts/ch14/build-data.mjs.",
+ "medical": {
+  "name": "ai-medical-training-simulator",
+  "createdAt": "2026-10-20T01:08:10Z",
+  "size": 0,
+  "empty": true
+ },
+ "assets": {
+  "name": "assets",
+  "fork": true,
+  "parent": "trustwallet/assets",
+  "ownCommits": [
+   {
+    "sha": "565fced8ae47b725082dc99664216fe69f006804",
+    "short": "565fced",
+    "date": "2026-01-22"
+   },
+   {
+    "sha": "5dbd20a6451a2ee5b21fc7bbadecf1ea1d9c17e3",
+    "short": "5dbd20a",
+    "date": "2026-01-22"
+   }
+  ]
+ }
+}

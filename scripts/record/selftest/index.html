@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>recorder self-test</title>
+<style>
+  html, body { margin: 0; background: #000; height: 3200px; }
+  .b { position: fixed; left: 20px; width: 20px; height: 20px; }
+  #raf { top: 30px; background: #ff0000; }
+  #css { top: 80px; background: #00ff00; animation: slide 2s linear infinite; }
+  #tr  { top: 130px; background: #0000ff; transition: transform 1s linear; }
+  #tr.go { transform: translateX(600px); }
+  #waapi { top: 180px; background: #ffff00; }
+  #tick { top: 230px; background: #ff00ff; }
+  #date { top: 280px; background: #00ffff; }
+  #bar { position: absolute; left: 0; top: 420px; width: 800px; height: 12px; background: #ffffff; }
+  #target { position: absolute; left: 0; top: 1500px; width: 10px; height: 10px; background: #222; }
+  #btn { position: fixed; left: 600px; top: 380px; width: 120px; height: 40px; background: #333; transition: background-color 0.3s linear; }
+  #btn:hover { background: #ff8800; }
+  @keyframes slide { from { transform: translateX(0); } to { transform: translateX(600px); } }
+</style>
+</head>
+<body>
+<div class="b" id="raf"></div>
+<div class="b" id="css"></div>
+<div class="b" id="tr"></div>
+<div class="b" id="waapi"></div>
+<div class="b" id="tick"></div>
+<div class="b" id="date"></div>
+<div id="btn"></div>
+<div id="bar"></div>
+<div id="target"></div>
+<script>
+  const $ = (s) => document.querySelector(s);
+  // rAF by timestamp: 0.3 px/ms = 5 px per 60 fps frame
+  let ts0 = null;
+  const raf = (ts) => {
+    if (ts0 === null) ts0 = ts;
+    $('#raf').style.transform = `translateX(${(ts - ts0) * 0.3}px)`;
+    const d = Date.now() - d0;
+    $('#date').style.transform = `translateX(${d * 0.3}px)`;
+    requestAnimationFrame(raf);
+  };
+  const d0 = Date.now();
+  requestAnimationFrame(raf);
+  // CSS transition started by a timer at 500 ms: 600 px over 1 s = 10 px per frame
+  setTimeout(() => $('#tr').classList.add('go'), 500);
+  // Web Animation: 600 px over 2 s
+  $('#waapi').animate([{transform: 'translateX(0)'}, {transform: 'translateX(600px)'}], {duration: 2000, iterations: Infinity});
+  // setInterval: +30 px every 100 ms
+  let n = 0;
+  setInterval(() => { n++; $('#tick').style.transform = `translateX(${n * 30}px)`; }, 100);
+  // smooth scroll at 1 s
+  setTimeout(() => $('#target').scrollIntoView({behavior: 'smooth', block: 'start'}), 1000);
+</script>
+</body>
+</html>

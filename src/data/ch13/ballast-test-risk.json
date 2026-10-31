@@ -1,0 +1,9 @@
+{"kind":"snippet","id":"ballast-test-risk","repo":"AnwarDebes/ballast","ref":"6f113a58a3f10113f04161d699e412ddcfd95df1","path":"tests/test_risk.py","lang":"python","startLine":30,"lines":[
+[],
+[],
+[["def","kw"],[" ",""],["test_stop_loss_flattens_regardless_of_proposal","fn"],["():","punc"]],
+[["    pf ",""],["=","op"],[" ",""],["_holding","fn"],["(","punc"],["\"BTC/USDT\"","str"],[",","punc"],[" ",""],["1.0","num"],[",","punc"],[" ",""],["100.0","num"],[",","punc"],[" ",""],["9900.0","num"],[")","punc"],["  ",""],["# avg 100, stop = 95","com"]],
+[["    d ",""],["=","op"],[" ",""],["_eval","fn"],["(","punc"],["pf",""],[",","punc"],[" ProposedAction",""],[".","punc"],["hold","fn"],["(","punc"],["\"BTC/USDT\"","str"],["),","punc"],[" ",""],["{","punc"],["\"BTC/USDT\"","str"],[":","punc"],[" ",""],["94.0","num"],["})","punc"]],
+[["    ",""],["assert","kw"],[" d",""],[".","punc"],["approved","prop"],[" ",""],["and","kw"],[" d",""],[".","punc"],["intent","prop"],[" ",""],["is","kw"],[" Intent",""],[".","punc"],["EXIT ",""],["and","kw"],[" d",""],[".","punc"],["rule","prop"],[" ",""],["==","op"],[" ",""],["\"stop_loss\"","str"]],
+[]
+]}

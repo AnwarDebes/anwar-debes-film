@@ -1,0 +1,76 @@
+{
+ "note": "Copied from research/storyboard/script.json by scripts/ch14/build-data.mjs.",
+ "ledgerEntries": 599,
+ "ledgerEntryTypes": {
+  "file@commit": 573,
+  "commit": 11,
+  "capture": 11,
+  "api-snapshot": 4
+ },
+ "scenes": {
+  "14.0": [
+   "14 · video-editing-skill · ai-medical-training-simulator · assets",
+   "Show its work."
+  ],
+  "14.1": [
+   "video-editing-skill",
+   "DOCUMENTATION / AGENT PLAYBOOK · NO RUNNABLE CODE",
+   "safe zones PASS · −14 ± 1 LUFS · a person approves the draft",
+   "not tested on a GPU: a 12 s test took 29 min"
+  ],
+  "14.2": [
+   "ai-medical-training-simulator",
+   "EMPTY · NO COMMITS · CREATED 20 OCT 2026",
+   "assets",
+   "FORK OF trustwallet/assets · TWO OWN COMMITS",
+   "66 / 66"
+  ],
+  "14.3": [
+   "66 repositories · ordered by the walk",
+   "first commits are publication dates, not build dates",
+   "solid: shared code or data",
+   "dotted: same project or same task",
+   "dashed: claimed, not in the code",
+   "trace-model.json × 3 · SHA-256 2f26c9a2…"
+  ],
+  "14.4": [
+   "assets/js/pins.js",
+   "k = 140 · damping 0.72",
+   "site ripple · film ripple · overshoot as measured on both",
+   "even this wall is one of the 66"
+  ],
+  "14.5": [
+   "599 entries · one chain",
+   "file@commit · commit · api-snapshot · capture",
+   "fresh clones · node verify-ledger.mjs · head hash as printed",
+   "head hash (computed at build): {LEDGER_HEAD}",
+   "film-ledger.json · published with this film",
+   "hash-chained, not signed: anyone can recompute it"
+  ],
+  "14.6": [
+   "One rule runs through all of it.",
+   "If a system makes a claim, it should show its work."
+  ],
+  "14.7": [
+   "Anwar Debes"
+  ],
+  "14.8": [
+   "Anwar Debes",
+   "AI that shows its work.",
+   "anwardebes.github.io",
+   "github.com/AnwarDebes",
+   "SCAN THE PINS · the film's ledger",
+   "verify: node verify-ledger.mjs",
+   "Right now, Pixie is",
+   "Waiting for you · Your turn",
+   "Independent open-source projects. Claude-Code-In-Motion and vsclaude are not affiliated with Anthropic."
+  ],
+  "14.9": [
+   "Music: Scott Buckley (CC BY 4.0)",
+   "Sound design: original synthesis · BigSoundBank · Kenney (CC0)",
+   "Pixie: Claude-Code-In-Motion/web/js/mascot.js (MIT)",
+   "Narration: one synthetic voice, generated locally",
+   "Sources: film-ledger.json"
+  ]
+ }
+}

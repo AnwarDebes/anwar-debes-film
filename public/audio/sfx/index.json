@@ -1,0 +1,510 @@
+{
+ "voiceTargetLufs": -16.0,
+ "tourLufs": -20.0,
+ "sampleRate": 48000,
+ "note": "Previews at their default mix level; mix.py renders cues from the recipes, not from these files.",
+ "sounds": [
+  {
+   "name": "pin-tick",
+   "file": "audio/sfx/pin-tick.wav",
+   "recipe": "pin_tick",
+   "category": "pin",
+   "params": {
+    "seed": 1
+   },
+   "about": "one soft steel pin",
+   "durS": 0.2315,
+   "peakS": 0.0,
+   "align": "start",
+   "level": -26,
+   "eventLufs": -42.0,
+   "tourAtS": 0.5
+  },
+  {
+   "name": "pin-tick-ring",
+   "file": "audio/sfx/pin-tick-ring.wav",
+   "recipe": "pin_tick",
+   "category": "pin",
+   "params": {
+    "tau": 0.12,
+    "f1": 2600,
+    "seed": 2
+   },
+   "about": "a struck pin that rings",
+   "durS": 0.784,
+   "peakS": 0.0,
+   "align": "start",
+   "level": -26,
+   "eventLufs": -42.0,
+   "tourAtS": 1.332
+  },
+  {
+   "name": "pin-brush",
+   "file": "audio/sfx/pin-brush.wav",
+   "recipe": "pin_brush",
+   "category": "pin",
+   "params": {
+    "dur": 1.2,
+    "shape": "bell",
+    "seed": 3
+   },
+   "about": "a sweep of pins brushing past",
+   "durS": 1.5105,
+   "peakS": 0.36,
+   "align": "start",
+   "level": -24,
+   "eventLufs": -40.0,
+   "tourAtS": 2.716
+  },
+  {
+   "name": "pin-brush-rise",
+   "file": "audio/sfx/pin-brush-rise.wav",
+   "recipe": "pin_brush",
+   "category": "pin",
+   "params": {
+    "dur": 0.9,
+    "shape": "rise",
+    "pan": [
+     -0.8,
+     0.8
+    ],
+    "height": [
+     0.1,
+     0.9
+    ],
+    "seed": 4
+   },
+   "about": "pins rising left to right, low to high",
+   "durS": 1.2405,
+   "peakS": 0.875,
+   "align": "start",
+   "level": -24,
+   "eventLufs": -40.0,
+   "tourAtS": 4.826
+  },
+  {
+   "name": "pin-brush-sparse",
+   "file": "audio/sfx/pin-brush-sparse.wav",
+   "recipe": "pin_brush",
+   "category": "pin",
+   "params": {
+    "dur": 1.0,
+    "shape": "flat",
+    "density": 90,
+    "seed": 5
+   },
+   "about": "a few pins: a dissolve",
+   "durS": 1.2706,
+   "peakS": 0.155,
+   "align": "start",
+   "level": -24,
+   "eventLufs": -40.0,
+   "tourAtS": 6.667
+  },
+  {
+   "name": "note-D5",
+   "file": "audio/sfx/note-D5.wav",
+   "recipe": "note",
+   "category": "tonal",
+   "params": {
+    "note": "D5",
+    "seed": 0
+   },
+   "about": "event note, palette D5",
+   "durS": 3.74,
+   "peakS": 0.005,
+   "align": "start",
+   "level": -15,
+   "eventLufs": -31.0,
+   "tourAtS": 8.537
+  },
+  {
+   "name": "note-E5",
+   "file": "audio/sfx/note-E5.wav",
+   "recipe": "note",
+   "category": "tonal",
+   "params": {
+    "note": "E5",
+    "seed": 1
+   },
+   "about": "event note, palette E5",
+   "durS": 3.74,
+   "peakS": 0.01,
+   "align": "start",
+   "level": -15,
+   "eventLufs": -31.0,
+   "tourAtS": 12.877
+  },
+  {
+   "name": "note-Fs5",
+   "file": "audio/sfx/note-Fs5.wav",
+   "recipe": "note",
+   "category": "tonal",
+   "params": {
+    "note": "F#5",
+    "seed": 2
+   },
+   "about": "event note, palette F#5",
+   "durS": 3.74,
+   "peakS": 0.005,
+   "align": "start",
+   "level": -15,
+   "eventLufs": -31.0,
+   "tourAtS": 17.217
+  },
+  {
+   "name": "note-A5",
+   "file": "audio/sfx/note-A5.wav",
+   "recipe": "note",
+   "category": "tonal",
+   "params": {
+    "note": "A5",
+    "seed": 3
+   },
+   "about": "event note, palette A5",
+   "durS": 3.74,
+   "peakS": 0.0,
+   "align": "start",
+   "level": -15,
+   "eventLufs": -31.0,
+   "tourAtS": 21.557
+  },
+  {
+   "name": "note-B5",
+   "file": "audio/sfx/note-B5.wav",
+   "recipe": "note",
+   "category": "tonal",
+   "params": {
+    "note": "B5",
+    "seed": 4
+   },
+   "about": "event note, palette B5",
+   "durS": 3.74,
+   "peakS": 0.005,
+   "align": "start",
+   "level": -15,
+   "eventLufs": -31.0,
+   "tourAtS": 25.897
+  },
+  {
+   "name": "note-Cs6",
+   "file": "audio/sfx/note-Cs6.wav",
+   "recipe": "note",
+   "category": "tonal",
+   "params": {
+    "note": "C#6",
+    "seed": 5
+   },
+   "about": "event note, palette C#6",
+   "durS": 3.74,
+   "peakS": 0.0,
+   "align": "start",
+   "level": -15,
+   "eventLufs": -31.0,
+   "tourAtS": 30.237
+  },
+  {
+   "name": "note-D6",
+   "file": "audio/sfx/note-D6.wav",
+   "recipe": "note",
+   "category": "tonal",
+   "params": {
+    "note": "D6",
+    "seed": 6
+   },
+   "about": "event note, palette D6",
+   "durS": 3.74,
+   "peakS": 0.005,
+   "align": "start",
+   "level": -15,
+   "eventLufs": -31.0,
+   "tourAtS": 34.577
+  },
+  {
+   "name": "chime",
+   "file": "audio/sfx/chime.wav",
+   "recipe": "chime",
+   "category": "tonal",
+   "params": {},
+   "about": "success: A5 to D6",
+   "durS": 2.42,
+   "peakS": 0.085,
+   "align": "start",
+   "level": -13,
+   "eventLufs": -29.0,
+   "tourAtS": 38.917
+  },
+  {
+   "name": "chime-triad",
+   "file": "audio/sfx/chime-triad.wav",
+   "recipe": "chime",
+   "category": "tonal",
+   "params": {
+    "degrees": [
+     3,
+     5,
+     8
+    ]
+   },
+   "about": "success, three notes: F#5 A5 D6",
+   "durS": 2.505,
+   "peakS": 0.215,
+   "align": "start",
+   "level": -13,
+   "eventLufs": -29.0,
+   "tourAtS": 41.937
+  },
+  {
+   "name": "error",
+   "file": "audio/sfx/error.wav",
+   "recipe": "error_buzz",
+   "category": "tonal",
+   "params": {},
+   "about": "polite denied: F3 to E3",
+   "durS": 0.61,
+   "peakS": 0.22,
+   "align": "start",
+   "level": -14,
+   "eventLufs": -30.0,
+   "tourAtS": 45.042
+  },
+  {
+   "name": "blip",
+   "file": "audio/sfx/blip.wav",
+   "recipe": "blip",
+   "category": "ui",
+   "params": {},
+   "about": "a chip or label appears (A5)",
+   "durS": 0.14,
+   "peakS": 0.0,
+   "align": "start",
+   "level": -19,
+   "eventLufs": -35.0,
+   "tourAtS": 46.252
+  },
+  {
+   "name": "blip-high",
+   "file": "audio/sfx/blip-high.wav",
+   "recipe": "blip",
+   "category": "ui",
+   "params": {
+    "degree": 9
+   },
+   "about": "a second chip (E6)",
+   "durS": 0.14,
+   "peakS": 0.0,
+   "align": "start",
+   "level": -19,
+   "eventLufs": -35.0,
+   "tourAtS": 46.992
+  },
+  {
+   "name": "stamp",
+   "file": "audio/sfx/stamp.wav",
+   "recipe": "stamp",
+   "category": "ui",
+   "params": {},
+   "about": "a verdict stamp lands",
+   "durS": 0.5,
+   "peakS": 0.0,
+   "align": "start",
+   "level": -14,
+   "eventLufs": -30.0,
+   "tourAtS": 47.732
+  },
+  {
+   "name": "tick",
+   "file": "audio/sfx/tick.wav",
+   "recipe": "tick",
+   "category": "ui",
+   "params": {
+    "seed": 6
+   },
+   "about": "counter tick",
+   "durS": 0.03,
+   "peakS": 0.0,
+   "align": "start",
+   "level": -21,
+   "eventLufs": -37.0,
+   "tourAtS": 48.832
+  },
+  {
+   "name": "typing",
+   "file": "audio/sfx/typing.wav",
+   "recipe": "typing",
+   "category": "ui",
+   "params": {
+    "n_keys": 18,
+    "rate": 9.0
+   },
+   "about": "keystrokes for code",
+   "durS": 1.8834,
+   "peakS": 1.43,
+   "align": "start",
+   "level": -24,
+   "eventLufs": -40.0,
+   "tourAtS": 49.462
+  },
+  {
+   "name": "whoosh",
+   "file": "audio/sfx/whoosh.wav",
+   "recipe": "whoosh",
+   "category": "transition",
+   "params": {},
+   "about": "camera move or transition (peak at 0.6 of its length)",
+   "durS": 0.9,
+   "peakS": 0.54,
+   "align": "peak",
+   "level": -13,
+   "eventLufs": -29.0,
+   "tourAtS": 51.946
+  },
+  {
+   "name": "swish",
+   "file": "audio/sfx/swish.wav",
+   "recipe": "swish",
+   "category": "transition",
+   "params": {},
+   "about": "a card swings in",
+   "durS": 0.42,
+   "peakS": 0.231,
+   "align": "peak",
+   "level": -16,
+   "eventLufs": -32.0,
+   "tourAtS": 53.446
+  },
+  {
+   "name": "riser",
+   "file": "audio/sfx/riser.wav",
+   "recipe": "riser",
+   "category": "transition",
+   "params": {
+    "dur": 1.6
+   },
+   "about": "into a chapter card (ends on the cut)",
+   "durS": 1.6,
+   "peakS": 1.575,
+   "align": "end",
+   "level": -11,
+   "eventLufs": -27.0,
+   "tourAtS": 54.466
+  },
+  {
+   "name": "riser-long",
+   "file": "audio/sfx/riser-long.wav",
+   "recipe": "riser",
+   "category": "transition",
+   "params": {
+    "dur": 4.0
+   },
+   "about": "a long build (ends on the cut)",
+   "durS": 4.0,
+   "peakS": 3.97,
+   "align": "end",
+   "level": -11,
+   "eventLufs": -27.0,
+   "tourAtS": 56.666
+  },
+  {
+   "name": "reverse-swell",
+   "file": "audio/sfx/reverse-swell.wav",
+   "recipe": "reverse_swell",
+   "category": "transition",
+   "params": {
+    "dur": 1.4,
+    "tone_degree": 1
+   },
+   "about": "reversed bloom with a D, ends on the cut",
+   "durS": 1.4,
+   "peakS": 1.29,
+   "align": "end",
+   "level": -11,
+   "eventLufs": -27.0,
+   "tourAtS": 61.266
+  },
+  {
+   "name": "sub-hit",
+   "file": "audio/sfx/sub-hit.wav",
+   "recipe": "sub_hit",
+   "category": "hit",
+   "params": {},
+   "about": "tuned sub hit (A2 to D1)",
+   "durS": 1.8,
+   "peakS": 0.005,
+   "align": "start",
+   "level": -9,
+   "eventLufs": -25.0,
+   "tourAtS": 63.266
+  },
+  {
+   "name": "impact",
+   "file": "audio/sfx/impact.wav",
+   "recipe": "impact",
+   "category": "hit",
+   "params": {},
+   "about": "chapter card hit",
+   "durS": 3.0,
+   "peakS": 0.06,
+   "align": "start",
+   "level": -5,
+   "eventLufs": -21.0,
+   "tourAtS": 65.666
+  },
+  {
+   "name": "glitch",
+   "file": "audio/sfx/glitch.wav",
+   "recipe": "glitch",
+   "category": "transition",
+   "params": {},
+   "about": "a failure beat",
+   "durS": 0.35,
+   "peakS": 0.315,
+   "align": "start",
+   "level": -15,
+   "eventLufs": -31.0,
+   "tourAtS": 69.266
+  },
+  {
+   "name": "paper",
+   "file": "audio/sfx/paper.wav",
+   "recipe": "paper",
+   "category": "ui",
+   "params": {},
+   "about": "a page or document",
+   "durS": 0.5,
+   "peakS": 0.235,
+   "align": "start",
+   "level": -17,
+   "eventLufs": -33.0,
+   "tourAtS": 70.216
+  },
+  {
+   "name": "heartbeat",
+   "file": "audio/sfx/heartbeat.wav",
+   "recipe": "heartbeat",
+   "category": "hit",
+   "params": {},
+   "about": "a pulse",
+   "durS": 4.25,
+   "peakS": 2.83,
+   "align": "start",
+   "level": -14,
+   "eventLufs": -30.0,
+   "tourAtS": 71.316
+  },
+  {
+   "name": "camera-shutter",
+   "file": "audio/sfx/camera-shutter.wav",
+   "recipe": "camera_shutter",
+   "category": "ui",
+   "params": {},
+   "about": "a screenshot",
+   "durS": 0.6,
+   "peakS": 0.055,
+   "align": "start",
+   "level": -14,
+   "eventLufs": -30.0,
+   "tourAtS": 76.166
+  }
+ ]
+}

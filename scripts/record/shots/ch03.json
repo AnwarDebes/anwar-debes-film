@@ -1,0 +1,63 @@
+{
+  "outDir": "public/recordings",
+  "shots": [
+    {
+      "name": "ch03-session",
+      "url": "https://anwardebes.github.io/trace/?film",
+      "viewport": {"width": 960, "height": 600},
+      "deviceScaleFactor": 2,
+      "colorScheme": "dark",
+      "duration": 11,
+      "crf": 17,
+      "waitUntil": "networkidle",
+      "waitFor": ["#tabs .tab", "#empty"],
+      "settleMs": 600,
+      "css": ".st .args { color: transparent !important; background: rgba(148,156,154,0.42); border-radius: 4px; } .cert pre.py { color: transparent !important; background: rgba(148,156,154,0.32); } #own { display: none !important; }",
+      "cursor": {"visible": false},
+      "actions": [
+        {"at": 0, "type": "eval", "script": "window.__trace.selectScenario(0)"},
+        {"at": 0, "type": "scroll", "to": "#blurb", "offset": -16, "duration": 0.02},
+        {"at": 1.0, "type": "eval", "script": "window.__trace.stepOnce()"},
+        {"at": 2.0, "type": "eval", "script": "window.__trace.stepOnce()"},
+        {"at": 2.0, "type": "scroll", "to": "#steps li:last-child", "block": "end", "offset": 28, "duration": 0.45, "ease": "ui"},
+        {"at": 3.0, "type": "eval", "script": "window.__trace.stepOnce()"},
+        {"at": 3.0, "type": "scroll", "to": "#steps li:last-child", "block": "end", "offset": 28, "duration": 0.45, "ease": "ui"},
+        {"at": 4.0, "type": "eval", "script": "window.__trace.stepOnce()"},
+        {"at": 4.0, "type": "scroll", "to": "#steps li:last-child", "block": "end", "offset": 28, "duration": 0.45, "ease": "ui"},
+        {"at": 5.0, "type": "eval", "script": "window.__trace.stepOnce()"},
+        {"at": 5.0, "type": "scroll", "to": "#steps li:last-child", "block": "end", "offset": 28, "duration": 0.45, "ease": "ui"},
+        {"at": 6.0, "type": "eval", "script": "window.__trace.stepOnce()"},
+        {"at": 6.0, "type": "scroll", "to": "#steps li:last-child", "block": "end", "offset": 28, "duration": 0.45, "ease": "ui"},
+        {"at": 7.0, "type": "eval", "script": "window.__trace.stepOnce()"},
+        {"at": 7.0, "type": "scroll", "to": "#steps li:last-child", "block": "end", "offset": 28, "duration": 0.45, "ease": "ui"},
+        {"at": 8.5, "type": "scroll", "to": "#monitor-card", "offset": -14, "duration": 0.9, "ease": "film"}
+      ]
+    },
+    {
+      "name": "ch03-ledger",
+      "url": "https://anwardebes.github.io/trace/?film",
+      "viewport": {"width": 960, "height": 600},
+      "deviceScaleFactor": 2,
+      "colorScheme": "dark",
+      "duration": 10,
+      "crf": 17,
+      "waitUntil": "networkidle",
+      "waitFor": ["#tabs .tab", "#empty"],
+      "settleMs": 600,
+      "css": ".st .args { color: transparent !important; background: rgba(148,156,154,0.42); border-radius: 4px; } .cert pre.py { color: transparent !important; background: rgba(148,156,154,0.32); } #own { display: none !important; }",
+      "cursor": {"visible": false},
+      "actions": [
+        {"at": 0, "type": "eval", "script": "(() => { const T = window.__trace; T.selectScenario(0); while (T.stepOnce()) {} })()"},
+        {"at": 0, "type": "scroll", "to": "#ledger-card", "offset": -14, "duration": 0.02},
+        {"at": 1.0, "type": "eval", "script": "window.__trace.seal()"},
+        {"at": 2.5, "type": "eval", "script": "(() => { const T = window.__trace; T.setTamper(true); const i = T.S.stored.entries.findIndex((e) => e.kind === 'behavior' && e.payload.violated_now.length); T.openEditor(i); })()"},
+        {"at": 2.6, "type": "scroll", "to": "#ledger-card .ent:nth-child(4)", "offset": -10, "duration": 0.6, "ease": "ui"},
+        {"at": 3.6, "type": "eval", "script": "(() => { const T = window.__trace; const i = T.S.stored.entries.findIndex((e) => e.kind === 'behavior' && e.payload.violated_now.length); T.tamperField(i, 'export', false); })()"},
+        {"at": 4.6, "type": "eval", "script": "window.__trace.verify()"},
+        {"at": 4.7, "type": "scroll", "to": "#ledger-card .ent:nth-child(6)", "offset": -10, "duration": 0.6, "ease": "ui"},
+        {"at": 6.8, "type": "eval", "script": "(() => { const T = window.__trace; const i = T.S.stored.entries.findIndex((e) => e.kind === 'behavior' && e.payload.violated_now.length); T.tamperField(i, 'export', true); })()"},
+        {"at": 7.8, "type": "eval", "script": "window.__trace.verify()"}
+      ]
+    }
+  ]
+}

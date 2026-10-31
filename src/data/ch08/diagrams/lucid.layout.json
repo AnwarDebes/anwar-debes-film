@@ -1,0 +1,277 @@
+{
+ "id": "lucid",
+ "title": "LUCID",
+ "repo": "github.com/AnwarDebes/lucid",
+ "commit": "4db5549cd4b5745b6f77b8c58f683076237671f1",
+ "about": "The agent's loop, read from lucidkit, in the order one step runs it (the next frame starts the loop again, lucidkit/runner.py:66): every edge is a call site cited by file and line.",
+ "generated": {
+  "by": "scripts/diagram/layout.mjs",
+  "elk": "layered",
+  "routing": "orthogonal",
+  "measured": true,
+  "cyclic": false
+ },
+ "unit": "u = 1/1000 of the frame height at camera zoom 1",
+ "style": {
+  "unit": "u = 1/1000 of the frame height at camera zoom 1",
+  "card": {
+   "padX": 21,
+   "padTop": 19,
+   "padBottom": 21,
+   "radius": 14,
+   "minW": 196,
+   "glyph": 12,
+   "glyphGap": 10,
+   "kind": {
+    "font": "mono",
+    "size": 17,
+    "weight": 500,
+    "tracking": 0.14,
+    "lineH": 20
+   },
+   "gapKindTitle": 11,
+   "title": {
+    "font": "sans",
+    "size": 29,
+    "weight": 650,
+    "tracking": -0.015,
+    "lineH": 32
+   },
+   "gapTitleSub": 6,
+   "sub": {
+    "font": "mono",
+    "size": 19,
+    "weight": 450,
+    "tracking": 0,
+    "lineH": 22
+   },
+   "detail": {
+    "font": "mono",
+    "size": 13,
+    "weight": 450,
+    "tracking": 0,
+    "lineH": 20,
+    "gapTop": 18,
+    "padBottom": 22
+   },
+   "detailHead": {
+    "font": "mono",
+    "size": 11.5,
+    "weight": 500,
+    "tracking": 0.12,
+    "lineH": 16,
+    "gapBelow": 10
+   }
+  },
+  "group": {
+   "pad": 22,
+   "clearance": 8,
+   "radius": 22,
+   "legendInset": 26,
+   "legendGap": 10,
+   "pathGap": 14,
+   "label": {
+    "font": "mono",
+    "size": 16,
+    "weight": 500,
+    "tracking": 0.2,
+    "lineH": 19
+   },
+   "path": {
+    "font": "mono",
+    "size": 16,
+    "weight": 450,
+    "tracking": 0,
+    "lineH": 19
+   }
+  },
+  "edge": {
+   "cornerRadius": 16,
+   "arrow": 8,
+   "label": {
+    "font": "mono",
+    "size": 15,
+    "weight": 500,
+    "tracking": 0.02,
+    "lineH": 18
+   },
+   "labelPadX": 9,
+   "labelPadY": 5
+  },
+  "spacing": {
+   "betweenLayers": 92,
+   "nodeNode": 40,
+   "edgeNode": 24,
+   "edgeEdge": 15,
+   "portPort": 16,
+   "componentGap": 60,
+   "rowGap": 38,
+   "innerGap": 54
+  }
+ },
+ "bounds": {
+  "w": 1648,
+  "h": 131
+ },
+ "ranks": 4,
+ "order": [
+  "perceive",
+  "model",
+  "plan",
+  "act"
+ ],
+ "nodes": [
+  {
+   "id": "perceive",
+   "label": "perceive",
+   "kind": "module",
+   "sub": "objects · HUD mask · signature",
+   "x": 0,
+   "y": 0,
+   "w": 388,
+   "h": 131,
+   "rank": 0,
+   "path": "lucidkit/perception.py",
+   "loc": 157,
+   "order": 0
+  },
+  {
+   "id": "model",
+   "label": "world model",
+   "kind": "data",
+   "sub": "Memory: moves · fatal pairs",
+   "x": 480,
+   "y": 0,
+   "w": 354,
+   "h": 131,
+   "rank": 1,
+   "path": "lucidkit/agent.py",
+   "order": 1
+  },
+  {
+   "id": "plan",
+   "label": "plan",
+   "kind": "model",
+   "sub": "BFS over learned moves",
+   "x": 926,
+   "y": 0,
+   "w": 298,
+   "h": 131,
+   "rank": 2,
+   "path": "lucidkit/agent.py",
+   "order": 2
+  },
+  {
+   "id": "act",
+   "label": "act",
+   "kind": "service",
+   "sub": "ACTION1-7 on the live API",
+   "x": 1316,
+   "y": 0,
+   "w": 332,
+   "h": 131,
+   "rank": 3,
+   "path": "lucidkit/runner.py",
+   "loc": 94,
+   "order": 3
+  }
+ ],
+ "groups": [],
+ "edges": [
+  {
+   "id": "e0:perceive->model",
+   "from": "perceive",
+   "to": "model",
+   "label": "what moved",
+   "points": [
+    [
+     388,
+     65.5
+    ],
+    [
+     480,
+     65.5
+    ]
+   ],
+   "labelBox": {
+    "x": 378.5,
+    "y": 30.5,
+    "w": 111,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "lucidkit/agent.py",
+     "line": 297,
+     "code": "disp = P.moved_object(before.grid, after.grid, hud)"
+    }
+   ]
+  },
+  {
+   "id": "e1:model->plan",
+   "from": "model",
+   "to": "plan",
+   "label": "known moves",
+   "points": [
+    [
+     834,
+     65.5
+    ],
+    [
+     926,
+     65.5
+    ]
+   ],
+   "labelBox": {
+    "x": 819.85,
+    "y": 30.5,
+    "w": 120.3,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "lucidkit/agent.py",
+     "line": 230,
+     "code": "known_moves = {a: self.mem.displacement(a) for a in safe if a != 6}"
+    }
+   ]
+  },
+  {
+   "id": "e2:plan->act",
+   "from": "plan",
+   "to": "act",
+   "label": "first step",
+   "points": [
+    [
+     1224,
+     65.5
+    ],
+    [
+     1316,
+     65.5
+    ]
+   ],
+   "labelBox": {
+    "x": 1214.5,
+    "y": 30.5,
+    "w": 111,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "lucidkit/agent.py",
+     "line": 240,
+     "code": "a = bfs_first_action((cy, cx), (gy, gx), known_moves, self.mem.obstacles, tol=tol)"
+    }
+   ]
+  }
+ ],
+ "paths": {
+  "loop": [
+   "perceive",
+   "model",
+   "plan",
+   "act"
+  ]
+ }
+}

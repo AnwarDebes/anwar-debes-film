@@ -1,0 +1,170 @@
+{
+  "outDir": "public/recordings",
+  "shots": [
+    {
+      "name": "trace",
+      "url": "https://anwardebes.github.io/trace/?film",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "deviceScaleFactor": 2,
+      "colorScheme": "dark",
+      "duration": 10,
+      "waitUntil": "networkidle",
+      "waitFor": [
+        "#start",
+        "#tabs .tab"
+      ],
+      "cursor": {
+        "start": [
+          1010,
+          760
+        ],
+        "size": 26
+      },
+      "actions": [
+        {
+          "at": 0.2,
+          "type": "move",
+          "to": "#start",
+          "anchor": [
+            0.4,
+            0.56
+          ],
+          "duration": 0.75,
+          "ease": "film"
+        },
+        {
+          "at": 1.0,
+          "type": "click"
+        },
+        {
+          "at": 1.25,
+          "type": "move",
+          "to": [
+            1500,
+            610
+          ],
+          "duration": 1.1,
+          "ease": "film",
+          "curve": 0.08
+        },
+        {
+          "at": 1.9,
+          "type": "cursor",
+          "visible": false,
+          "duration": 0.45
+        }
+      ]
+    },
+    {
+      "name": "home",
+      "url": "https://anwardebes.github.io/",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "deviceScaleFactor": 2,
+      "colorScheme": "dark",
+      "duration": 6.5,
+      "waitUntil": "networkidle",
+      "waitFor": [
+        "#bool-toggle",
+        "#hero-slot canvas"
+      ],
+      "cursor": {
+        "start": [
+          640,
+          930
+        ],
+        "size": 26
+      },
+      "actions": [
+        {
+          "at": 1.2,
+          "type": "move",
+          "to": [
+            1010,
+            520
+          ],
+          "duration": 1.1,
+          "ease": "film",
+          "curve": 0.18
+        },
+        {
+          "at": 2.35,
+          "type": "move",
+          "to": [
+            1205,
+            410
+          ],
+          "duration": 0.9,
+          "ease": "film",
+          "curve": -0.12
+        },
+        {
+          "at": 3.35,
+          "type": "click",
+          "holdMs": 140
+        },
+        {
+          "at": 3.75,
+          "type": "move",
+          "to": "#bool-toggle",
+          "anchor": [
+            0.5,
+            0.62
+          ],
+          "duration": 0.75,
+          "ease": "film",
+          "curve": 0.1
+        },
+        {
+          "at": 4.6,
+          "type": "click"
+        }
+      ]
+    },
+    {
+      "name": "home-phone",
+      "url": "https://anwardebes.github.io/",
+      "viewport": {
+        "width": 390,
+        "height": 798
+      },
+      "deviceScaleFactor": 3,
+      "mobile": true,
+      "colorScheme": "dark",
+      "duration": 6.5,
+      "waitUntil": "networkidle",
+      "waitFor": [
+        "#bool-toggle",
+        "#hero-slot canvas"
+      ],
+      "cursor": {
+        "style": "touch",
+        "size": 26
+      },
+      "actions": [
+        {
+          "at": 2.2,
+          "type": "tap",
+          "to": [
+            236,
+            214
+          ]
+        },
+        {
+          "at": 3.8,
+          "type": "tap",
+          "to": "#bool-toggle",
+          "anchor": [
+            0.42,
+            0.6
+          ]
+        }
+      ]
+    }
+  ]
+}

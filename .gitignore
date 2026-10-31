@@ -1,0 +1,12 @@
+node_modules/
+out/
+build/
+.cache/
+*.log
+.DS_Store
+Thumbs.db
+.tmp/
+
+# Generated: re-made by scripts/audio/mix.py and scripts/audio/fetch-music.mjs (sha256 in audio/music-manifest.json)
+public/audio/film/
+public/audio/music/*.mp3

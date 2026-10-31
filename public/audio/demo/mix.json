@@ -1,0 +1,540 @@
+{
+ "version": 1,
+ "name": "demo",
+ "cueSheet": "audio/cues/demo.json",
+ "cueSheetSha256": "c96c2682d154b31c60a32eca0e28d050703ed44f69b43b99099210c2d6afe966",
+ "fps": 60.0,
+ "durationS": 24.0,
+ "sampleRate": 48000,
+ "renderedWith": {
+  "python": "3.14.3",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "synth": "9efd74d74e4852c1"
+ },
+ "files": {
+  "voice": "audio/demo/voice.flac",
+  "music": "audio/demo/music.flac",
+  "sfx": "audio/demo/sfx.flac",
+  "master": "audio/demo/master.flac"
+ },
+ "voice": {
+  "sources": [
+   {
+    "src": "public/audio/demo/standin.wav",
+    "at": 0.0,
+    "sha256": "90da20c1a93940daf180742baa4a2c123c2aa2f3bba1b587b3d3434c85e74ea0"
+   }
+  ],
+  "measuredLufs": -15.648,
+  "normaliseGainDb": -0.352,
+  "targetLufs": -16,
+  "highpassHz": 80,
+  "words": 46,
+  "phrases": [
+   [
+    1.2,
+    9.05
+   ],
+   [
+    13.0,
+    22.88
+   ]
+  ]
+ },
+ "duck": {
+  "params": {
+   "depth_db": -10.0,
+   "merge_gap": 1.5,
+   "pre": 0.15,
+   "attack": 0.25,
+   "hold": 0.35,
+   "release": 0.6,
+   "full_gap": 3.0,
+   "swell_db": 3.0,
+   "swell_min_gap": 3.0,
+   "swell_rise": 1.2,
+   "swell_fall": 1.0
+  },
+  "pocket": {
+   "freqHz": 2500,
+   "q": 1.0,
+   "gainDb": -2.5
+  }
+ },
+ "music": [
+  {
+   "id": "M1",
+   "track": "decoherence",
+   "title": "Decoherence",
+   "attribution": "'Decoherence' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+   "in": 0.0,
+   "out": 12.0,
+   "offset": 18.0,
+   "fadeIn": 1.2,
+   "fadeOut": 1.0,
+   "fadeInCurve": "qsin",
+   "fadeOutCurve": "qsin",
+   "sliceLufs": -20.08,
+   "level": -5,
+   "gainDb": -0.92,
+   "key": "E minor",
+   "sha256": "9ce02e24e853265ea6dc2439e39af0905abdce806f242f57222c3a13712961aa"
+  },
+  {
+   "id": "M2",
+   "track": "machina",
+   "title": "Machina",
+   "attribution": "'Machina' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+   "in": 12.0,
+   "out": 24.0,
+   "offset": 1.13,
+   "fadeIn": 0.02,
+   "fadeOut": 1.2,
+   "fadeInCurve": "qsin",
+   "fadeOutCurve": "qsin",
+   "sliceLufs": -20.359,
+   "level": -5,
+   "gainDb": -0.641,
+   "key": "Ab major",
+   "sha256": "72f479c583fd1cb894584c51d4fb9b33200b098bd1b13195bd41d29586d9d344"
+  }
+ ],
+ "sfx": [
+  {
+   "id": "pins:portrait",
+   "type": "pin_brush",
+   "category": "pin",
+   "align": "start",
+   "anchorS": 6.61,
+   "frame": 397,
+   "startS": 6.61,
+   "endS": 7.399,
+   "level": -24,
+   "gainDb": -30.682,
+   "eventLufs": -40.0,
+   "key": null,
+   "speaking": 1.0,
+   "voiceLufs": -17.808,
+   "relToVoiceLU": -22.192,
+   "send": 0.25,
+   "shield": false,
+   "params": {
+    "seed": "pin_brush@397",
+    "hist": "83 bins of 0.005 s"
+   },
+   "pins": 10713
+  },
+  {
+   "id": "portrait-note-1",
+   "type": "note",
+   "category": "tonal",
+   "align": "start",
+   "anchorS": 7.5,
+   "frame": 450,
+   "startS": 7.5,
+   "endS": 11.24,
+   "level": -15,
+   "gainDb": -25.559,
+   "eventLufs": -31.0,
+   "key": "E minor",
+   "speaking": 1.0,
+   "voiceLufs": -17.105,
+   "relToVoiceLU": -13.895,
+   "send": 0.32,
+   "shield": false,
+   "params": {
+    "degree": 6,
+    "key": "E minor",
+    "seed": "note@450"
+   }
+  },
+  {
+   "id": "portrait-note-2",
+   "type": "note",
+   "category": "tonal",
+   "align": "start",
+   "anchorS": 8.0,
+   "frame": 480,
+   "startS": 8.0,
+   "endS": 11.74,
+   "level": -15,
+   "gainDb": -25.428,
+   "eventLufs": -31.0,
+   "key": "E minor",
+   "speaking": 1.0,
+   "voiceLufs": -17.092,
+   "relToVoiceLU": -13.908,
+   "send": 0.32,
+   "shield": false,
+   "params": {
+    "degree": 3,
+    "velocity": 0.7,
+    "key": "E minor",
+    "seed": "note@480"
+   }
+  },
+  {
+   "id": "card:riser",
+   "type": "riser",
+   "category": "transition",
+   "align": "end",
+   "anchorS": 12.0,
+   "frame": 720,
+   "startS": 10.4,
+   "endS": 12.0,
+   "level": -11,
+   "gainDb": -16.84,
+   "eventLufs": -27.0,
+   "key": "Ab major",
+   "speaking": 0.0,
+   "voiceLufs": null,
+   "relToVoiceLU": null,
+   "send": 0.18,
+   "shield": true,
+   "params": {
+    "dur": 1.6,
+    "key": "Ab major",
+    "seed": "riser@720"
+   }
+  },
+  {
+   "id": "card:impact",
+   "type": "impact",
+   "category": "hit",
+   "align": "start",
+   "anchorS": 12.0,
+   "frame": 720,
+   "startS": 12.0,
+   "endS": 15.0,
+   "level": -5,
+   "gainDb": -12.708,
+   "eventLufs": -21.0,
+   "key": "Ab major",
+   "speaking": 0.0,
+   "voiceLufs": null,
+   "relToVoiceLU": null,
+   "send": 0.12,
+   "shield": false,
+   "params": {
+    "key": "Ab major",
+    "seed": "impact@720"
+   }
+  },
+  {
+   "id": "pins:card",
+   "type": "pin_brush",
+   "category": "pin",
+   "align": "start",
+   "anchorS": 12.058,
+   "frame": 723,
+   "startS": 12.058,
+   "endS": 13.213,
+   "level": -24,
+   "gainDb": -29.648,
+   "eventLufs": -40.0,
+   "key": null,
+   "speaking": 1.0,
+   "voiceLufs": -18.966,
+   "relToVoiceLU": -21.034,
+   "send": 0.25,
+   "shield": false,
+   "params": {
+    "seed": "pin_brush@723",
+    "hist": "156 bins of 0.005 s"
+   },
+   "pins": 12678
+  },
+  {
+   "id": "tsetlin-card",
+   "type": "swish",
+   "category": "transition",
+   "align": "peak",
+   "anchorS": 15.467,
+   "frame": 928,
+   "startS": 15.236,
+   "endS": 15.656,
+   "level": -16,
+   "gainDb": -14.965,
+   "eventLufs": -37.455,
+   "key": null,
+   "speaking": 1.0,
+   "voiceLufs": -16.834,
+   "relToVoiceLU": -20.621,
+   "send": 0.12,
+   "shield": true,
+   "params": {
+    "seed": "swish@928"
+   }
+  },
+  {
+   "id": "pins:clauses",
+   "type": "pin_brush",
+   "category": "pin",
+   "align": "start",
+   "anchorS": 19.453,
+   "frame": 1167,
+   "startS": 19.453,
+   "endS": 20.398,
+   "level": -26,
+   "gainDb": -33.424,
+   "eventLufs": -42.0,
+   "key": null,
+   "speaking": 1.0,
+   "voiceLufs": -16.323,
+   "relToVoiceLU": -25.677,
+   "send": 0.25,
+   "shield": false,
+   "params": {
+    "seed": "pin_brush@1167",
+    "hist": "114 bins of 0.005 s"
+   },
+   "pins": 978
+  },
+  {
+   "id": "clauses-note",
+   "type": "note",
+   "category": "tonal",
+   "align": "start",
+   "anchorS": 19.7,
+   "frame": 1182,
+   "startS": 19.7,
+   "endS": 23.44,
+   "level": -15,
+   "gainDb": -24.285,
+   "eventLufs": -31.0,
+   "key": "Ab major",
+   "speaking": 1.0,
+   "voiceLufs": -16.082,
+   "relToVoiceLU": -14.918,
+   "send": 0.32,
+   "shield": false,
+   "params": {
+    "degree": 3,
+    "key": "Ab major",
+    "seed": "note@1182"
+   }
+  },
+  {
+   "id": "chip-read",
+   "type": "blip",
+   "category": "ui",
+   "align": "start",
+   "anchorS": 20.617,
+   "frame": 1237,
+   "startS": 20.617,
+   "endS": 20.757,
+   "level": -19,
+   "gainDb": -15.892,
+   "eventLufs": -35.0,
+   "key": "Ab major",
+   "speaking": 1.0,
+   "voiceLufs": -16.996,
+   "relToVoiceLU": -18.004,
+   "send": 0.12,
+   "shield": false,
+   "params": {
+    "degree": 5,
+    "key": "Ab major",
+    "seed": "blip@1237"
+   }
+  },
+  {
+   "id": "chip-check",
+   "type": "blip",
+   "category": "ui",
+   "align": "start",
+   "anchorS": 21.383,
+   "frame": 1283,
+   "startS": 21.383,
+   "endS": 21.523,
+   "level": -19,
+   "gainDb": -16.319,
+   "eventLufs": -35.0,
+   "key": "Ab major",
+   "speaking": 1.0,
+   "voiceLufs": -17.583,
+   "relToVoiceLU": -17.417,
+   "send": 0.12,
+   "shield": false,
+   "params": {
+    "degree": 6,
+    "key": "Ab major",
+    "seed": "blip@1283"
+   }
+  },
+  {
+   "id": "chip-argue",
+   "type": "blip",
+   "category": "ui",
+   "align": "start",
+   "anchorS": 22.017,
+   "frame": 1321,
+   "startS": 22.017,
+   "endS": 22.157,
+   "level": -19,
+   "gainDb": -15.957,
+   "eventLufs": -35.0,
+   "key": "Ab major",
+   "speaking": 1.0,
+   "voiceLufs": -18.961,
+   "relToVoiceLU": -16.039,
+   "send": 0.12,
+   "shield": false,
+   "params": {
+    "degree": 8,
+    "key": "Ab major",
+    "seed": "blip@1321"
+   }
+  },
+  {
+   "id": "verdict-stamp",
+   "type": "stamp",
+   "category": "ui",
+   "align": "start",
+   "anchorS": 23.1,
+   "frame": 1386,
+   "startS": 23.1,
+   "endS": 23.6,
+   "level": -14,
+   "gainDb": -14.752,
+   "eventLufs": -30.0,
+   "key": "Ab major",
+   "speaking": 1.0,
+   "voiceLufs": -21.309,
+   "relToVoiceLU": -8.691,
+   "send": 0.06,
+   "shield": false,
+   "params": {
+    "key": "Ab major",
+    "seed": "stamp@1386"
+   }
+  },
+  {
+   "id": "verdict-chime",
+   "type": "chime",
+   "category": "tonal",
+   "align": "start",
+   "anchorS": 23.133,
+   "frame": 1388,
+   "startS": 23.133,
+   "endS": 24.0,
+   "level": -13,
+   "gainDb": -19.097,
+   "eventLufs": -29.0,
+   "key": "Ab major",
+   "speaking": 1.0,
+   "voiceLufs": -21.309,
+   "relToVoiceLU": -7.691,
+   "send": 0.18,
+   "shield": false,
+   "params": {
+    "key": "Ab major",
+    "seed": "chime@1388"
+   }
+  }
+ ],
+ "balance": {
+  "method": "centred 3 s short-term loudness per 800-sample block",
+  "musicUnderVoiceLU": {
+   "median": 14.352,
+   "p10": 9.335,
+   "p90": 17.673,
+   "seconds": 18.767,
+   "target": [
+    12,
+    15
+   ]
+  },
+  "musicInHoldsLU": {
+   "median": -3.026,
+   "p90": -2.821,
+   "seconds": 0.583,
+   "target": [
+    -2,
+    0
+   ]
+  }
+ },
+ "stems": {
+  "voice": {
+   "I": -16.0,
+   "LRA": 4.87,
+   "TP": null,
+   "SP": -3.03,
+   "Mmax": -12.78,
+   "Smax": -15.17
+  },
+  "music": {
+   "I": -25.78,
+   "LRA": 16.63,
+   "TP": null,
+   "SP": -6.99,
+   "Mmax": -15.5,
+   "Smax": -18.82
+  },
+  "sfx": {
+   "I": -29.37,
+   "LRA": 19.6,
+   "TP": null,
+   "SP": -13.02,
+   "Mmax": -20.77,
+   "Smax": -26.53
+  },
+  "premix": {
+   "I": -16.39,
+   "LRA": 2.88,
+   "TP": -2.83,
+   "SP": -2.84,
+   "Mmax": -12.69,
+   "Smax": -15.07
+  }
+ },
+ "master": {
+  "target": {
+   "lufs": -15.0,
+   "truePeakMaxDb": -1.5
+  },
+  "premixLufs": -16.393,
+  "gainDb": 1.393,
+  "limiter": {
+   "ceilingDb": -2.0,
+   "lookaheadMs": 4.0,
+   "releaseDbPerS": 14.0,
+   "iterations": 1,
+   "maxGainReductionDb": 0.78,
+   "pctTimeLimiting": 0.82,
+   "truePeakDb": -2.0
+  },
+  "stats": {
+   "I": -15.01,
+   "LRA": 2.88,
+   "TP": -2.0,
+   "SP": -2.0,
+   "Mmax": -11.29,
+   "Smax": -13.68
+  },
+  "ffmpeg": {
+   "I": -15.0,
+   "LRA": 2.9,
+   "TP": -2.0
+  },
+  "aac": {
+   "I": -15.0,
+   "LRA": 2.9,
+   "TP": -2.0,
+   "bitrate": "320k"
+  },
+  "pass": true
+ },
+ "warnings": [],
+ "timing": {
+  "voice": 0.17,
+  "music": 6.77,
+  "sfx": 0.95,
+  "stems": 1.97,
+  "master": 5.09,
+  "meters": 0.21,
+  "total": 15.29
+ }
+}

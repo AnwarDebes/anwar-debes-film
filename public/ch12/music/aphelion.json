@@ -1,0 +1,20 @@
+{
+ "id": "aphelion",
+ "title": "Aphelion",
+ "artist": "Scott Buckley",
+ "file": "public/ch12/music/aphelion.mp3",
+ "url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2026/04/Aphelion.mp3",
+ "page": "https://www.scottbuckley.com.au/library/aphelion/",
+ "license": "CC-BY-4.0",
+ "attribution": "'Aphelion' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+ "licenseEvidence": "Creative Commons Attribution 4.0 International License (text on the track page, checked 2026-10-29)",
+ "sha256": "57ae03dbc122f0859e0f9a273e59503e34883728ddb5b06761fbf8244b0eb23e",
+ "bytes": 16894139,
+ "fetchedAt": "2026-10-29",
+ "analysis": {
+  "key": "A minor",
+  "durationS": 422.25,
+  "method": "scripts/audio/analyze_music.py analyse()"
+ },
+ "note": "Not in audio/music-manifest.json; chapter cues reference it by src. Do not re-upload the file on its own."
+}

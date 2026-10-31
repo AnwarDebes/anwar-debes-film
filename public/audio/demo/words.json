@@ -1,0 +1,332 @@
+{
+ "fps": 60,
+ "durationS": 24.0,
+ "chapters": [
+  {
+   "id": "the-black-box",
+   "title": "The black box",
+   "start": 0.0,
+   "end": 12.55
+  },
+  {
+   "id": "tsetlin-machines",
+   "title": "Tsetlin Machines",
+   "start": 12.55,
+   "end": 23.65
+  },
+  {
+   "id": "glassbox-lm",
+   "title": "glassbox-lm",
+   "start": 23.65,
+   "end": 24.0
+  }
+ ],
+ "utterances": [
+  {
+   "id": "u01",
+   "chapter": "The black box",
+   "words": [
+    {
+     "text": "Most",
+     "start": 1.2,
+     "end": 1.48,
+     "tag": ""
+    },
+    {
+     "text": "AI",
+     "start": 1.48,
+     "end": 1.82,
+     "tag": ""
+    },
+    {
+     "text": "hands",
+     "start": 1.82,
+     "end": 2.11,
+     "tag": ""
+    },
+    {
+     "text": "you",
+     "start": 2.11,
+     "end": 2.19,
+     "tag": ""
+    },
+    {
+     "text": "an",
+     "start": 2.19,
+     "end": 2.27,
+     "tag": ""
+    },
+    {
+     "text": "answer.",
+     "start": 2.27,
+     "end": 2.98,
+     "tag": "em"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "chapter": "The black box",
+   "words": [
+    {
+     "text": "Very",
+     "start": 3.85,
+     "end": 4.15,
+     "tag": ""
+    },
+    {
+     "text": "little",
+     "start": 4.15,
+     "end": 4.36,
+     "tag": ""
+    },
+    {
+     "text": "of",
+     "start": 4.36,
+     "end": 4.45,
+     "tag": ""
+    },
+    {
+     "text": "it",
+     "start": 4.45,
+     "end": 4.61,
+     "tag": ""
+    },
+    {
+     "text": "shows",
+     "start": 4.61,
+     "end": 4.92,
+     "tag": ""
+    },
+    {
+     "text": "you",
+     "start": 4.92,
+     "end": 5.08,
+     "tag": ""
+    },
+    {
+     "text": "why.",
+     "start": 5.08,
+     "end": 5.65,
+     "tag": "em"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "chapter": "The black box",
+   "words": [
+    {
+     "text": "Anwar",
+     "start": 6.7,
+     "end": 7.1,
+     "tag": "name"
+    },
+    {
+     "text": "Debes",
+     "start": 7.1,
+     "end": 7.59,
+     "tag": "name"
+    },
+    {
+     "text": "builds",
+     "start": 7.59,
+     "end": 7.91,
+     "tag": ""
+    },
+    {
+     "text": "the",
+     "start": 7.91,
+     "end": 8.0,
+     "tag": ""
+    },
+    {
+     "text": "kind",
+     "start": 8.0,
+     "end": 8.29,
+     "tag": ""
+    },
+    {
+     "text": "that",
+     "start": 8.29,
+     "end": 8.43,
+     "tag": ""
+    },
+    {
+     "text": "does.",
+     "start": 8.43,
+     "end": 9.05,
+     "tag": "em"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "chapter": "Tsetlin Machines",
+   "words": [
+    {
+     "text": "At",
+     "start": 13.0,
+     "end": 13.11,
+     "tag": ""
+    },
+    {
+     "text": "the",
+     "start": 13.11,
+     "end": 13.2,
+     "tag": ""
+    },
+    {
+     "text": "University",
+     "start": 13.2,
+     "end": 13.86,
+     "tag": ""
+    },
+    {
+     "text": "of",
+     "start": 13.86,
+     "end": 13.96,
+     "tag": ""
+    },
+    {
+     "text": "Agder,",
+     "start": 13.96,
+     "end": 14.57,
+     "tag": "key"
+    },
+    {
+     "text": "he",
+     "start": 14.68,
+     "end": 14.84,
+     "tag": ""
+    },
+    {
+     "text": "researches",
+     "start": 14.84,
+     "end": 15.47,
+     "tag": ""
+    },
+    {
+     "text": "Tsetlin",
+     "start": 15.47,
+     "end": 15.89,
+     "tag": "key"
+    },
+    {
+     "text": "Machines:",
+     "start": 15.89,
+     "end": 16.88,
+     "tag": "key"
+    },
+    {
+     "text": "models",
+     "start": 17.05,
+     "end": 17.55,
+     "tag": ""
+    },
+    {
+     "text": "whose",
+     "start": 17.55,
+     "end": 17.79,
+     "tag": ""
+    },
+    {
+     "text": "every",
+     "start": 17.79,
+     "end": 18.1,
+     "tag": ""
+    },
+    {
+     "text": "decision",
+     "start": 18.1,
+     "end": 18.69,
+     "tag": ""
+    },
+    {
+     "text": "is",
+     "start": 18.69,
+     "end": 18.81,
+     "tag": ""
+    },
+    {
+     "text": "a",
+     "start": 18.81,
+     "end": 18.9,
+     "tag": ""
+    },
+    {
+     "text": "set",
+     "start": 18.9,
+     "end": 19.09,
+     "tag": ""
+    },
+    {
+     "text": "of",
+     "start": 19.09,
+     "end": 19.21,
+     "tag": ""
+    },
+    {
+     "text": "logical",
+     "start": 19.21,
+     "end": 19.7,
+     "tag": "key"
+    },
+    {
+     "text": "clauses",
+     "start": 19.7,
+     "end": 20.25,
+     "tag": "key"
+    },
+    {
+     "text": "you",
+     "start": 20.25,
+     "end": 20.4,
+     "tag": ""
+    },
+    {
+     "text": "can",
+     "start": 20.4,
+     "end": 20.62,
+     "tag": ""
+    },
+    {
+     "text": "read,",
+     "start": 20.62,
+     "end": 21.23,
+     "tag": "em"
+    },
+    {
+     "text": "check,",
+     "start": 21.38,
+     "end": 21.82,
+     "tag": "em"
+    },
+    {
+     "text": "and",
+     "start": 21.9,
+     "end": 22.02,
+     "tag": ""
+    },
+    {
+     "text": "argue",
+     "start": 22.02,
+     "end": 22.4,
+     "tag": "em"
+    },
+    {
+     "text": "with.",
+     "start": 22.4,
+     "end": 22.88,
+     "tag": "em"
+    }
+   ]
+  }
+ ],
+ "source": {
+  "reel": "reel-720p.mp4",
+  "from": 0.0,
+  "to": 24.0,
+  "method": "reel audio, voice separated with Demucs htdemucs, gated"
+ }
+}

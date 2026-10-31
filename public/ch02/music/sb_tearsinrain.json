@@ -1,0 +1,13 @@
+{
+  "title": "Tears in Rain",
+  "artist": "Scott Buckley",
+  "year": 2019,
+  "page": "https://www.scottbuckley.com.au/library/tears-in-rain/",
+  "url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2019/07/sb_tearsinrain.mp3",
+  "license": "CC-BY-4.0",
+  "attribution": "'Tears in Rain' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+  "bytes": 13602679,
+  "sha256": "c56f817a5090e17a2def09e3623104a5474f144f81a595eb4ccae5f3ef9ab69f",
+  "fetchedAt": "2026-10-29",
+  "note": "Chapter 02's bed. Not in audio/music-manifest.json (a shared file), so the chapter's cue names this file with `src`. Like the manifest's tracks it is not to be committed or re-uploaded on its own."
+}

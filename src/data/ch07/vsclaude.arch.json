@@ -1,0 +1,193 @@
+{
+ "id": "vsclaude",
+ "title": "vsclaude",
+ "repo": "github.com/AnwarDebes/vsclaude",
+ "commit": "281aaa41fa17a51166c295cf8b5969e0058fd6a8",
+ "about": "From the live provider to Pixie: the Rust core runs the Claude Code CLI with stream-json output, the renderer parses each line into a frozen AgentEvent, and the motion mapper turns events into poses through a fixed table.",
+ "nodes": [
+  {
+   "id": "cli",
+   "label": "Claude Code CLI",
+   "kind": "service",
+   "path": "external",
+   "sub": "claude -p … --output-format stream-json"
+  },
+  {
+   "id": "rust",
+   "label": "Rust core",
+   "kind": "service",
+   "path": "apps/desktop/src-tauri/src/provider.rs",
+   "sub": "spawns the CLI, pipes stdout",
+   "loc": 111
+  },
+  {
+   "id": "live",
+   "label": "useLiveProvider",
+   "kind": "module",
+   "path": "apps/desktop/src/session/useLiveProvider.ts",
+   "sub": "provider:stdout → AgentEvent",
+   "loc": 82
+  },
+  {
+   "id": "providers",
+   "label": "Claude stream parser",
+   "kind": "module",
+   "path": "packages/providers/src/claude-stream.ts",
+   "sub": "parseClaudeStreamLine()",
+   "loc": 400
+  },
+  {
+   "id": "contracts",
+   "label": "Frozen contracts",
+   "kind": "data",
+   "path": "packages/contracts/src/motion.ts",
+   "sub": "AgentEvent, EVENT_TO_STATE",
+   "loc": 118
+  },
+  {
+   "id": "session",
+   "label": "useSession",
+   "kind": "module",
+   "path": "apps/desktop/src/session/useSession.ts",
+   "sub": "replays and derives the panels",
+   "loc": 134
+  },
+  {
+   "id": "motion",
+   "label": "Motion mapper",
+   "kind": "module",
+   "path": "packages/motion/src/mapper.ts",
+   "sub": "priority, 600 ms dwell",
+   "loc": 234
+  },
+  {
+   "id": "stage",
+   "label": "PixieStage",
+   "kind": "ui",
+   "path": "apps/desktop/src/components/PixieStage.tsx",
+   "sub": "a static symbol per action",
+   "loc": 32
+  }
+ ],
+ "edges": [
+  {
+   "from": "rust",
+   "to": "cli",
+   "label": "spawn, stdout piped",
+   "evidence": [
+    {
+     "file": "apps/desktop/src-tauri/src/provider.rs",
+     "line": 61,
+     "code": "let mut cmd = Command::new(&program);"
+    },
+    {
+     "file": "apps/desktop/src-tauri/src/provider.rs",
+     "line": 65,
+     "code": ".arg(\"stream-json\")"
+    }
+   ]
+  },
+  {
+   "from": "rust",
+   "to": "live",
+   "label": "provider:stdout",
+   "evidence": [
+    {
+     "file": "apps/desktop/src-tauri/src/provider.rs",
+     "line": 90,
+     "code": "\"provider:stdout\","
+    },
+    {
+     "file": "apps/desktop/src/session/useLiveProvider.ts",
+     "line": 54,
+     "code": "const u1 = await onProviderStdout((p) => {"
+    }
+   ]
+  },
+  {
+   "from": "live",
+   "to": "providers",
+   "label": "parseClaudeStreamLine()",
+   "evidence": [
+    {
+     "file": "apps/desktop/src/session/useLiveProvider.ts",
+     "line": 56,
+     "code": "const event = parseClaudeStreamLine(p.line, ctx);"
+    }
+   ]
+  },
+  {
+   "from": "providers",
+   "to": "contracts",
+   "label": "createAgentEvent()",
+   "evidence": [
+    {
+     "file": "packages/providers/src/claude-stream.ts",
+     "line": 133,
+     "code": "return createAgentEvent({"
+    }
+   ]
+  },
+  {
+   "from": "live",
+   "to": "session",
+   "label": "live events",
+   "evidence": [
+    {
+     "file": "apps/desktop/src/App.tsx",
+     "line": 204,
+     "code": "const session = useSession(usingLive ? live.events : undefined, { live: usingLive });"
+    }
+   ]
+  },
+  {
+   "from": "session",
+   "to": "motion",
+   "label": "mapEvents()",
+   "evidence": [
+    {
+     "file": "apps/desktop/src/session/useSession.ts",
+     "line": 4,
+     "code": "import { classifyAction, mapEvents } from '@vsclaude/motion';"
+    },
+    {
+     "file": "apps/desktop/src/session/useSession.ts",
+     "line": 61,
+     "code": "const directives = mapEvents(seen, (e) => e.ts);"
+    }
+   ]
+  },
+  {
+   "from": "motion",
+   "to": "contracts",
+   "label": "EVENT_TO_STATE",
+   "evidence": [
+    {
+     "file": "packages/motion/src/priority.ts",
+     "line": 54,
+     "code": "return EVENT_TO_STATE[event.type] ?? 'idle';"
+    }
+   ]
+  },
+  {
+   "from": "motion",
+   "to": "stage",
+   "label": "MotionDirective",
+   "evidence": [
+    {
+     "file": "apps/desktop/src/App.tsx",
+     "line": 1464,
+     "code": "<PixieStage actionId={session.actionId} caption={session.directive.caption} stateLabel={stateLabel} />"
+    }
+   ]
+  }
+ ],
+ "paths": {
+  "line": [
+   "rust",
+   "live",
+   "providers",
+   "contracts"
+  ]
+ }
+}

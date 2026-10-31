@@ -1,0 +1,69 @@
+{
+ "note": "Chapter 14's own sources, hash-chained (link = SHA-256(prev + newline + 'type id hash')). Not the film-wide film-ledger.json, which is not built yet.",
+ "scope": "chapter 14",
+ "genesis": "8fbcba9a2d38ff9a3bff8776a3ded3b75d4e7a45a9f39c19bda883174f13a6aa",
+ "entries": [
+  {
+   "type": "api-snapshot",
+   "id": "ledger/api/ai-medical-training-simulator.raw.json",
+   "hash": "a89fbd3b3eebc9939677340d15d5a770990f92cd3ad0f2d66f55d80d886d9564",
+   "prev": "8fbcba9a2d38ff9a3bff8776a3ded3b75d4e7a45a9f39c19bda883174f13a6aa",
+   "link": "901178171252e2717faad3e34e493a91086abfc41991fb305e9dba652787a870"
+  },
+  {
+   "type": "api-snapshot",
+   "id": "ledger/api/assets.raw.json",
+   "hash": "4679c1610177fef0f1c38be4ed6b990be22026f52314744c1738b2f42b70f778",
+   "prev": "901178171252e2717faad3e34e493a91086abfc41991fb305e9dba652787a870",
+   "link": "7908b00c97b8611ad7c44f5fd80095698f386e01899b062ec879095e1dabeee3"
+  },
+  {
+   "type": "api-snapshot",
+   "id": "ledger/api/assets-commits.raw.json",
+   "hash": "01bdf3c305fd9157285fbaa7e1bb5f464fa4d9844b48d56fda238ce57d02cf89",
+   "prev": "7908b00c97b8611ad7c44f5fd80095698f386e01899b062ec879095e1dabeee3",
+   "link": "a226ae48bf72f04a2f9fb38b8860673f6e762c8fb737cf9075d05a3a80951868"
+  },
+  {
+   "type": "api-snapshot",
+   "id": "ledger/api/rl.raw.json",
+   "hash": "30fd930225711b50f164ebde56eddaae8a0ddb8197c123974ef4c5792a5ad8de",
+   "prev": "a226ae48bf72f04a2f9fb38b8860673f6e762c8fb737cf9075d05a3a80951868",
+   "link": "272247b445059866d0a557c225d55fdd9c2b1c39e74f3e6f4d8024a345389524"
+  },
+  {
+   "type": "commit",
+   "id": "assets@565fced",
+   "hash": "565fced8ae47b725082dc99664216fe69f006804",
+   "prev": "272247b445059866d0a557c225d55fdd9c2b1c39e74f3e6f4d8024a345389524",
+   "link": "3bb635e84edd5b764eb1878904941491e1562fffeec2ada78eac238545d87320"
+  },
+  {
+   "type": "commit",
+   "id": "assets@5dbd20a",
+   "hash": "5dbd20a6451a2ee5b21fc7bbadecf1ea1d9c17e3",
+   "prev": "3bb635e84edd5b764eb1878904941491e1562fffeec2ada78eac238545d87320",
+   "link": "f666e5892951b0e063f196c6852def604635743cd1acdc300aa38394ede601a7"
+  },
+  {
+   "type": "commit",
+   "id": "AnwarDebes.github.io@a58258d",
+   "hash": "a58258de9b9a66f372f3b7752e9ec04babd28deb",
+   "prev": "f666e5892951b0e063f196c6852def604635743cd1acdc300aa38394ede601a7",
+   "link": "ff5769cf933a3f4b2a442b49f8b179c8f0d3a922f1844406fe5c81428f2b2e0e"
+  }
+ ],
+ "head": "ff5769cf933a3f4b2a442b49f8b179c8f0d3a922f1844406fe5c81428f2b2e0e",
+ "transcript": [
+  "genesis 8fbcba9a2d38ff9a",
+  "api-snapshot a89fbd3b  ledger/api/ai-medical-training-simulator.raw.json",
+  "api-snapshot 4679c161  ledger/api/assets.raw.json",
+  "api-snapshot 01bdf3c3  ledger/api/assets-commits.raw.json",
+  "api-snapshot 30fd9302  ledger/api/rl.raw.json",
+  "commit       565fced8  assets@565fced",
+  "commit       5dbd20a6  assets@5dbd20a",
+  "commit       a58258de  AnwarDebes.github.io@a58258d",
+  "7 entries · head ff5769cf933a3f4b2a442b49f8b179c8f0d3a922f1844406fe5c81428f2b2e0e"
+ ],
+ "cmd": "node scripts/ch14/build-data.mjs"
+}

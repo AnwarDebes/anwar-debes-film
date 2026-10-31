@@ -1,0 +1,59 @@
+$ cd live && npm test
+
+> test
+> node --test tests/monitors.test.mjs tests/ledger.test.mjs
+
+TAP version 13
+# Subtest: canonical JSON matches json.dumps(sort_keys=True, separators=(",", ":"))
+ok 1 - canonical JSON matches json.dumps(sort_keys=True, separators=(",", ":"))
+  ---
+  duration_ms: 10.963
+  ...
+# Subtest: HMAC-SHA256 matches RFC 4231 test case 2
+ok 2 - HMAC-SHA256 matches RFC 4231 test case 2
+  ---
+  duration_ms: 3.0445
+  ...
+# Subtest: an honest ledger verifies, and every edited field is caught at its entry
+ok 3 - an honest ledger verifies, and every edited field is caught at its entry
+  ---
+  duration_ms: 280.3613
+  ...
+# Subtest: bounded count is a sliding window
+ok 4 - bounded count is a sliding window
+  ---
+  duration_ms: 11.9917
+  ...
+# Subtest: response: same-step answer counts, each trigger needs its own answer, deadline is inclusive
+ok 5 - response: same-step answer counts, each trigger needs its own answer, deadline is inclusive
+  ---
+  duration_ms: 2.8702
+  ...
+# Subtest: precedence latches and always checks every step
+ok 6 - precedence latches and always checks every step
+  ---
+  duration_ms: 3.5887
+  ...
+# Subtest: memory does not grow with the session
+ok 7 - memory does not grow with the session
+  ---
+  duration_ms: 78.2305
+  ...
+# Subtest: the five sessions end the way the page says
+ok 8 - the five sessions end the way the page says
+  ---
+  duration_ms: 70.0244
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 774.7675
+exit 0
+$ python tests/crosscheck.py
+python verify_ledger: browser ledger of 10 entries passes; edit at entry 7 caught
+exit 0

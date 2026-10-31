@@ -1,0 +1,47 @@
+Script started on 2026-10-29 20:48:27+01:00 [COMMAND="npm test" <not executed on terminal>]
+[1G[0K⠙[1G[0K⠹[1G[0K⠸[1G[0K⠼[1G[0K
+> pixie-code@0.1.1 test
+> node --test test/*.test.js
+
+[1G[0K⠴[1G[0K[32m✔ read-only tools run without approval and produce a reply [90m(1837.118489ms)[39m[39m
+[32m✔ write_file requires approval and is applied when allowed [90m(335.843186ms)[39m[39m
+[32m✔ a denied write is not applied [90m(192.341862ms)[39m[39m
+[32m✔ a second message while busy is rejected with 409 [90m(52.898153ms)[39m[39m
+[32m✔ escapes HTML [90m(249.442563ms)[39m[39m
+[32m✔ renders bold, italic and inline code [90m(3.310138ms)[39m[39m
+[32m✔ inline code is escaped exactly once [90m(15.213875ms)[39m[39m
+[32m✔ does not mangle snake_case or plain digits [90m(1.260079ms)[39m[39m
+[32m✔ neutralizes javascript: links but keeps https [90m(12.595229ms)[39m[39m
+[32m✔ escapes inside code fences [90m(1.27779ms)[39m[39m
+[32m✔ renders lists [90m(1.6325ms)[39m[39m
+[32m✔ escapeHtml handles the basics [90m(0.924238ms)[39m[39m
+[32m✔ draws all states without throwing and actually paints [90m(208.567026ms)[39m[39m
+[32m✔ waiting draws a question bubble that idle does not [90m(60.095157ms)[39m[39m
+[32m✔ success is one-shot and reverts to idle [90m(2.776722ms)[39m[39m
+[32m✔ min-dwell debounces rapid switches [90m(1.849115ms)[39m[39m
+[32m✔ Anthropic provider drives a tool turn end to end [90m(1847.469457ms)[39m[39m
+[32m✔ Gemini provider drives a tool turn end to end [90m(969.737128ms)[39m[39m
+[32m✔ read-only commands auto-approve [90m(64.17048ms)[39m[39m
+[32m✔ mutating commands ask in default mode [90m(2.589488ms)[39m[39m
+[32m✔ yolo auto-approves the non-catastrophic [90m(1.32614ms)[39m[39m
+[32m✔ redirection is not treated as read-only [90m(2.031331ms)[39m[39m
+[32m✔ find with destructive actions is not read-only [90m(2.008707ms)[39m[39m
+[32m✔ backgrounding and substitution cannot smuggle commands [90m(1.835525ms)[39m[39m
+[32m✔ git config and stash are not read-only (hooks injection) [90m(11.549862ms)[39m[39m
+[32m✔ catastrophic commands are denied, even in yolo [90m(2.253461ms)[39m[39m
+[32m✔ catastrophic hidden behind separators and substitution is caught [90m(328.415748ms)[39m[39m
+[32m✔ catastrophic check holds when session-allow makes it non-mutating [90m(2.830436ms)[39m[39m
+[32m✔ ordinary relative deletes are not catastrophic [90m(1.169175ms)[39m[39m
+[32m✔ path sandbox blocks escapes and secret reads [90m(275.119987ms)[39m[39m
+[32m✔ path sandbox is symlink-aware [90m(21.592742ms)[39m[39m
+[32m✔ classifyBash reports readonly only for safe pipelines [90m(0.804287ms)[39m[39m
+[34mℹ tests 32[39m
+[34mℹ suites 0[39m
+[34mℹ pass 32[39m
+[34mℹ fail 0[39m
+[34mℹ cancelled 0[39m
+[34mℹ skipped 0[39m
+[34mℹ todo 0[39m
+[34mℹ duration_ms 10165.342868[39m
+[1G[0K⠙[1G[0K
+Script done on 2026-10-29 20:49:07+01:00 [COMMAND_EXIT_CODE="0"]

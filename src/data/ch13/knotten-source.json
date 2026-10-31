@@ -1,0 +1,15 @@
+{"kind":"snippet","id":"knotten-source","repo":"AnwarDebes/knotten-web","ref":"c3faa9fe9caa79d8f376883ba7e8d1aa2b778373","path":"components/Source.tsx","lang":"tsx","startLine":55,"lines":[
+[["    ",""],["</","punc"],["SourceCtx.Provider","type"],[">","punc"]],
+[["  ",""],[");","punc"]],
+[["}","punc"]],
+[],
+[["/** The chip. Put it right after the number it documents. */","com"]],
+[["export","kw"],[" ",""],["function","kw"],[" ",""],["Src","fn"],["({","punc"],[" ",""],["id","param"],[",","punc"],[" ",""],["label","param"],[" ",""],["=","op"],[" ",""],["\"Kilde\"","str"],[" ",""],["}","punc"],[":","op"],[" ",""],["{","punc"],[" ",""],["id","var"],[":","op"],[" ",""],["keyof","kw"],[" ",""],["typeof","kw"],[" ",""],["SOURCES","const"],[";","punc"],[" ",""],["label","var"],["?:","op"],[" ",""],["string","type"],[" ",""],["})","punc"],[" ",""],["{","punc"]],
+[["  ",""],["const","kw"],[" ",""],["{","punc"],[" ",""],["open","var"],[",","punc"],[" ",""],["current","var"],[" ",""],["}","punc"],[" ",""],["=","op"],[" ",""],["useContext","fn"],["(","punc"],["SourceCtx","var"],[");","punc"]],
+[["  ",""],["return","kw"],[" ",""],["(","punc"]],
+[["    ",""],["<","punc"],["button","kw"],[" ",""],["type","prop"],["=","op"],["\"button\"","str"],[" ",""],["className","prop"],["=","op"],["\"src\"","str"],[" ",""],["aria-expanded","prop"],["=","op"],["{","punc"],["current","var"],[" ",""],["===","op"],[" ",""],["id","var"],["}","punc"],[" ",""],["onClick","prop"],["=","op"],["{(","punc"],["e","param"],[")","punc"],[" ",""],["=>","op"],[" ",""],["open","fn"],["(","punc"],["id","var"],[",","punc"],[" ",""],["e","var"],[".","punc"],["currentTarget","prop"],[")}>","punc"]],
+[["      ",""],["{","punc"],["label","var"],["}","punc"]],
+[["    ",""],["</","punc"],["button","kw"],[">","punc"]],
+[["  ",""],[");","punc"]],
+[["}","punc"]]
+]}

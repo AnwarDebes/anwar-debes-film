@@ -1,0 +1,33 @@
+{
+  "outDir": "public/recordings",
+  "shots": [
+    {
+      "name": "ch01-demo",
+      "url": "https://anwardebes.github.io/",
+      "viewport": {"width": 1600, "height": 1000},
+      "deviceScaleFactor": 1.25,
+      "colorScheme": "dark",
+      "duration": 11.5,
+      "crf": 17,
+      "waitUntil": "networkidle",
+      "waitFor": ["#demo", "button[data-try]"],
+      "settleMs": 800,
+      "cursor": {"start": [1260, 930], "size": 26},
+      "actions": [
+        {"at": 0, "type": "scroll", "to": "#demo-title", "offset": -150, "duration": 0.05},
+        {"at": 0.45, "type": "move", "to": "button[data-try^=\"Ignore\"]", "anchor": [0.45, 0.55], "duration": 0.65, "ease": "film"},
+        {"at": 1.2, "type": "click"},
+        {"at": 2.55, "type": "move", "to": "button[data-try^=\"Vergiss\"]", "anchor": [0.45, 0.55], "duration": 0.55, "ease": "film"},
+        {"at": 3.2, "type": "click"},
+        {"at": 4.55, "type": "move", "to": "button[data-try^=\"What are\"]", "anchor": [0.45, 0.55], "duration": 0.55, "ease": "film"},
+        {"at": 5.2, "type": "click"},
+        {"at": 6.55, "type": "move", "to": "button[data-try^=\"Disregard\"]", "anchor": [0.45, 0.55], "duration": 0.55, "ease": "film"},
+        {"at": 7.2, "type": "click"},
+        {"at": 8.55, "type": "move", "to": "button[data-try^=\"Write a poem\"]", "anchor": [0.45, 0.55], "duration": 0.55, "ease": "film"},
+        {"at": 9.2, "type": "click"},
+        {"at": 9.9, "type": "move", "to": "#clauses", "anchor": [0.3, 0.2], "duration": 0.9, "ease": "film"},
+        {"at": 10.9, "type": "cursor", "visible": false, "duration": 0.4}
+      ]
+    }
+  ]
+}

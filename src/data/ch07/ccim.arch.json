@@ -1,0 +1,405 @@
+{
+ "id": "ccim",
+ "title": "Claude-Code-In-Motion",
+ "repo": "github.com/AnwarDebes/Claude-Code-In-Motion",
+ "commit": "2c79ee05a8cbfa93eaafbe7372a04ef29ce992a1",
+ "about": "The local agent, module by module. Every edge is an import or a call site in the code, cited by file and line; arrows point the way the call goes. Provider model ids are left out on purpose.",
+ "groups": [
+  {
+   "id": "ui",
+   "label": "Browser UI",
+   "path": "web/js/"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "cli",
+   "label": "CLI",
+   "kind": "module",
+   "path": "bin/pixie.js",
+   "sub": "flags, start, open the browser",
+   "loc": 116,
+   "row": 1
+  },
+  {
+   "id": "server",
+   "label": "Server",
+   "kind": "service",
+   "path": "src/server.js",
+   "sub": "HTTP + SSE, binds 127.0.0.1",
+   "loc": 179,
+   "row": 1
+  },
+  {
+   "id": "config",
+   "label": "Config",
+   "kind": "data",
+   "path": "src/config.js",
+   "sub": "~/.pixie/config.json",
+   "loc": 103,
+   "row": 2.2
+  },
+  {
+   "id": "agent",
+   "label": "Agent loop",
+   "kind": "module",
+   "path": "src/agent.js",
+   "sub": "up to 60 steps per turn",
+   "loc": 232,
+   "row": 1
+  },
+  {
+   "id": "prompt",
+   "label": "Prompt",
+   "kind": "module",
+   "path": "src/prompt.js",
+   "sub": "system prompt, 7 tools",
+   "loc": 37,
+   "row": 0
+  },
+  {
+   "id": "safety",
+   "label": "Safety gate",
+   "kind": "module",
+   "path": "src/safety.js",
+   "sub": "decide(): allow / ask / deny",
+   "loc": 196,
+   "row": 1.6
+  },
+  {
+   "id": "tools",
+   "label": "Tools",
+   "kind": "module",
+   "path": "src/tools/index.js",
+   "sub": "each names the pose it plays",
+   "loc": 26,
+   "row": 2.4
+  },
+  {
+   "id": "providers",
+   "label": "Providers",
+   "kind": "module",
+   "path": "src/providers/index.js",
+   "sub": "6 setups, plain fetch",
+   "loc": 134,
+   "row": 0
+  },
+  {
+   "id": "anthropic",
+   "label": "anthropic",
+   "kind": "service",
+   "path": "src/providers/anthropic.js",
+   "sub": "Messages API",
+   "loc": 119
+  },
+  {
+   "id": "openai",
+   "label": "openai-compatible",
+   "kind": "service",
+   "path": "src/providers/openai.js",
+   "sub": "chat/completions",
+   "loc": 111
+  },
+  {
+   "id": "gemini",
+   "label": "gemini",
+   "kind": "service",
+   "path": "src/providers/gemini.js",
+   "sub": "generateContent",
+   "loc": 85
+  },
+  {
+   "id": "hub",
+   "label": "Event hub",
+   "kind": "module",
+   "path": "src/events.js",
+   "sub": "SSE, 2,000-event replay buffer",
+   "loc": 50,
+   "row": 3
+  },
+  {
+   "id": "app",
+   "label": "App",
+   "kind": "ui",
+   "path": "web/js/app.js",
+   "sub": "events to transcript + mascot",
+   "group": "ui",
+   "loc": 215,
+   "row": 3
+  },
+  {
+   "id": "mascot",
+   "label": "Mascot",
+   "kind": "ui",
+   "path": "web/js/mascot.js",
+   "sub": "Pixie, 11 states",
+   "group": "ui",
+   "loc": 360,
+   "row": 2.6
+  },
+  {
+   "id": "transcript",
+   "label": "Transcript",
+   "kind": "ui",
+   "path": "web/js/transcript.js",
+   "sub": "tool cards, approvals",
+   "group": "ui",
+   "loc": 153,
+   "row": 3.6
+  }
+ ],
+ "edges": [
+  {
+   "from": "cli",
+   "to": "server",
+   "label": "startServer(opts)",
+   "evidence": [
+    {
+     "file": "bin/pixie.js",
+     "line": 5,
+     "code": "import { startServer } from \"../src/server.js\";"
+    },
+    {
+     "file": "bin/pixie.js",
+     "line": 98,
+     "code": "const { url } = await startServer(opts);"
+    }
+   ]
+  },
+  {
+   "from": "server",
+   "to": "agent",
+   "label": "new Agent()",
+   "evidence": [
+    {
+     "file": "src/server.js",
+     "line": 8,
+     "code": "import { Agent } from \"./agent.js\";"
+    },
+    {
+     "file": "src/server.js",
+     "line": 85,
+     "code": "const agent = new Agent({ hub, cwd, getConfig });"
+    }
+   ]
+  },
+  {
+   "from": "server",
+   "to": "config",
+   "label": "loadConfig()",
+   "evidence": [
+    {
+     "file": "src/server.js",
+     "line": 9,
+     "code": "import { loadConfig, saveConfig, publicConfig } from \"./config.js\";"
+    }
+   ]
+  },
+  {
+   "from": "agent",
+   "to": "prompt",
+   "label": "buildSystemPrompt()",
+   "evidence": [
+    {
+     "file": "src/agent.js",
+     "line": 6,
+     "code": "import { buildSystemPrompt } from \"./prompt.js\";"
+    },
+    {
+     "file": "src/agent.js",
+     "line": 84,
+     "code": "const system = buildSystemPrompt(this.cwd, { approvalMode: config.approvalMode });"
+    }
+   ]
+  },
+  {
+   "from": "agent",
+   "to": "providers",
+   "label": "chat()",
+   "evidence": [
+    {
+     "file": "src/agent.js",
+     "line": 3,
+     "code": "import { chat, toolShimParse } from \"./providers/index.js\";"
+    },
+    {
+     "file": "src/agent.js",
+     "line": 105,
+     "code": "result = await chat(config, {"
+    }
+   ]
+  },
+  {
+   "from": "providers",
+   "to": "anthropic",
+   "label": "fetch",
+   "evidence": [
+    {
+     "file": "src/providers/index.js",
+     "line": 5,
+     "code": "import { streamChat as anthropic } from \"./anthropic.js\";"
+    },
+    {
+     "file": "src/providers/anthropic.js",
+     "line": 52,
+     "code": "const response = await fetch(`${baseUrl}/v1/messages`, {"
+    }
+   ]
+  },
+  {
+   "from": "providers",
+   "to": "openai",
+   "label": "fetch",
+   "evidence": [
+    {
+     "file": "src/providers/index.js",
+     "line": 6,
+     "code": "import { streamChat as openaiCompatible } from \"./openai.js\";"
+    },
+    {
+     "file": "src/providers/openai.js",
+     "line": 56,
+     "code": "const response = await fetch(`${baseUrl}/chat/completions`, {"
+    }
+   ]
+  },
+  {
+   "from": "providers",
+   "to": "gemini",
+   "label": "fetch",
+   "evidence": [
+    {
+     "file": "src/providers/index.js",
+     "line": 7,
+     "code": "import { streamChat as gemini } from \"./gemini.js\";"
+    },
+    {
+     "file": "src/providers/gemini.js",
+     "line": 43,
+     "code": "const response = await fetch(url, {"
+    }
+   ]
+  },
+  {
+   "from": "agent",
+   "to": "safety",
+   "label": "decide() per tool call",
+   "evidence": [
+    {
+     "file": "src/agent.js",
+     "line": 5,
+     "code": "import { decide } from \"./safety.js\";"
+    },
+    {
+     "file": "src/agent.js",
+     "line": 163,
+     "code": "const d = decide({"
+    }
+   ]
+  },
+  {
+   "from": "agent",
+   "to": "tools",
+   "label": "getTool()",
+   "evidence": [
+    {
+     "file": "src/agent.js",
+     "line": 4,
+     "code": "import { toolSpecs, getTool, resolveActivity } from \"./tools/index.js\";"
+    },
+    {
+     "file": "src/agent.js",
+     "line": 151,
+     "code": "const tool = getTool(tc.name);"
+    }
+   ]
+  },
+  {
+   "from": "tools",
+   "to": "safety",
+   "label": "resolveSafePath()",
+   "evidence": [
+    {
+     "file": "src/tools/fs-tools.js",
+     "line": 4,
+     "code": "import { resolveSafePath } from \"../safety.js\";"
+    }
+   ]
+  },
+  {
+   "from": "agent",
+   "to": "hub",
+   "label": "emit(tool_start …)",
+   "evidence": [
+    {
+     "file": "src/agent.js",
+     "line": 154,
+     "code": "this.hub.emit(\"tool_start\", { id: tc.id, name: tc.name, activity, title, input: tc.input, turnId });"
+    }
+   ]
+  },
+  {
+   "from": "hub",
+   "to": "app",
+   "label": "SSE /api/events",
+   "evidence": [
+    {
+     "file": "src/server.js",
+     "line": 101,
+     "code": "hub.addClient(res, req.headers[\"last-event-id\"]);"
+    },
+    {
+     "file": "web/js/app.js",
+     "line": 58,
+     "code": "const es = new EventSource(\"/api/events\");"
+    }
+   ]
+  },
+  {
+   "from": "app",
+   "to": "mascot",
+   "label": "setActivity()",
+   "evidence": [
+    {
+     "file": "web/js/app.js",
+     "line": 2,
+     "code": "import { Mascot } from \"./mascot.js\";"
+    },
+    {
+     "file": "web/js/app.js",
+     "line": 51,
+     "code": "if (mascot) mascot.setActivity(activity);"
+    }
+   ]
+  },
+  {
+   "from": "app",
+   "to": "transcript",
+   "label": "toolStart()",
+   "evidence": [
+    {
+     "file": "web/js/app.js",
+     "line": 3,
+     "code": "import { Transcript } from \"./transcript.js\";"
+    },
+    {
+     "file": "web/js/app.js",
+     "line": 104,
+     "code": "transcript.toolStart(d.id, { title: d.title, name: d.name, activity: d.activity });"
+    }
+   ]
+  }
+ ],
+ "paths": {
+  "call": [
+   "agent",
+   "safety"
+  ],
+  "events": [
+   "agent",
+   "hub",
+   "app",
+   "mascot"
+  ]
+ }
+}

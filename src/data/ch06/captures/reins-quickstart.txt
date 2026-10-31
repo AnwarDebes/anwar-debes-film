@@ -1,0 +1,14 @@
+shieldable (soundness guaranteed?): True 
+
+step 0: ALLOW read_record(id=42) (no monitor at risk)
+step 1: insert[authorize]+allow on transfer_funds(to=internal) [enforcing precedence(authorize<transfer)] -> ['authorize()', 'transfer_funds(to=internal)']
+step 2: substitute->archive on delete_all() [enforcing always(within_scope), never(delete_all)] -> ['archive()']
+step 3: insert[audit_log]+allow on send_email(to=a@partner.com) [enforcing response(sensitive_read->audit_log,3)] -> ['audit_log()', 'send_email(to=a@partner.com)']
+step 4: ALLOW send_email(to=b@partner.com) (no monitor at risk)
+step 5: suppress on send_email(to=c@partner.com) [enforcing count_le(export,2,50)] -> ['noop()']
+step 6: ALLOW respond() (no monitor at risk)
+
+session sound: True | interventions: {'insert': 2, 'substitute': 1, 'suppress': 1}
+certificate verifies (integrity + soundness + minimality): True
+
+Merkle root: 799444639054385ef0b7f43d9d01ba56 ...

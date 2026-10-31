@@ -1,0 +1,36 @@
+{
+  "outDir": "public/recordings",
+  "shots": [
+    {
+      "name": "ch12-sleeparchitect",
+      "url": "https://anwardebes.github.io/SleepArchitect/",
+      "viewport": {"width": 1280, "height": 800},
+      "deviceScaleFactor": 1.5,
+      "duration": 9.5,
+      "waitUntil": "networkidle",
+      "waitFor": ["#caffeine_list .item-row", "button[data-tab=tonight]"],
+      "crf": 17,
+      "prerollMs": 600,
+      "cursor": {"start": [980, 700], "size": 24},
+      "actions": [
+        {"at": 0.0, "type": "scroll", "to": "#caffeine_list", "block": "center", "duration": 0.01},
+        {"at": 0.2, "type": "move", "to": "#caffeine_list .item-row:nth-child(2) input", "anchor": [0.6, 0.5], "duration": 0.7, "ease": "film"},
+        {"at": 1.0, "type": "click"},
+        {"at": 1.1, "type": "press", "key": "Control+A"},
+        {"at": 1.2, "type": "type", "text": "10", "cps": 8},
+        {"at": 1.8, "type": "move", "to": "#add_caffeine", "anchor": [0.5, 0.5], "duration": 0.6, "ease": "film"},
+        {"at": 2.5, "type": "click"},
+        {"at": 2.75, "type": "move", "to": "#caffeine_list .item-row:nth-child(3) input", "anchor": [0.6, 0.5], "duration": 0.55, "ease": "film"},
+        {"at": 3.35, "type": "click"},
+        {"at": 3.45, "type": "press", "key": "Control+A"},
+        {"at": 3.55, "type": "type", "text": "15", "cps": 8},
+        {"at": 4.2, "type": "scroll", "to": 0, "duration": 0.45, "ease": "film"},
+        {"at": 4.3, "type": "move", "to": "button[data-tab=tonight]", "anchor": [0.5, 0.5], "duration": 0.6, "ease": "film"},
+        {"at": 5.0, "type": "click"},
+        {"at": 6.6, "type": "move", "to": "button[data-tab=tomorrow]", "anchor": [0.5, 0.5], "duration": 0.6, "ease": "film"},
+        {"at": 7.3, "type": "click"},
+        {"at": 8.6, "type": "cursor", "visible": false, "duration": 0.4}
+      ]
+    }
+  ]
+}

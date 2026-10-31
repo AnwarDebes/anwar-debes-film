@@ -1,0 +1,41 @@
+{"kind":"diff","id":"pixie-app-waiting","repo":"AnwarDebes/Claude-Code-In-Motion","path":"web/js/app.js","lang":"javascript","from":"12c44b2b2af55364bd362ca62b99827459039131","to":"e4ab557fd3736df333e9ae042362bfbc8e07fc16","message":"Waiting pose, back to the running tool after approval, inline code escaped once","hunks":[
+{"rows":[
+{"k":" ","a":17,"b":17,"t":[["  ",""],["asstKey","prop"],[":","punc"],[" ",""],["null","num"],[",","punc"]]},
+{"k":" ","a":18,"b":18,"t":[["  ",""],["totalIn","prop"],[":","punc"],[" ",""],["0","num"],[",","punc"]]},
+{"k":" ","a":19,"b":19,"t":[["  ",""],["totalOut","prop"],[":","punc"],[" ",""],["0","num"],[",","punc"]]},
+{"k":"+","b":20,"t":[["  ",""],["pending","prop"],[":","punc"],[" ",""],["new","kw"],[" ",""],["Map","fn"],["(),","punc"],[" ",""],["// approval id -> the tool activity to resume once allowed","com"]]},
+{"k":" ","a":20,"b":21,"t":[["};","punc"]]},
+{"k":" ","a":21,"b":22,"t":[]},
+{"k":" ","a":22,"b":23,"t":[["let","kw"],[" ",""],["mascot","var"],[",","punc"],[" ",""],["transcript","var"],[",","punc"],[" ",""],["settings","var"],[";","punc"]]}
+]},
+{"rows":[
+{"k":" ","a":68,"b":69,"t":[["      ",""],["state","var"],[".","punc"],["step","prop"],[" ",""],["=","op"],[" ",""],["-","op"],["1","num"],[";","punc"]]},
+{"k":" ","a":69,"b":70,"t":[["      ",""],["state","var"],[".","punc"],["asstKey","prop"],[" ",""],["=","op"],[" ",""],["null","num"],[";","punc"]]},
+{"k":" ","a":70,"b":71,"t":[["      ",""],["state","var"],[".","punc"],["totalIn","prop"],[" ",""],["=","op"],[" ",""],["0","num"],[";","punc"],[" ",""],["state","var"],[".","punc"],["totalOut","prop"],[" ",""],["=","op"],[" ",""],["0","num"],[";","punc"]]},
+{"k":"+","b":72,"t":[["      ",""],["state","var"],[".","punc"],["pending","prop"],[".","punc"],["clear","fn"],["();","punc"]]},
+{"k":" ","a":71,"b":73,"t":[["      ",""],["setMascot","fn"],["(","punc"],["\"thinking\"","str"],[",","punc"],[" ",""],["\"Thinking…\"","str"],[");","punc"]]},
+{"k":" ","a":72,"b":74,"t":[["      ",""],["return","kw"],[";","punc"]]},
+{"k":" ","a":73,"b":75,"t":[["    ",""],["}","punc"]]}
+]},
+{"rows":[
+{"k":" ","a":109,"b":111,"t":[]},
+{"k":" ","a":110,"b":112,"t":[["  ",""],["on","fn"],["(","punc"],["\"approval_request\"","str"],[",","punc"],[" ",""],["(","punc"],["d","param"],[")","punc"],[" ",""],["=>","op"],[" ",""],["{","punc"]]},
+{"k":" ","a":111,"b":113,"t":[["    ",""],["transcript","var"],[".","punc"],["approvalRequest","fn"],["(","punc"],["d","var"],[".","punc"],["id","prop"],[",","punc"],[" ",""],["d","var"],[");","punc"]]},
+{"k":"-","a":112,"t":[["    ",""],["setMascot","fn"],["(","punc"],["\"thinking\"","str"],[",","punc"],[" ",""],["\"Waiting for your approval…\"","str"],[");","punc"]]},
+{"k":"+","b":114,"t":[["    ",""],["state","var"],[".","punc"],["pending","prop"],[".","punc"],["set","fn"],["(","punc"],["d","var"],[".","punc"],["id","prop"],[",","punc"],[" ",""],["{","punc"],[" ",""],["activity","prop"],[":","punc"],[" ",""],["d","var"],[".","punc"],["activity","prop"],[",","punc"],[" ",""],["title","prop"],[":","punc"],[" ",""],["d","var"],[".","punc"],["title","prop"],[" ",""],["});","punc"]]},
+{"k":"+","b":115,"t":[["    ",""],["setMascot","fn"],["(","punc"],["\"waiting\"","str"],[",","punc"],[" ",""],["\"Waiting for your approval…\"","str"],[");","punc"]]},
+{"k":" ","a":113,"b":116,"t":[["  ",""],["});","punc"]]},
+{"k":" ","a":114,"b":117,"t":[]},
+{"k":"-","a":115,"t":[["  ",""],["on","fn"],["(","punc"],["\"approval_resolved\"","str"],[",","punc"],[" ",""],["(","punc"],["d","param"],[")","punc"],[" ",""],["=>","op"],[" ",""],["transcript","var"],[".","punc"],["approvalResolved","fn"],["(","punc"],["d","var"],[".","punc"],["id","prop"],[",","punc"],[" ",""],["d","var"],[".","punc"],["decision","prop"],["));","punc"]]},
+{"k":"+","b":118,"t":[["  ",""],["on","fn"],["(","punc"],["\"approval_resolved\"","str"],[",","punc"],[" ",""],["(","punc"],["d","param"],[")","punc"],[" ",""],["=>","op"],[" ",""],["{","punc"]]},
+{"k":"+","b":119,"t":[["    ",""],["transcript","var"],[".","punc"],["approvalResolved","fn"],["(","punc"],["d","var"],[".","punc"],["id","prop"],[",","punc"],[" ",""],["d","var"],[".","punc"],["decision","prop"],[");","punc"]]},
+{"k":"+","b":120,"t":[["    ",""],["const","kw"],[" ",""],["p","var"],[" ",""],["=","op"],[" ",""],["state","var"],[".","punc"],["pending","prop"],[".","punc"],["get","fn"],["(","punc"],["d","var"],[".","punc"],["id","prop"],[");","punc"]]},
+{"k":"+","b":121,"t":[["    ",""],["state","var"],[".","punc"],["pending","prop"],[".","punc"],["delete","fn"],["(","punc"],["d","var"],[".","punc"],["id","prop"],[");","punc"]]},
+{"k":"+","b":122,"t":[["    ",""],["// Once allowed, go back to acting out the tool that is now running.","com"]]},
+{"k":"+","b":123,"t":[["    ",""],["if","kw"],[" ",""],["(","punc"],["p","var"],[" ",""],["&&","op"],[" ",""],["d","var"],[".","punc"],["decision","prop"],[" ",""],["!==","op"],[" ",""],["\"deny\"","str"],[" ",""],["&&","op"],[" ",""],["state","var"],[".","punc"],["busy","prop"],[")","punc"],[" ",""],["setMascot","fn"],["(","punc"],["p","var"],[".","punc"],["activity","prop"],[" ",""],["||","op"],[" ",""],["\"running\"","str"],[",","punc"],[" ",""],["p","var"],[".","punc"],["title","prop"],[");","punc"]]},
+{"k":"+","b":124,"t":[["  ",""],["});","punc"]]},
+{"k":" ","a":116,"b":125,"t":[]},
+{"k":" ","a":117,"b":126,"t":[["  ",""],["on","fn"],["(","punc"],["\"usage\"","str"],[",","punc"],[" ",""],["(","punc"],["d","param"],[")","punc"],[" ",""],["=>","op"],[" ",""],["{","punc"]]},
+{"k":" ","a":118,"b":127,"t":[["    ",""],["state","var"],[".","punc"],["totalIn","prop"],[" ",""],["=","op"],[" ",""],["d","var"],[".","punc"],["totalInput","prop"],[";","punc"],[" ",""],["state","var"],[".","punc"],["totalOut","prop"],[" ",""],["=","op"],[" ",""],["d","var"],[".","punc"],["totalOutput","prop"],[";","punc"]]}
+]}
+]}

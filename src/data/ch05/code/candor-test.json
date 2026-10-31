@@ -1,0 +1,14 @@
+{"kind":"snippet","id":"candor-test","repo":"AnwarDebes/candor","ref":"6772e1aa6b310dc6d24638f3438705522ddbaa61","path":"tests/test_candor.py","lang":"python","startLine":14,"lines":[
+[],
+[],
+[["def","kw"],[" ",""],["test_bottleneck_shapes_and_identity_passthrough","fn"],["():","punc"]],
+[["    bn ",""],["=","op"],[" ",""],["LegibleBottleneck","fn"],["(","punc"],["d","param"],["=","op"],["8","num"],[",","punc"],[" ",""],["m","param"],["=","op"],["32","num"],[",","punc"],[" ",""],["k","param"],["=","op"],["4","num"],[")","punc"]],
+[["    h ",""],["=","op"],[" torch",""],[".","punc"],["randn","fn"],["(","punc"],["5","num"],[",","punc"],[" ",""],["8","num"],[")","punc"]],
+[["    o ",""],["=","op"],[" ",""],["bn","fn"],["(","punc"],["h",""],[")","punc"]],
+[["    ",""],["assert","kw"],[" o",""],[".","punc"],["code","prop"],[".","punc"],["shape","prop"],[" ",""],["==","op"],[" ",""],["(","punc"],["5","num"],[",","punc"],[" ",""],["32","num"],[")","punc"],[" ",""],["and","kw"],[" o",""],[".","punc"],["recon","prop"],[".","punc"],["shape","prop"],[" ",""],["==","op"],[" ",""],["(","punc"],["5","num"],[",","punc"],[" ",""],["8","num"],[")","punc"]],
+[["    ",""],["assert","kw"],[" ",""],["(","punc"],["o",""],[".","punc"],["code","prop"],[" ",""],[">","op"],[" ",""],["0","num"],[").","punc"],["sum","fn"],["(","punc"],["-","op"],["1","num"],[").","punc"],["max","fn"],["().","punc"],["item","fn"],["()","punc"],[" ",""],["<=","op"],[" ",""],["4","num"]],
+[["    ",""],["# recon + leak reconstructs h exactly (definition of the leak)","com"]],
+[["    ",""],["assert","kw"],[" torch",""],[".","punc"],["allclose","fn"],["(","punc"],["o",""],[".","punc"],["recon","prop"],[" ",""],["+","op"],[" o",""],[".","punc"],["leak","prop"],[",","punc"],[" h",""],[",","punc"],[" ",""],["atol","param"],["=","op"],["1e-5","num"],[")","punc"]],
+[],
+[]
+]}

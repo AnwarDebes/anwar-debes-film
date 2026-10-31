@@ -1,0 +1,29 @@
+_________________ ERROR collecting tests/test_ccxt_source.py __________________
+E   ModuleNotFoundError: No module named 'ballast.data'
+________________ ERROR collecting tests/test_live_execution.py ________________
+E   ModuleNotFoundError: No module named 'ballast.data'
+__________________ ERROR collecting tests/test_money_room.py __________________
+E   ModuleNotFoundError: No module named 'ballast.data'
+__________________ ERROR collecting tests/test_monitoring.py __________________
+E   ModuleNotFoundError: No module named 'ballast.data'
+_____________________ ERROR collecting tests/test_news.py _____________________
+E   ModuleNotFoundError: No module named 'ballast.data'
+__________________ ERROR collecting tests/test_paper_loop.py __________________
+E   ModuleNotFoundError: No module named 'ballast.data'
+___________________ ERROR collecting tests/test_rss_news.py ___________________
+E   ModuleNotFoundError: No module named 'ballast.data'
+_________________ ERROR collecting tests/test_solana_data.py __________________
+E   ModuleNotFoundError: No module named 'ballast.data'
+_________________ ERROR collecting tests/test_solana_stub.py __________________
+E   ModuleNotFoundError: No module named 'ballast.data'
+=========================== short test summary info ===========================
+ERROR tests/test_ccxt_source.py
+ERROR tests/test_live_execution.py
+ERROR tests/test_money_room.py
+ERROR tests/test_monitoring.py
+ERROR tests/test_news.py
+ERROR tests/test_paper_loop.py
+ERROR tests/test_rss_news.py
+ERROR tests/test_solana_data.py
+ERROR tests/test_solana_stub.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 9 errors during collection !!!!!!!!!!!!!!!!!!!

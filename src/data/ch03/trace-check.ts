@@ -1,0 +1,84 @@
+// Generated from trace-check.json (same data), so Node scripts can read it without JSON import attributes.
+// eslint-disable-next-line
+export const traceCheck = {
+ "repo": "AnwarDebes/trace",
+ "commit": "cc3a1a432ab010f58758f55caeec51d853086573",
+ "date": "2026-10-29",
+ "where": "fresh clone of github.com/AnwarDebes/trace (HEAD = cc3a1a4)",
+ "tools": {
+  "node": "v22.14.0",
+  "python": "3.14.3",
+  "numpy": "2.4.3"
+ },
+ "captureFile": "src/data/ch03/trace-check.txt",
+ "captureSha256": "80b2e0385a887c8be0d693365df105bc472259f8ecc44037a45d113ee475d401",
+ "runs": [
+  {
+   "cmd": "cd live && npm test",
+   "output": [
+    "",
+    "> test",
+    "> node --test tests/monitors.test.mjs tests/ledger.test.mjs",
+    "",
+    "TAP version 13",
+    "# Subtest: canonical JSON matches json.dumps(sort_keys=True, separators=(\",\", \":\"))",
+    "ok 1 - canonical JSON matches json.dumps(sort_keys=True, separators=(\",\", \":\"))",
+    "  ---",
+    "  duration_ms: 10.963",
+    "  ...",
+    "# Subtest: HMAC-SHA256 matches RFC 4231 test case 2",
+    "ok 2 - HMAC-SHA256 matches RFC 4231 test case 2",
+    "  ---",
+    "  duration_ms: 3.0445",
+    "  ...",
+    "# Subtest: an honest ledger verifies, and every edited field is caught at its entry",
+    "ok 3 - an honest ledger verifies, and every edited field is caught at its entry",
+    "  ---",
+    "  duration_ms: 280.3613",
+    "  ...",
+    "# Subtest: bounded count is a sliding window",
+    "ok 4 - bounded count is a sliding window",
+    "  ---",
+    "  duration_ms: 11.9917",
+    "  ...",
+    "# Subtest: response: same-step answer counts, each trigger needs its own answer, deadline is inclusive",
+    "ok 5 - response: same-step answer counts, each trigger needs its own answer, deadline is inclusive",
+    "  ---",
+    "  duration_ms: 2.8702",
+    "  ...",
+    "# Subtest: precedence latches and always checks every step",
+    "ok 6 - precedence latches and always checks every step",
+    "  ---",
+    "  duration_ms: 3.5887",
+    "  ...",
+    "# Subtest: memory does not grow with the session",
+    "ok 7 - memory does not grow with the session",
+    "  ---",
+    "  duration_ms: 78.2305",
+    "  ...",
+    "# Subtest: the five sessions end the way the page says",
+    "ok 8 - the five sessions end the way the page says",
+    "  ---",
+    "  duration_ms: 70.0244",
+    "  ...",
+    "1..8",
+    "# tests 8",
+    "# suites 0",
+    "# pass 8",
+    "# fail 0",
+    "# cancelled 0",
+    "# skipped 0",
+    "# todo 0",
+    "# duration_ms 774.7675"
+   ],
+   "exit": 0
+  },
+  {
+   "cmd": "python tests/crosscheck.py",
+   "output": [
+    "python verify_ledger: browser ledger of 10 entries passes; edit at entry 7 caught"
+   ],
+   "exit": 0
+  }
+ ]
+} as const;

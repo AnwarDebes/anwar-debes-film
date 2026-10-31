@@ -1,0 +1,418 @@
+{
+ "$comment": "Claude-Code-In-Motion `npm test`, run by the film from a fresh clone of github.com/AnwarDebes/Claude-Code-In-Motion at 2c79ee0, on this laptop under WSL2 (Ubuntu, Linux), where the account may create symlinks. npm-test.capture.txt is the terminal exactly as printed (util-linux script), npm-test.timing.txt its output timing, npm-test.run.sh the command. Lines below are that capture with the ANSI colours turned into classes; no character is added or removed.",
+ "repo": "AnwarDebes/Claude-Code-In-Motion",
+ "commit": "2c79ee05a8cbfa93eaafbe7372a04ef29ce992a1",
+ "command": "npm test",
+ "script": "node --test test/*.test.js",
+ "startedAt": "2026-10-29 20:48:27+01:00",
+ "doneAt": "2026-10-29 20:49:07+01:00",
+ "exitCode": 0,
+ "env": {
+  "os": "Linux 6.18.54.1-microsoft-standard-WSL2 (Ubuntu, WSL2)",
+  "node": "v22.14.0",
+  "npm": "10.9.2"
+ },
+ "capture": {
+  "file": "src/data/ch07/npm-test.capture.txt",
+  "bytes": 3129,
+  "sha256": "3acb0d39ec4195517ae8c7831136b7a6e8cbb9d7a5bc84e28ad7a15a27e5b588"
+ },
+ "timingFile": {
+  "file": "src/data/ch07/npm-test.timing.txt",
+  "sha256": "4f1a0c8f24ebb66367fa665d776c140fdaade169643456186d9d35f802fdbb50"
+ },
+ "npmSpinnerFrames": 6,
+ "tally": {
+  "tests": 32,
+  "pass": 32,
+  "fail": 0,
+  "cancelled": 0,
+  "skipped": 0,
+  "todo": 0,
+  "durationMs": 10165.342868
+ },
+ "lines": [
+  [],
+  [
+   [
+    "> pixie-code@0.1.1 test",
+    ""
+   ]
+  ],
+  [
+   [
+    "> node --test test/*.test.js",
+    ""
+   ]
+  ],
+  [],
+  [
+   [
+    "✔ read-only tools run without approval and produce a reply ",
+    "pass"
+   ],
+   [
+    "(1837.118489ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ write_file requires approval and is applied when allowed ",
+    "pass"
+   ],
+   [
+    "(335.843186ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ a denied write is not applied ",
+    "pass"
+   ],
+   [
+    "(192.341862ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ a second message while busy is rejected with 409 ",
+    "pass"
+   ],
+   [
+    "(52.898153ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ escapes HTML ",
+    "pass"
+   ],
+   [
+    "(249.442563ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ renders bold, italic and inline code ",
+    "pass"
+   ],
+   [
+    "(3.310138ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ inline code is escaped exactly once ",
+    "pass"
+   ],
+   [
+    "(15.213875ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ does not mangle snake_case or plain digits ",
+    "pass"
+   ],
+   [
+    "(1.260079ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ neutralizes javascript: links but keeps https ",
+    "pass"
+   ],
+   [
+    "(12.595229ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ escapes inside code fences ",
+    "pass"
+   ],
+   [
+    "(1.27779ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ renders lists ",
+    "pass"
+   ],
+   [
+    "(1.6325ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ escapeHtml handles the basics ",
+    "pass"
+   ],
+   [
+    "(0.924238ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ draws all states without throwing and actually paints ",
+    "pass"
+   ],
+   [
+    "(208.567026ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ waiting draws a question bubble that idle does not ",
+    "pass"
+   ],
+   [
+    "(60.095157ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ success is one-shot and reverts to idle ",
+    "pass"
+   ],
+   [
+    "(2.776722ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ min-dwell debounces rapid switches ",
+    "pass"
+   ],
+   [
+    "(1.849115ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ Anthropic provider drives a tool turn end to end ",
+    "pass"
+   ],
+   [
+    "(1847.469457ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ Gemini provider drives a tool turn end to end ",
+    "pass"
+   ],
+   [
+    "(969.737128ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ read-only commands auto-approve ",
+    "pass"
+   ],
+   [
+    "(64.17048ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ mutating commands ask in default mode ",
+    "pass"
+   ],
+   [
+    "(2.589488ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ yolo auto-approves the non-catastrophic ",
+    "pass"
+   ],
+   [
+    "(1.32614ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ redirection is not treated as read-only ",
+    "pass"
+   ],
+   [
+    "(2.031331ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ find with destructive actions is not read-only ",
+    "pass"
+   ],
+   [
+    "(2.008707ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ backgrounding and substitution cannot smuggle commands ",
+    "pass"
+   ],
+   [
+    "(1.835525ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ git config and stash are not read-only (hooks injection) ",
+    "pass"
+   ],
+   [
+    "(11.549862ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ catastrophic commands are denied, even in yolo ",
+    "pass"
+   ],
+   [
+    "(2.253461ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ catastrophic hidden behind separators and substitution is caught ",
+    "pass"
+   ],
+   [
+    "(328.415748ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ catastrophic check holds when session-allow makes it non-mutating ",
+    "pass"
+   ],
+   [
+    "(2.830436ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ ordinary relative deletes are not catastrophic ",
+    "pass"
+   ],
+   [
+    "(1.169175ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ path sandbox blocks escapes and secret reads ",
+    "pass"
+   ],
+   [
+    "(275.119987ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ path sandbox is symlink-aware ",
+    "pass"
+   ],
+   [
+    "(21.592742ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "✔ classifyBash reports readonly only for safe pipelines ",
+    "pass"
+   ],
+   [
+    "(0.804287ms)",
+    "dim"
+   ]
+  ],
+  [
+   [
+    "ℹ tests 32",
+    "info"
+   ]
+  ],
+  [
+   [
+    "ℹ suites 0",
+    "info"
+   ]
+  ],
+  [
+   [
+    "ℹ pass 32",
+    "info"
+   ]
+  ],
+  [
+   [
+    "ℹ fail 0",
+    "info"
+   ]
+  ],
+  [
+   [
+    "ℹ cancelled 0",
+    "info"
+   ]
+  ],
+  [
+   [
+    "ℹ skipped 0",
+    "info"
+   ]
+  ],
+  [
+   [
+    "ℹ todo 0",
+    "info"
+   ]
+  ],
+  [
+   [
+    "ℹ duration_ms 10165.342868",
+    "info"
+   ]
+  ]
+ ]
+}

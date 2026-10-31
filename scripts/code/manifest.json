@@ -1,0 +1,46 @@
+{
+  "$comment": "Snippets shown in the film. Sources are copied from the real repositories at the listed commit by fetch-sources.mjs, then highlight.mjs turns them into token JSON under src/data/code/. Line numbers in scenes are the real file line numbers.",
+  "tabSize": 4,
+  "snippets": [
+    {
+      "id": "pixie-mascot",
+      "repo": "AnwarDebes/Claude-Code-In-Motion",
+      "ref": "e4ab557fd3736df333e9ae042362bfbc8e07fc16",
+      "path": "web/js/mascot.js",
+      "lang": "javascript"
+    },
+    {
+      "id": "pixie-app",
+      "repo": "AnwarDebes/Claude-Code-In-Motion",
+      "ref": "e4ab557fd3736df333e9ae042362bfbc8e07fc16",
+      "path": "web/js/app.js",
+      "lang": "javascript"
+    },
+    {
+      "id": "trace-ledger",
+      "repo": "AnwarDebes/trace",
+      "ref": "cc3a1a432ab010f58758f55caeec51d853086573",
+      "path": "tracekit/ledger.py",
+      "lang": "python"
+    },
+    {
+      "id": "trace-ledger-js",
+      "repo": "AnwarDebes/trace",
+      "ref": "cc3a1a432ab010f58758f55caeec51d853086573",
+      "path": "live/ledger.js",
+      "lang": "javascript"
+    }
+  ],
+  "diffs": [
+    {
+      "id": "pixie-app-waiting",
+      "repo": "AnwarDebes/Claude-Code-In-Motion",
+      "path": "web/js/app.js",
+      "lang": "javascript",
+      "from": "12c44b2b2af55364bd362ca62b99827459039131",
+      "to": "e4ab557fd3736df333e9ae042362bfbc8e07fc16",
+      "message": "Waiting pose, back to the running tool after approval, inline code escaped once",
+      "context": 3
+    }
+  ]
+}

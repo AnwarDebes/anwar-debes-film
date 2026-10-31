@@ -1,0 +1,479 @@
+{
+  "id": "trace",
+  "title": "TRACE",
+  "repo": "github.com/AnwarDebes/trace",
+  "commit": "cc3a1a432ab010f58758f55caeec51d853086573",
+  "about": "tracekit, read module by module. Every edge is a call site or an import in the code, cited by file and line; arrows point the way the data moves. engine.py wires the two guards and the ledger together (its own docstring).",
+  "groups": [
+    {
+      "id": "content",
+      "label": "Content guard"
+    },
+    {
+      "id": "behaviour",
+      "label": "Behaviour guard"
+    },
+    {
+      "id": "ledger",
+      "label": "Certificate ledger",
+      "path": "ledger.py"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ltl",
+      "label": "LTL monitors",
+      "kind": "module",
+      "path": "tracekit/ltl.py",
+      "group": "behaviour",
+      "loc": 288,
+      "detail": [
+        "Always(p)              G p",
+        "Never(e)               G !e",
+        "BoundedCount(e, k, w)  <= k per w steps",
+        "Response(t, r, d)      G (t -> F<=d r)",
+        "Precedence(a, b)       !b W a"
+      ],
+      "row": 0
+    },
+    {
+      "id": "policy",
+      "label": "Policy",
+      "kind": "module",
+      "path": "tracekit/policy.py",
+      "group": "behaviour",
+      "loc": 82,
+      "detail": [
+        "always(\"within_scope\")",
+        "bounded_count(\"export\", max_count=2, window=50)",
+        "response(\"sensitive_read\", \"audit_log\", deadline=3)",
+        "precedence(\"authorize\", \"transfer\")"
+      ],
+      "row": 0
+    },
+    {
+      "id": "behavior_guard",
+      "label": "Behaviour guard",
+      "kind": "module",
+      "path": "tracekit/behavior_guard.py",
+      "group": "behaviour",
+      "loc": 83,
+      "detail": [
+        "step(events) -> StepVerdict",
+        "memory constant in the trajectory length"
+      ],
+      "row": 0
+    },
+    {
+      "id": "engine",
+      "label": "TRACE engine",
+      "kind": "service",
+      "path": "tracekit/engine.py",
+      "loc": 102,
+      "detail": [
+        "class TRACEEngine:",
+        "  guard_input(text)       # content channel",
+        "  observe(call, provider) # behaviour channel",
+        "  seal() -> SessionCertificate"
+      ],
+      "row": 1
+    },
+    {
+      "id": "adapters",
+      "label": "Adapters",
+      "kind": "module",
+      "path": "tracekit/adapters.py",
+      "loc": 141,
+      "detail": [
+        "parse_openai(call) -> ToolCall",
+        "parse_anthropic(call) -> ToolCall",
+        "parse_deepseek(call) -> ToolCall",
+        "to_events(tc) -> Dict[str, bool]"
+      ],
+      "row": 1
+    },
+    {
+      "id": "ledger",
+      "label": "Hash chain",
+      "kind": "service",
+      "path": "tracekit/ledger.py",
+      "sub": "CertificateLedger",
+      "group": "ledger",
+      "loc": 285,
+      "detail": [
+        "entry_hash[i] = SHA256( entry_hash[i-1] || canonical(payload[i]) )",
+        "signature[i]  = HMAC-SHA256( key, entry_hash[i] )"
+      ],
+      "row": 1
+    },
+    {
+      "id": "certificate",
+      "label": "Certificate",
+      "kind": "data",
+      "path": "tracekit/ledger.py",
+      "sub": "SessionCertificate",
+      "group": "ledger",
+      "detail": [
+        "session_id, policy, n_entries",
+        "chain_head      # last entry_hash",
+        "merkle_root",
+        "signature = HMAC(key, canonical(body))"
+      ],
+      "row": 1
+    },
+    {
+      "id": "verify",
+      "label": "Verifier",
+      "kind": "step",
+      "path": "tracekit/ledger.py",
+      "sub": "verify_ledger()",
+      "group": "ledger",
+      "detail": [
+        "# 1. hash chain + signatures",
+        "# 2. Merkle root + chain head",
+        "# 3. content CNF receipts replay",
+        "# 4. behaviour monitor replay (model-free)"
+      ],
+      "row": 1
+    },
+    {
+      "id": "booleanize",
+      "label": "Booleanizer",
+      "kind": "module",
+      "path": "tracekit/booleanize.py",
+      "group": "content",
+      "loc": 123,
+      "detail": [
+        "tokenize(text) -> List[str]",
+        "transform(texts) -> 0/1 token presence"
+      ],
+      "row": 2
+    },
+    {
+      "id": "content_guard",
+      "label": "Content guard",
+      "kind": "model",
+      "path": "tracekit/content_guard.py",
+      "group": "content",
+      "loc": 126,
+      "detail": [
+        "verdict(text) -> ContentVerdict",
+        "audit(text) -> fired clauses + literals",
+        "explain() -> IF ignore AND previous -> UNSAFE"
+      ],
+      "row": 2.5
+    },
+    {
+      "id": "live",
+      "label": "Live demo",
+      "kind": "ui",
+      "path": "live/",
+      "loc": 900,
+      "detail": [
+        "guard.js, ltl.js, ledger.js, crypto.js",
+        "writes the same ledger format"
+      ],
+      "row": 2.5
+    },
+    {
+      "id": "automata",
+      "label": "Tsetlin automata",
+      "kind": "model",
+      "path": "tracekit/automata.py",
+      "loc": 214,
+      "detail": [
+        "class ETTABank:",
+        "  state in {1, ..., 2N}",
+        "  include literal iff state > N"
+      ],
+      "row": 3
+    },
+    {
+      "id": "tm",
+      "label": "Tsetlin Machine",
+      "kind": "model",
+      "path": "tracekit/tm.py",
+      "group": "content",
+      "loc": 144,
+      "detail": [
+        "vote_sum(literals_row) -> (votes, clauses)",
+        "clause_includes() -> include masks"
+      ],
+      "row": 3
+    }
+  ],
+  "edges": [
+    {
+      "from": "engine",
+      "to": "adapters",
+      "label": "tool call",
+      "evidence": [
+        {
+          "file": "tracekit/engine.py",
+          "line": 28,
+          "code": "from .adapters import ToolCallAdapter"
+        },
+        {
+          "file": "tracekit/engine.py",
+          "line": 77,
+          "code": "events = self.adapter.step_events(call, provider=provider)"
+        }
+      ],
+      "straight": true
+    },
+    {
+      "from": "adapters",
+      "to": "behavior_guard",
+      "label": "events",
+      "evidence": [
+        {
+          "file": "tracekit/engine.py",
+          "line": 78,
+          "code": "return self.observe_events(events)"
+        },
+        {
+          "file": "tracekit/engine.py",
+          "line": 81,
+          "code": "sv = self.behavior.step(events)"
+        }
+      ]
+    },
+    {
+      "from": "engine",
+      "to": "content_guard",
+      "label": "text",
+      "evidence": [
+        {
+          "file": "tracekit/engine.py",
+          "line": 27,
+          "code": "from .content_guard import ContentGuard, ContentVerdict"
+        },
+        {
+          "file": "tracekit/engine.py",
+          "line": 64,
+          "code": "v = self.content_guard.verdict(text)"
+        }
+      ]
+    },
+    {
+      "from": "booleanize",
+      "to": "content_guard",
+      "label": "literals",
+      "evidence": [
+        {
+          "file": "tracekit/content_guard.py",
+          "line": 24,
+          "code": "from .booleanize import BooleanVocabulizer"
+        },
+        {
+          "file": "tracekit/content_guard.py",
+          "line": 92,
+          "code": "lits = to_literals(self.vec.transform([text]))[0]"
+        }
+      ]
+    },
+    {
+      "from": "tm",
+      "to": "content_guard",
+      "label": "votes",
+      "evidence": [
+        {
+          "file": "tracekit/content_guard.py",
+          "line": 25,
+          "code": "from .tm import TsetlinMachine, TMConfig, to_literals"
+        },
+        {
+          "file": "tracekit/content_guard.py",
+          "line": 93,
+          "code": "v, co = self.tm.vote_sum(lits, predict=True)"
+        }
+      ]
+    },
+    {
+      "from": "automata",
+      "to": "tm",
+      "label": "ETTABank",
+      "evidence": [
+        {
+          "file": "tracekit/tm.py",
+          "line": 19,
+          "code": "from .automata import ETTABank"
+        },
+        {
+          "file": "tracekit/tm.py",
+          "line": 56,
+          "code": "self.bank = ETTABank("
+        }
+      ]
+    },
+    {
+      "from": "ltl",
+      "to": "policy",
+      "label": "Monitor",
+      "evidence": [
+        {
+          "file": "tracekit/policy.py",
+          "line": 29,
+          "code": "from .ltl import Monitor"
+        },
+        {
+          "file": "tracekit/policy.py",
+          "line": 75,
+          "code": "return [Monitor.from_spec(c) for c in self.constraints]"
+        }
+      ]
+    },
+    {
+      "from": "policy",
+      "to": "behavior_guard",
+      "label": "compile()",
+      "evidence": [
+        {
+          "file": "tracekit/behavior_guard.py",
+          "line": 20,
+          "code": "from .policy import Policy"
+        },
+        {
+          "file": "tracekit/behavior_guard.py",
+          "line": 37,
+          "code": "self.monitors = policy.compile()"
+        }
+      ]
+    },
+    {
+      "from": "content_guard",
+      "to": "ledger",
+      "label": "receipts",
+      "evidence": [
+        {
+          "file": "tracekit/engine.py",
+          "line": 65,
+          "code": "audit = self.content_guard.audit(text)"
+        },
+        {
+          "file": "tracekit/engine.py",
+          "line": 66,
+          "code": "self.ledger.append_content(text=text, label=v.label, margin=v.margin,"
+        }
+      ]
+    },
+    {
+      "from": "behavior_guard",
+      "to": "ledger",
+      "label": "StepVerdict",
+      "evidence": [
+        {
+          "file": "tracekit/engine.py",
+          "line": 82,
+          "code": "self.ledger.append_behavior(step=sv.step, events=events,"
+        }
+      ]
+    },
+    {
+      "from": "policy",
+      "to": "ledger",
+      "label": "Policy",
+      "evidence": [
+        {
+          "file": "tracekit/ledger.py",
+          "line": 38,
+          "code": "from .policy import Policy"
+        },
+        {
+          "file": "tracekit/ledger.py",
+          "line": 185,
+          "code": "policy=self.policy.to_dict(),"
+        }
+      ]
+    },
+    {
+      "from": "ledger",
+      "to": "certificate",
+      "label": "seal()",
+      "evidence": [
+        {
+          "file": "tracekit/engine.py",
+          "line": 97,
+          "code": "return self.ledger.seal(behavior_verdict=self.behavior.verdict(),"
+        },
+        {
+          "file": "tracekit/ledger.py",
+          "line": 181,
+          "code": "def seal(self, behavior_verdict: dict, content_summary: dict) -> SessionCertificate:"
+        }
+      ]
+    },
+    {
+      "from": "certificate",
+      "to": "verify",
+      "label": "cert",
+      "evidence": [
+        {
+          "file": "tracekit/ledger.py",
+          "line": 208,
+          "code": "def verify_ledger(ledger_dict: dict, cert: SessionCertificate,"
+        }
+      ]
+    },
+    {
+      "from": "behavior_guard",
+      "to": "verify",
+      "label": "replay",
+      "evidence": [
+        {
+          "file": "tracekit/ledger.py",
+          "line": 39,
+          "code": "from .behavior_guard import BehaviorGuard"
+        },
+        {
+          "file": "tracekit/ledger.py",
+          "line": 267,
+          "code": "guard = BehaviorGuard(policy)"
+        }
+      ]
+    },
+    {
+      "from": "live",
+      "to": "verify",
+      "label": "crosscheck.py",
+      "evidence": [
+        {
+          "file": "live/tests/crosscheck.py",
+          "line": 11,
+          "code": "from tracekit.ledger import verify_ledger, SessionCertificate"
+        },
+        {
+          "file": "live/tests/crosscheck.py",
+          "line": 15,
+          "code": "ok, info = verify_ledger(bundle[\"ledger\"], cert, key=b\"demo-session-key\")"
+        }
+      ]
+    }
+  ],
+  "paths": {
+    "behaviour": [
+      "engine",
+      "adapters",
+      "behavior_guard",
+      "ledger",
+      "certificate",
+      "verify"
+    ],
+    "content": [
+      "engine",
+      "content_guard",
+      "ledger",
+      "certificate",
+      "verify"
+    ],
+    "substrate": [
+      "automata",
+      "tm",
+      "content_guard"
+    ],
+    "replay": [
+      "behavior_guard",
+      "verify"
+    ]
+  }
+}

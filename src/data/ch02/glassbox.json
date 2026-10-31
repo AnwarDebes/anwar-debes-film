@@ -1,0 +1,44 @@
+{
+  "repo": "AnwarDebes/glassbox-lm",
+  "commit": "381180ca604a2c07ecb5bc1d5be53df9f4e140f8",
+  "checked": "2026-10-29, fresh clone",
+  "status": {"text": "Research programme · 5 studies · 19 Sep–25 Oct 2026", "source": "README.md:17"},
+  "families": {
+    "source": "docs/results-overview.md:15-30",
+    "rows": [
+      {"f": "H1", "by": "pre-registration", "date": "2026-09-22", "ids": 4, "met": 1, "notMet": 1, "notJudged": 1, "notRun": 1},
+      {"f": "H2", "by": "pre-registration", "date": "2026-09-22", "ids": 4, "met": 4, "notMet": 0, "notJudged": 0, "notRun": 0},
+      {"f": "H3", "by": "pre-registration", "date": "2026-09-22", "ids": 5, "met": 1, "notMet": 0, "notJudged": 1, "notRun": 3},
+      {"f": "H4", "by": "pre-registration", "date": "2026-09-22", "ids": 3, "met": 0, "notMet": 0, "notJudged": 1, "notRun": 2},
+      {"f": "H5", "by": "pre-registration", "date": "2026-09-22", "ids": 3, "met": 1, "notMet": 1, "notJudged": 0, "notRun": 1},
+      {"f": "H6", "by": "amendment A1", "date": "2026-09-22", "ids": 5, "met": 0, "notMet": 1, "notJudged": 0, "notRun": 4},
+      {"f": "H8", "by": "amendment A3", "date": "2026-09-24", "ids": 11, "met": 6, "notMet": 2, "notJudged": 2, "notRun": 1},
+      {"f": "H9", "by": "amendment A4", "date": "2026-09-24", "ids": 11, "met": 1, "notMet": 2, "notJudged": 0, "notRun": 8},
+      {"f": "H10", "by": "amendment A4", "date": "2026-09-24", "ids": 9, "met": 0, "notMet": 0, "notJudged": 0, "notRun": 9},
+      {"f": "H11", "by": "amendment A4", "date": "2026-09-24", "ids": 3, "met": 0, "notMet": 0, "notJudged": 0, "notRun": 3},
+      {"f": "H12", "by": "amendment A6", "date": "2026-09-24", "ids": 7, "met": 0, "notMet": 0, "notJudged": 0, "notRun": 7},
+      {"f": "H13", "by": "amendment A6", "date": "2026-09-24", "ids": 1, "met": 0, "notMet": 0, "notJudged": 0, "notRun": 1},
+      {"f": "H14", "by": "amendment A6", "date": "2026-09-24", "ids": 3, "met": 0, "notMet": 0, "notJudged": 0, "notRun": 3},
+      {"f": "H15", "by": "amendment A6", "date": "2026-09-24", "ids": 7, "met": 0, "notMet": 0, "notJudged": 0, "notRun": 7},
+      {"f": "H16", "by": "amendment A6", "date": "2026-09-24", "ids": 3, "met": 0, "notMet": 0, "notJudged": 0, "notRun": 3},
+      {"f": "H17", "by": "amendment A7 (A8 to A10 of 2026-09-25)", "date": "2026-09-24", "ids": 12, "met": 1, "notMet": 7, "notJudged": 0, "notRun": 4}
+    ],
+    "totals": {"ids": 91, "met": 15, "metQualified": 13, "notMet": 14, "notJudged": 5, "notRun": 57, "source": "README.md:18"}
+  },
+  "anchor": {
+    "run": "20260923T042350Z_CP_anchor",
+    "date": "2026-09-23",
+    "clauses": 1048576,
+    "tokens": 135246414,
+    "epochS": [11951, 12239, 13018, 18725],
+    "epochNote": "upper bounds (shared GPU)",
+    "kn5": 1.3719,
+    "tm": 2.2193,
+    "kb7": "sparse-only causal perplexity above 1.5x KN-5; triggered at 1.62x KN-5 on test",
+    "sources": {"run": "studies/tm_language_model/docs/results.md:37", "seeds": "studies/tm_language_model/docs/results.md:39", "h11": "studies/tm_language_model/docs/results.md:49", "kb7": "studies/tm_language_model/docs/results.md:175", "readme": "README.md:53", "overview": "docs/results-overview.md:35"}
+  },
+  "identity": {"positions": 282587, "maxDiff": "5.3e-15", "threshold": "1e-9", "decision": "F19 · 2026-09-24 · votes from counts", "sources": {"result": "studies/tm_language_model/docs/results.md:233", "vote": "studies/tm_language_model/docs/11-engine-spec.md:521", "decision": "studies/tm_language_model/docs/12-design-changes.md:125"}},
+  "document": {"bpbFrom": 1.3501, "bpbTo": 1.2409, "ns16": 13160, "ns65536": 12925, "gains": [0.0211, 0.0129, 0.0113], "gainAtM": [5, 15, 20], "overBest": 0.0002, "sources": {"h87": "studies/tm_language_model/docs/results.md:233", "gains": "studies/tm_language_model/docs/results.md:221", "overBest": "studies/tm_language_model/docs/results.md:223", "mixture": "studies/tm_language_model/src/tmlm/cvtm/mixture.py:1-10"}},
+  "receipts": {"pass": 11400, "tampered": 1113, "modes": 12, "audit": "2026-10-03", "rebound": "2026-10-25", "reTampered": 1412, "reModes": 15, "forgeries": 299, "sources": {"result": "studies/tm_language_model/docs/results.md:72", "limits": "docs/known-limitations.md:133"}},
+  "page": {"tokens": 678041, "patterns": 1934607, "sources": {"status": "live/index.html:46", "readme": "live/README.md:44", "votes": "live/model.js:222-250", "hooks": "live/app.js:634-639", "tolerance": "live/tests/model.test.mjs:77-82"}}
+}

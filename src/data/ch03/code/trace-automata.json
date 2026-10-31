@@ -1,0 +1,22 @@
+{"kind":"snippet","id":"trace-automata","repo":"AnwarDebes/trace","ref":"cc3a1a432ab010f58758f55caeec51d853086573","path":"tracekit/automata.py","lang":"python","startLine":79,"lines":[
+[["    ",""],["def","kw"],[" ",""],["actions","fn"],["(","punc"],["self","self"],[")","punc"],[" ",""],["->","punc"],[" np",""],[".","punc"],["ndarray","prop"],[":","punc"]],
+[["        ",""],["\"\"\"","str"],["(n_clauses, n_literals) bool: True iff the TA includes the literal.","com"],["\"\"\"","str"]],
+[["        ",""],["return","kw"],[" ",""],["self","self"],[".","punc"],["state","prop"],[" ",""],[">","op"],[" ",""],["self","self"],[".","punc"],["N","prop"]],
+[],
+[["    ",""],["def","kw"],[" ",""],["clause_outputs","fn"],["(","punc"],["self","self"],[",","punc"],[" ",""],["literals","param"],[":","punc"],[" np",""],[".","punc"],["ndarray","prop"],[",","punc"],[" ",""],["predict","param"],[":","punc"],[" ",""],["bool","type"],[" ",""],["=","op"],[" ",""],["False","num"],[")","punc"],[" ",""],["->","punc"],[" np",""],[".","punc"],["ndarray","prop"],[":","punc"]],
+[["        ",""],["\"\"\"","str"],["Evaluate every clause on a single 1-D literal vector.","com"]],
+[],
+[["        A clause outputs the AND over its included literals.  In ``predict``","com"]],
+[["        mode an all-exclude (empty) clause outputs 0; in train mode it outputs","com"]],
+[["        1 (the standard Granmo convention).","com"]],
+[["        ","com"],["\"\"\"","str"]],
+[["        literals ",""],["=","op"],[" np",""],[".","punc"],["asarray","fn"],["(","punc"],["literals",""],[",","punc"],[" ",""],["dtype","param"],["=","op"],["bool","type"],[")","punc"]],
+[["        inc ",""],["=","op"],[" ",""],["self","self"],[".","punc"],["actions","fn"],["()","punc"],["                                 ",""],["# (C, L)","com"]],
+[["        bad ",""],["=","op"],[" inc ",""],["&","op"],[" ",""],["~","op"],["literals",""],["[","punc"],["np",""],[".","punc"],["newaxis","prop"],[",","punc"],[" ",""],[":]","punc"],["                 ",""],["# included AND value=0","com"]],
+[["        any_bad ",""],["=","op"],[" bad",""],[".","punc"],["any","fn"],["(","punc"],["axis","param"],["=","op"],["1","num"],[")","punc"],["                            ",""],["# (C,)","com"]],
+[["        out ",""],["=","op"],[" ",""],["(","punc"],["~","op"],["any_bad",""],[").","punc"],["astype","fn"],["(","punc"],["np",""],[".","punc"],["int8","prop"],[")","punc"]],
+[["        ",""],["if","kw"],[" predict",""],[":","punc"]],
+[["            empty ",""],["=","op"],[" ",""],["~","op"],["inc",""],[".","punc"],["any","fn"],["(","punc"],["axis","param"],["=","op"],["1","num"],[")","punc"]],
+[["            out ",""],["=","op"],[" np",""],[".","punc"],["where","fn"],["(","punc"],["empty",""],[",","punc"],[" np",""],[".","punc"],["int8","fn"],["(","punc"],["0","num"],["),","punc"],[" out",""],[")","punc"]],
+[["        ",""],["return","kw"],[" out",""]]
+]}

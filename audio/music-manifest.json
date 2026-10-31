@@ -1,0 +1,2113 @@
+{
+  "version": 1,
+  "note": "Licensed music for the film. The MP3s are fetched into public/audio/music/ by scripts/audio/fetch-music.mjs and are not committed (the artist asks that his music not be re-uploaded on its own). sha256 and bytes pin the exact files the mix was made with; 'analysis' is written by scripts/audio/analyze_music.py.",
+  "license": {
+    "name": "Creative Commons Attribution 4.0 International",
+    "spdx": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "usageRules": "https://scottbuckley.com.au/library/using-this-music",
+    "faq": "https://scottbuckley.com.au/library/faq",
+    "claimRelease": "https://scottbuckley.com.au/library/copyright-claims-release",
+    "requirements": [
+      "Credit the artist in the film's credits, the README and the YouTube description (his Smart Content ID reads the description).",
+      "State that the music was modified: 'Edited for length and mixed under narration.'",
+      "Do not re-upload the music on its own and do not submit remixes to fingerprinting services."
+    ]
+  },
+  "creditsBlock": "Music\n'Decoherence', 'Resonance', 'Machina', 'Nightfall', 'Discovery', 'Catalyst' and 'Stars In Her Skies'\nby Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au\nEdited for length and mixed under narration.",
+  "tracks": [
+    {
+      "id": "decoherence",
+      "title": "Decoherence",
+      "artist": "Scott Buckley",
+      "year": 2022,
+      "mix": "main",
+      "role": "Cold open, interludes, beds under dense explanation (no pulse)",
+      "page": "https://www.scottbuckley.com.au/library/decoherence/",
+      "url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2022/03/sb_decoherence.mp3",
+      "file": "decoherence.mp3",
+      "license": "CC-BY-4.0",
+      "attribution": "'Decoherence' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+      "sha256": "9ce02e24e853265ea6dc2439e39af0905abdce806f242f57222c3a13712961aa",
+      "bytes": 24727749,
+      "fetchedAt": "2026-10-29T12:16:13.237Z",
+      "pageSha256": "6ef609c78af88c07ea2ef1f68b3b1b440fc99a494f86bcf4d5e5bf007e6c3cf5",
+      "pageFetchedAt": "2026-10-29T12:18:14.398Z",
+      "licenseEvidence": {
+        "license": "This work is licensed under a Creative Commons Attribution 4.0 International License",
+        "attributionFormat": "'Decoherence' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au"
+      },
+      "analysis": {
+        "key": "B major",
+        "keyScore": 0.761,
+        "alternatives": [
+          {
+            "key": "E minor",
+            "score": 0.627
+          },
+          {
+            "key": "B minor",
+            "score": 0.506
+          },
+          {
+            "key": "E major",
+            "score": 0.377
+          }
+        ],
+        "palette": [
+          "B",
+          "C#",
+          "Eb",
+          "F#",
+          "Ab",
+          "Bb"
+        ],
+        "durationS": 618.089,
+        "segments": [
+          {
+            "fromS": 0,
+            "toS": 30,
+            "key": "E minor",
+            "score": 0.825
+          },
+          {
+            "fromS": 30,
+            "toS": 60,
+            "key": "B major",
+            "score": 0.717
+          },
+          {
+            "fromS": 60,
+            "toS": 90,
+            "key": "B major",
+            "score": 0.749
+          },
+          {
+            "fromS": 90,
+            "toS": 120,
+            "key": "B major",
+            "score": 0.713
+          },
+          {
+            "fromS": 120,
+            "toS": 150,
+            "key": "E minor",
+            "score": 0.71
+          },
+          {
+            "fromS": 150,
+            "toS": 180,
+            "key": "B major",
+            "score": 0.736
+          },
+          {
+            "fromS": 180,
+            "toS": 210,
+            "key": "B major",
+            "score": 0.679
+          },
+          {
+            "fromS": 210,
+            "toS": 240,
+            "key": "B major",
+            "score": 0.704
+          },
+          {
+            "fromS": 240,
+            "toS": 270,
+            "key": "B major",
+            "score": 0.497
+          },
+          {
+            "fromS": 270,
+            "toS": 300,
+            "key": "E minor",
+            "score": 0.598
+          },
+          {
+            "fromS": 300,
+            "toS": 330,
+            "key": "B major",
+            "score": 0.761
+          },
+          {
+            "fromS": 330,
+            "toS": 360,
+            "key": "B minor",
+            "score": 0.543
+          },
+          {
+            "fromS": 360,
+            "toS": 390,
+            "key": "B major",
+            "score": 0.587
+          },
+          {
+            "fromS": 390,
+            "toS": 420,
+            "key": "B major",
+            "score": 0.635
+          },
+          {
+            "fromS": 420,
+            "toS": 450,
+            "key": "E minor",
+            "score": 0.594
+          },
+          {
+            "fromS": 450,
+            "toS": 480,
+            "key": "E minor",
+            "score": 0.5
+          },
+          {
+            "fromS": 480,
+            "toS": 510,
+            "key": "B major",
+            "score": 0.613
+          },
+          {
+            "fromS": 510,
+            "toS": 540,
+            "key": "B major",
+            "score": 0.678
+          },
+          {
+            "fromS": 540,
+            "toS": 570,
+            "key": "B major",
+            "score": 0.75
+          },
+          {
+            "fromS": 570,
+            "toS": 600,
+            "key": "B major",
+            "score": 0.707
+          },
+          {
+            "fromS": 600,
+            "toS": 618.1,
+            "key": "B major",
+            "score": 0.752
+          }
+        ],
+        "method": "chroma (STFT 8192, 55-2100 Hz) x Krumhansl-Kessler profiles; key signature is what the palette uses",
+        "analyzedAt": "2026-10-29"
+      }
+    },
+    {
+      "id": "resonance",
+      "title": "Resonance",
+      "artist": "Scott Buckley",
+      "year": 2018,
+      "mix": "main",
+      "role": "Title and thesis: the pins power up",
+      "page": "https://www.scottbuckley.com.au/library/resonance/",
+      "url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2018/04/sb_resonance.mp3",
+      "file": "resonance.mp3",
+      "license": "CC-BY-4.0",
+      "attribution": "'Resonance' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+      "sha256": "264be9c44c32419b6de70f0ac24c92f81401419419c8fb111b8e19e62261331b",
+      "bytes": 10643504,
+      "fetchedAt": "2026-10-29T12:16:13.237Z",
+      "pageSha256": "b20115bb4195acac1679b5f84c9a8ae0cfc98b2e1e4bcca50d4c386705fa30cb",
+      "pageFetchedAt": "2026-10-29T12:18:14.398Z",
+      "licenseEvidence": {
+        "license": "This work is licensed under a Creative Commons Attribution 4.0 International License",
+        "attributionFormat": "'Resonance' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au"
+      },
+      "analysis": {
+        "key": "A minor",
+        "keyScore": 0.767,
+        "alternatives": [
+          {
+            "key": "A major",
+            "score": 0.424
+          },
+          {
+            "key": "F major",
+            "score": 0.386
+          },
+          {
+            "key": "C major",
+            "score": 0.284
+          }
+        ],
+        "palette": [
+          "C",
+          "D",
+          "E",
+          "G",
+          "A",
+          "B"
+        ],
+        "durationS": 265.99,
+        "segments": [
+          {
+            "fromS": 0,
+            "toS": 30,
+            "key": "Bb minor",
+            "score": 0.674
+          },
+          {
+            "fromS": 30,
+            "toS": 60,
+            "key": "A major",
+            "score": 0.458
+          },
+          {
+            "fromS": 60,
+            "toS": 90,
+            "key": "A minor",
+            "score": 0.57
+          },
+          {
+            "fromS": 90,
+            "toS": 120,
+            "key": "A minor",
+            "score": 0.636
+          },
+          {
+            "fromS": 120,
+            "toS": 150,
+            "key": "A minor",
+            "score": 0.81
+          },
+          {
+            "fromS": 150,
+            "toS": 180,
+            "key": "A minor",
+            "score": 0.634
+          },
+          {
+            "fromS": 180,
+            "toS": 210,
+            "key": "A minor",
+            "score": 0.724
+          },
+          {
+            "fromS": 210,
+            "toS": 240,
+            "key": "F major",
+            "score": 0.704
+          },
+          {
+            "fromS": 240,
+            "toS": 266,
+            "key": "A minor",
+            "score": 0.703
+          }
+        ],
+        "method": "chroma (STFT 8192, 55-2100 Hz) x Krumhansl-Kessler profiles; key signature is what the palette uses",
+        "analyzedAt": "2026-10-29"
+      }
+    },
+    {
+      "id": "resonance-alt",
+      "title": "Resonance (alternative mix, no melody in the back half)",
+      "artist": "Scott Buckley",
+      "year": 2018,
+      "mix": "alt",
+      "role": "Resonance under narration. Shares the main mix's samples (offset +219.83 ms) for the first 83 s, so it can be swapped in place there",
+      "page": "https://www.scottbuckley.com.au/library/resonance/",
+      "url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2018/04/sb_resonance_altmix.mp3",
+      "file": "resonance-alt.mp3",
+      "license": "CC-BY-4.0",
+      "attribution": "'Resonance' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+      "sha256": "a09c0ea14aa6942ed4023dcc95a754108fdba9bca7087853d36ffe0a264c16cb",
+      "bytes": 11882805,
+      "fetchedAt": "2026-10-29T12:16:13.237Z",
+      "pageSha256": "5579dadb13c1779669cd6a220d32a929ab4dcdc65ef2b62cfc5e75976748fef3",
+      "pageFetchedAt": "2026-10-29T12:18:14.398Z",
+      "licenseEvidence": {
+        "license": "This work is licensed under a Creative Commons Attribution 4.0 International License",
+        "attributionFormat": "'Resonance' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au"
+      },
+      "analysis": {
+        "key": "A minor",
+        "keyScore": 0.729,
+        "alternatives": [
+          {
+            "key": "A major",
+            "score": 0.44
+          },
+          {
+            "key": "F major",
+            "score": 0.381
+          },
+          {
+            "key": "E major",
+            "score": 0.211
+          }
+        ],
+        "palette": [
+          "C",
+          "D",
+          "E",
+          "G",
+          "A",
+          "B"
+        ],
+        "durationS": 296.981,
+        "segments": [
+          {
+            "fromS": 0,
+            "toS": 30,
+            "key": "Bb minor",
+            "score": 0.594
+          },
+          {
+            "fromS": 30,
+            "toS": 60,
+            "key": "A major",
+            "score": 0.456
+          },
+          {
+            "fromS": 60,
+            "toS": 90,
+            "key": "A minor",
+            "score": 0.569
+          },
+          {
+            "fromS": 90,
+            "toS": 120,
+            "key": "A minor",
+            "score": 0.642
+          },
+          {
+            "fromS": 120,
+            "toS": 150,
+            "key": "A minor",
+            "score": 0.814
+          },
+          {
+            "fromS": 150,
+            "toS": 180,
+            "key": "A minor",
+            "score": 0.644
+          },
+          {
+            "fromS": 180,
+            "toS": 210,
+            "key": "A minor",
+            "score": 0.7
+          },
+          {
+            "fromS": 210,
+            "toS": 240,
+            "key": "F major",
+            "score": 0.814
+          },
+          {
+            "fromS": 240,
+            "toS": 270,
+            "key": "A minor",
+            "score": 0.721
+          }
+        ],
+        "method": "chroma (STFT 8192, 55-2100 Hz) x Krumhansl-Kessler profiles; key signature is what the palette uses",
+        "analyzedAt": "2026-10-29"
+      },
+      "alignment": {
+        "reference": "resonance",
+        "offsetS": 0.219833,
+        "lagSamples48k": 10552,
+        "lagSpreadSamples": 0,
+        "inPlaceSwapUntilS": 83,
+        "verdict": "same samples until 83 s of the main mix, where an equal-gain ('hsin') crossfade swaps them in place; after that the mixes differ: crossfade equal-power ('qsin') on a phrase boundary",
+        "windows": [
+          {
+            "atS": 2,
+            "lagSamples": 10552,
+            "corr": 0.992,
+            "nullLU": 15.7
+          },
+          {
+            "atS": 17,
+            "lagSamples": 10552,
+            "corr": 0.998,
+            "nullLU": 18
+          },
+          {
+            "atS": 32,
+            "lagSamples": 10552,
+            "corr": 0.998,
+            "nullLU": 17.5
+          },
+          {
+            "atS": 47,
+            "lagSamples": 10552,
+            "corr": 0.994,
+            "nullLU": 13.3
+          },
+          {
+            "atS": 62,
+            "lagSamples": 10552,
+            "corr": 0.983,
+            "nullLU": 9.2
+          },
+          {
+            "atS": 77,
+            "lagSamples": 10552,
+            "corr": 0.988,
+            "nullLU": 12.3
+          },
+          {
+            "atS": 92,
+            "lagSamples": 10552,
+            "corr": 0.968,
+            "nullLU": 8.3
+          },
+          {
+            "atS": 107,
+            "lagSamples": 10552,
+            "corr": 0.92,
+            "nullLU": 4.9
+          },
+          {
+            "atS": 122,
+            "lagSamples": 10552,
+            "corr": 0.913,
+            "nullLU": 4.8
+          },
+          {
+            "atS": 137,
+            "lagSamples": 10552,
+            "corr": 0.886,
+            "nullLU": 4.3
+          },
+          {
+            "atS": 152,
+            "lagSamples": 10552,
+            "corr": 0.859,
+            "nullLU": 1.9
+          },
+          {
+            "atS": 167,
+            "lagSamples": 10552,
+            "corr": 0.63,
+            "nullLU": -0.5
+          },
+          {
+            "atS": 182,
+            "lagSamples": 10552,
+            "corr": 0.635,
+            "nullLU": -0.6
+          },
+          {
+            "atS": 197,
+            "lagSamples": 10552,
+            "corr": 0.607,
+            "nullLU": -0.2
+          },
+          {
+            "atS": 212,
+            "lagSamples": 10552,
+            "corr": 0.478,
+            "nullLU": -0.8
+          },
+          {
+            "atS": 227,
+            "lagSamples": 10552,
+            "corr": 0.44,
+            "nullLU": -1.2
+          },
+          {
+            "atS": 242,
+            "lagSamples": 10552,
+            "corr": 0.613,
+            "nullLU": -0.9
+          },
+          {
+            "atS": 257,
+            "lagSamples": 10552,
+            "corr": 0.985,
+            "nullLU": 12.2
+          }
+        ],
+        "method": "normalised cross-correlation (mono, 6 s windows every 15 s, +-1 s); null = main minus aligned alt, BS.1770 loudness",
+        "measuredAt": "2026-10-29"
+      }
+    },
+    {
+      "id": "machina",
+      "title": "Machina",
+      "artist": "Scott Buckley",
+      "year": 2019,
+      "mix": "main",
+      "role": "Systems deep dives (Tsetlin literals, clauses)",
+      "page": "https://www.scottbuckley.com.au/library/machina/",
+      "url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2019/12/sb_machina.mp3",
+      "file": "machina.mp3",
+      "license": "CC-BY-4.0",
+      "attribution": "'Machina' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+      "sha256": "72f479c583fd1cb894584c51d4fb9b33200b098bd1b13195bd41d29586d9d344",
+      "bytes": 11639298,
+      "fetchedAt": "2026-10-29T12:16:13.237Z",
+      "pageSha256": "cb4ff16a07a45e3e04457b44cfcd6d0f67c32d73e5563583950f5f2a71752cc5",
+      "pageFetchedAt": "2026-10-29T12:18:14.398Z",
+      "licenseEvidence": {
+        "license": "This work is licensed under a Creative Commons Attribution 4.0 International License",
+        "attributionFormat": "'Machina' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au"
+      },
+      "analysis": {
+        "key": "Ab major",
+        "keyScore": 0.816,
+        "alternatives": [
+          {
+            "key": "Eb major",
+            "score": 0.744
+          },
+          {
+            "key": "Ab minor",
+            "score": 0.662
+          },
+          {
+            "key": "C minor",
+            "score": 0.499
+          }
+        ],
+        "palette": [
+          "Ab",
+          "Bb",
+          "C",
+          "Eb",
+          "F",
+          "G"
+        ],
+        "durationS": 290.896,
+        "segments": [
+          {
+            "fromS": 0,
+            "toS": 30,
+            "key": "Ab major",
+            "score": 0.799
+          },
+          {
+            "fromS": 30,
+            "toS": 60,
+            "key": "Eb major",
+            "score": 0.755
+          },
+          {
+            "fromS": 60,
+            "toS": 90,
+            "key": "Eb major",
+            "score": 0.82
+          },
+          {
+            "fromS": 90,
+            "toS": 120,
+            "key": "Ab major",
+            "score": 0.832
+          },
+          {
+            "fromS": 120,
+            "toS": 150,
+            "key": "Ab major",
+            "score": 0.883
+          },
+          {
+            "fromS": 150,
+            "toS": 180,
+            "key": "Eb major",
+            "score": 0.724
+          },
+          {
+            "fromS": 180,
+            "toS": 210,
+            "key": "Ab major",
+            "score": 0.812
+          },
+          {
+            "fromS": 210,
+            "toS": 240,
+            "key": "Ab minor",
+            "score": 0.728
+          },
+          {
+            "fromS": 240,
+            "toS": 270,
+            "key": "Eb major",
+            "score": 0.608
+          },
+          {
+            "fromS": 270,
+            "toS": 290.9,
+            "key": "C minor",
+            "score": 0.834
+          }
+        ],
+        "method": "chroma (STFT 8192, 55-2100 Hz) x Krumhansl-Kessler profiles; key signature is what the palette uses",
+        "analyzedAt": "2026-10-29"
+      }
+    },
+    {
+      "id": "nightfall",
+      "title": "Nightfall",
+      "artist": "Scott Buckley",
+      "year": 2019,
+      "mix": "main",
+      "role": "Claims put to the test: back half, once the narration stops",
+      "page": "https://www.scottbuckley.com.au/library/nightfall/",
+      "url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2019/05/sb_nightfall.mp3",
+      "file": "nightfall.mp3",
+      "license": "CC-BY-4.0",
+      "attribution": "'Nightfall' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+      "sha256": "831a6baeb1d01fbecb89a0473b141625dd1136809f059ddaba6e106fd01db8e5",
+      "bytes": 10540076,
+      "fetchedAt": "2026-10-29T12:16:13.237Z",
+      "pageSha256": "52c6071c64847e20f366b24bff83dbe7a1e7e50eb42d4bd4382d5cdddb3c2f44",
+      "pageFetchedAt": "2026-10-29T12:18:14.398Z",
+      "licenseEvidence": {
+        "license": "This work is licensed under a Creative Commons Attribution 4.0 International License",
+        "attributionFormat": "'Nightfall' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au"
+      },
+      "analysis": {
+        "key": "C minor",
+        "keyScore": 0.867,
+        "alternatives": [
+          {
+            "key": "C major",
+            "score": 0.594
+          },
+          {
+            "key": "G minor",
+            "score": 0.516
+          },
+          {
+            "key": "Eb major",
+            "score": 0.494
+          }
+        ],
+        "palette": [
+          "Eb",
+          "F",
+          "G",
+          "Bb",
+          "C",
+          "D"
+        ],
+        "durationS": 263.398,
+        "segments": [
+          {
+            "fromS": 0,
+            "toS": 30,
+            "key": "C major",
+            "score": 0.44
+          },
+          {
+            "fromS": 30,
+            "toS": 60,
+            "key": "C minor",
+            "score": 0.849
+          },
+          {
+            "fromS": 60,
+            "toS": 90,
+            "key": "C minor",
+            "score": 0.89
+          },
+          {
+            "fromS": 90,
+            "toS": 120,
+            "key": "C minor",
+            "score": 0.918
+          },
+          {
+            "fromS": 120,
+            "toS": 150,
+            "key": "C minor",
+            "score": 0.878
+          },
+          {
+            "fromS": 150,
+            "toS": 180,
+            "key": "C minor",
+            "score": 0.823
+          },
+          {
+            "fromS": 180,
+            "toS": 210,
+            "key": "C minor",
+            "score": 0.793
+          },
+          {
+            "fromS": 210,
+            "toS": 240,
+            "key": "C minor",
+            "score": 0.867
+          },
+          {
+            "fromS": 240,
+            "toS": 263.4,
+            "key": "C minor",
+            "score": 0.7
+          }
+        ],
+        "method": "chroma (STFT 8192, 55-2100 Hz) x Krumhansl-Kessler profiles; key signature is what the palette uses",
+        "analyzedAt": "2026-10-29"
+      }
+    },
+    {
+      "id": "nightfall-nosolo",
+      "title": "Nightfall (alternative mix without the solo strings)",
+      "artist": "Scott Buckley",
+      "year": 2019,
+      "mix": "alt",
+      "role": "Nightfall under narration. Not sample-aligned with the main mix after the intro (see alignment): swap with an equal-power crossfade on a phrase boundary",
+      "page": "https://www.scottbuckley.com.au/library/nightfall/",
+      "url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2019/05/sb_nightfall_nosolostrings.mp3",
+      "file": "nightfall-nosolo.mp3",
+      "license": "CC-BY-4.0",
+      "attribution": "'Nightfall' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+      "sha256": "a0e78fd950f3cdca439028f7ac6478e4621eeabb907f189823c1ecf3d94ecc95",
+      "bytes": 10540120,
+      "fetchedAt": "2026-10-29T12:16:13.237Z",
+      "pageSha256": "84536a86923d6a5ebf522b36961e5697f40fe85b5aa485d6e14bc703026b4197",
+      "pageFetchedAt": "2026-10-29T12:18:14.398Z",
+      "licenseEvidence": {
+        "license": "This work is licensed under a Creative Commons Attribution 4.0 International License",
+        "attributionFormat": "'Nightfall' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au"
+      },
+      "analysis": {
+        "key": "C minor",
+        "keyScore": 0.877,
+        "alternatives": [
+          {
+            "key": "C major",
+            "score": 0.584
+          },
+          {
+            "key": "Eb major",
+            "score": 0.49
+          },
+          {
+            "key": "G minor",
+            "score": 0.459
+          }
+        ],
+        "palette": [
+          "Eb",
+          "F",
+          "G",
+          "Bb",
+          "C",
+          "D"
+        ],
+        "durationS": 263.409,
+        "segments": [
+          {
+            "fromS": 0,
+            "toS": 30,
+            "key": "C minor",
+            "score": 0.474
+          },
+          {
+            "fromS": 30,
+            "toS": 60,
+            "key": "C minor",
+            "score": 0.804
+          },
+          {
+            "fromS": 60,
+            "toS": 90,
+            "key": "C minor",
+            "score": 0.871
+          },
+          {
+            "fromS": 90,
+            "toS": 120,
+            "key": "C minor",
+            "score": 0.876
+          },
+          {
+            "fromS": 120,
+            "toS": 150,
+            "key": "C minor",
+            "score": 0.831
+          },
+          {
+            "fromS": 150,
+            "toS": 180,
+            "key": "C minor",
+            "score": 0.797
+          },
+          {
+            "fromS": 180,
+            "toS": 210,
+            "key": "C minor",
+            "score": 0.89
+          },
+          {
+            "fromS": 210,
+            "toS": 240,
+            "key": "C minor",
+            "score": 0.925
+          },
+          {
+            "fromS": 240,
+            "toS": 263.4,
+            "key": "C minor",
+            "score": 0.736
+          }
+        ],
+        "method": "chroma (STFT 8192, 55-2100 Hz) x Krumhansl-Kessler profiles; key signature is what the palette uses",
+        "analyzedAt": "2026-10-29"
+      },
+      "alignment": {
+        "reference": "nightfall",
+        "offsetS": 0.019521,
+        "lagSamples48k": 937,
+        "lagSpreadSamples": 922,
+        "inPlaceSwapUntilS": 8,
+        "verdict": "same samples until 8 s of the main mix, where an equal-gain ('hsin') crossfade swaps them in place; after that the mixes differ: crossfade equal-power ('qsin') on a phrase boundary",
+        "windows": [
+          {
+            "atS": 2,
+            "lagSamples": 937,
+            "corr": 0.986,
+            "nullLU": 14.8
+          },
+          {
+            "atS": 17,
+            "lagSamples": 937,
+            "corr": 0.545,
+            "nullLU": 0.5
+          },
+          {
+            "atS": 32,
+            "lagSamples": 916,
+            "corr": 0.592,
+            "nullLU": 0.4
+          },
+          {
+            "atS": 47,
+            "lagSamples": 899,
+            "corr": 0.419,
+            "nullLU": -1.4
+          },
+          {
+            "atS": 62,
+            "lagSamples": 934,
+            "corr": 0.444,
+            "nullLU": -0.7
+          },
+          {
+            "atS": 77,
+            "lagSamples": 936,
+            "corr": 0.491,
+            "nullLU": -0.3
+          },
+          {
+            "atS": 92,
+            "lagSamples": 940,
+            "corr": 0.35,
+            "nullLU": -1.4
+          },
+          {
+            "atS": 107,
+            "lagSamples": 940,
+            "corr": 0.312,
+            "nullLU": -1.5
+          },
+          {
+            "atS": 122,
+            "lagSamples": 936,
+            "corr": 0.324,
+            "nullLU": -1.6
+          },
+          {
+            "atS": 137,
+            "lagSamples": 937,
+            "corr": 0.569,
+            "nullLU": 0.3
+          },
+          {
+            "atS": 152,
+            "lagSamples": 935,
+            "corr": 0.425,
+            "nullLU": -0.2
+          },
+          {
+            "atS": 167,
+            "lagSamples": 15,
+            "corr": 0.307,
+            "nullLU": -2.1
+          },
+          {
+            "atS": 182,
+            "lagSamples": 937,
+            "corr": 0.687,
+            "nullLU": 0.6
+          },
+          {
+            "atS": 197,
+            "lagSamples": 939,
+            "corr": 0.647,
+            "nullLU": 0.9
+          },
+          {
+            "atS": 212,
+            "lagSamples": 937,
+            "corr": 0.692,
+            "nullLU": 1.3
+          },
+          {
+            "atS": 227,
+            "lagSamples": 937,
+            "corr": 0.594,
+            "nullLU": 0.2
+          },
+          {
+            "atS": 242,
+            "lagSamples": 937,
+            "corr": 0.694,
+            "nullLU": 0.8
+          }
+        ],
+        "method": "normalised cross-correlation (mono, 6 s windows every 15 s, +-1 s); null = main minus aligned alt, BS.1770 loudness",
+        "measuredAt": "2026-10-29"
+      }
+    },
+    {
+      "id": "discovery",
+      "title": "Discovery",
+      "artist": "Scott Buckley",
+      "year": 2020,
+      "mix": "main",
+      "role": "Launch montage (roll-call of the repos)",
+      "page": "https://www.scottbuckley.com.au/library/discovery/",
+      "url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2020/01/sb_discovery.mp3",
+      "file": "discovery.mp3",
+      "license": "CC-BY-4.0",
+      "attribution": "'Discovery' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+      "sha256": "e4629422bd18a927950167dabfbe7c77c061595329da367f2407a8b4021fb832",
+      "bytes": 9415765,
+      "fetchedAt": "2026-10-29T12:16:13.237Z",
+      "pageSha256": "45da2bdd959b98e6a8b74bf1cb33ddb2004b3d038c4bf393db45c1052f864afb",
+      "pageFetchedAt": "2026-10-29T12:18:14.398Z",
+      "licenseEvidence": {
+        "license": "This work is licensed under a Creative Commons Attribution 4.0 International License",
+        "attributionFormat": "'Discovery' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au"
+      },
+      "analysis": {
+        "key": "G minor",
+        "keyScore": 0.804,
+        "alternatives": [
+          {
+            "key": "G major",
+            "score": 0.699
+          },
+          {
+            "key": "D major",
+            "score": 0.438
+          },
+          {
+            "key": "B minor",
+            "score": 0.423
+          }
+        ],
+        "palette": [
+          "Bb",
+          "C",
+          "D",
+          "F",
+          "G",
+          "A"
+        ],
+        "durationS": 235.303,
+        "segments": [
+          {
+            "fromS": 0,
+            "toS": 30,
+            "key": "G minor",
+            "score": 0.78
+          },
+          {
+            "fromS": 30,
+            "toS": 60,
+            "key": "G minor",
+            "score": 0.772
+          },
+          {
+            "fromS": 60,
+            "toS": 90,
+            "key": "G minor",
+            "score": 0.826
+          },
+          {
+            "fromS": 90,
+            "toS": 120,
+            "key": "G minor",
+            "score": 0.77
+          },
+          {
+            "fromS": 120,
+            "toS": 150,
+            "key": "G minor",
+            "score": 0.745
+          },
+          {
+            "fromS": 150,
+            "toS": 180,
+            "key": "G minor",
+            "score": 0.771
+          },
+          {
+            "fromS": 180,
+            "toS": 210,
+            "key": "G minor",
+            "score": 0.865
+          },
+          {
+            "fromS": 210,
+            "toS": 235.3,
+            "key": "G major",
+            "score": 0.808
+          }
+        ],
+        "method": "chroma (STFT 8192, 55-2100 Hz) x Krumhansl-Kessler profiles; key signature is what the palette uses",
+        "analyzedAt": "2026-10-29"
+      }
+    },
+    {
+      "id": "catalyst",
+      "title": "Catalyst",
+      "artist": "Scott Buckley",
+      "year": 2020,
+      "mix": "main",
+      "role": "Finale: from dark to hopeful",
+      "page": "https://www.scottbuckley.com.au/library/catalyst/",
+      "url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2020/06/sb_catalyst.mp3",
+      "file": "catalyst.mp3",
+      "license": "CC-BY-4.0",
+      "attribution": "'Catalyst' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+      "sha256": "8dabdc650ed2db00c9b5b685e5c9ddbc9e14e5d9f4a8dcd3f87db3ccf139e41e",
+      "bytes": 11106408,
+      "fetchedAt": "2026-10-29T12:16:13.237Z",
+      "pageSha256": "a6c1f9ede7498b83911b1b8cf8dc2b4b4127c5f2cdb2ce33e91baf267e7e0b8f",
+      "pageFetchedAt": "2026-10-29T12:18:14.398Z",
+      "licenseEvidence": {
+        "license": "This work is licensed under a Creative Commons Attribution 4.0 International License",
+        "attributionFormat": "'Catalyst' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au"
+      },
+      "analysis": {
+        "key": "Ab minor",
+        "keyScore": 0.875,
+        "alternatives": [
+          {
+            "key": "Ab major",
+            "score": 0.684
+          },
+          {
+            "key": "Eb minor",
+            "score": 0.507
+          },
+          {
+            "key": "Eb major",
+            "score": 0.494
+          }
+        ],
+        "palette": [
+          "B",
+          "C#",
+          "Eb",
+          "F#",
+          "Ab",
+          "Bb"
+        ],
+        "durationS": 277.568,
+        "segments": [
+          {
+            "fromS": 0,
+            "toS": 30,
+            "key": "Ab major",
+            "score": 0.812
+          },
+          {
+            "fromS": 30,
+            "toS": 60,
+            "key": "Ab minor",
+            "score": 0.909
+          },
+          {
+            "fromS": 60,
+            "toS": 90,
+            "key": "Ab minor",
+            "score": 0.778
+          },
+          {
+            "fromS": 90,
+            "toS": 120,
+            "key": "Ab minor",
+            "score": 0.914
+          },
+          {
+            "fromS": 120,
+            "toS": 150,
+            "key": "Ab minor",
+            "score": 0.905
+          },
+          {
+            "fromS": 150,
+            "toS": 180,
+            "key": "Ab minor",
+            "score": 0.744
+          },
+          {
+            "fromS": 180,
+            "toS": 210,
+            "key": "Ab minor",
+            "score": 0.709
+          },
+          {
+            "fromS": 210,
+            "toS": 240,
+            "key": "Ab minor",
+            "score": 0.944
+          },
+          {
+            "fromS": 240,
+            "toS": 270,
+            "key": "Ab minor",
+            "score": 0.789
+          }
+        ],
+        "method": "chroma (STFT 8192, 55-2100 Hz) x Krumhansl-Kessler profiles; key signature is what the palette uses",
+        "analyzedAt": "2026-10-29"
+      }
+    },
+    {
+      "id": "stars-in-her-skies",
+      "title": "Stars In Her Skies",
+      "artist": "Scott Buckley",
+      "year": 2016,
+      "mix": "main",
+      "role": "End credits",
+      "page": "https://www.scottbuckley.com.au/library/stars-in-her-skies/",
+      "url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2016/03/sb_starsinherskies.mp3",
+      "file": "stars-in-her-skies.mp3",
+      "license": "CC-BY-4.0",
+      "attribution": "'Stars In Her Skies' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+      "sha256": "1bbe9a38f3fa841c6ee30d0ac5ac223882b24aab3c77711fc05d2311a308be45",
+      "bytes": 10161139,
+      "fetchedAt": "2026-10-29T12:16:13.237Z",
+      "pageSha256": "2391d30734e58d299e1c93c41aeb9476a063733b056ca6893da315ebd5b2c947",
+      "pageFetchedAt": "2026-10-29T12:18:14.398Z",
+      "licenseEvidence": {
+        "license": "This work is licensed under a Creative Commons Attribution 4.0 International License",
+        "attributionFormat": "'Stars In Her Skies' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au"
+      },
+      "analysis": {
+        "key": "B minor",
+        "keyScore": 0.719,
+        "alternatives": [
+          {
+            "key": "G major",
+            "score": 0.68
+          },
+          {
+            "key": "E minor",
+            "score": 0.641
+          },
+          {
+            "key": "D major",
+            "score": 0.603
+          }
+        ],
+        "palette": [
+          "D",
+          "E",
+          "F#",
+          "A",
+          "B",
+          "C#"
+        ],
+        "durationS": 277.235,
+        "segments": [
+          {
+            "fromS": 0,
+            "toS": 30,
+            "key": "G major",
+            "score": 0.901
+          },
+          {
+            "fromS": 30,
+            "toS": 60,
+            "key": "B minor",
+            "score": 0.765
+          },
+          {
+            "fromS": 60,
+            "toS": 90,
+            "key": "G major",
+            "score": 0.865
+          },
+          {
+            "fromS": 90,
+            "toS": 120,
+            "key": "D major",
+            "score": 0.751
+          },
+          {
+            "fromS": 120,
+            "toS": 150,
+            "key": "B minor",
+            "score": 0.713
+          },
+          {
+            "fromS": 150,
+            "toS": 180,
+            "key": "B minor",
+            "score": 0.715
+          },
+          {
+            "fromS": 180,
+            "toS": 210,
+            "key": "B minor",
+            "score": 0.679
+          },
+          {
+            "fromS": 210,
+            "toS": 240,
+            "key": "G major",
+            "score": 0.743
+          },
+          {
+            "fromS": 240,
+            "toS": 270,
+            "key": "B minor",
+            "score": 0.691
+          }
+        ],
+        "method": "chroma (STFT 8192, 55-2100 Hz) x Krumhansl-Kessler profiles; key signature is what the palette uses",
+        "analyzedAt": "2026-10-29"
+      }
+    },
+    {
+      "id": "tears-in-rain",
+      "title": "Tears in Rain",
+      "artist": "Scott Buckley",
+      "mix": "main",
+      "role": "Chapter 02 bed",
+      "page": "https://www.scottbuckley.com.au/library/tears-in-rain/",
+      "url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2019/07/sb_tearsinrain.mp3",
+      "file": "tears-in-rain.mp3",
+      "license": "CC-BY-4.0",
+      "attribution": "'Tears in Rain' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+      "licenseEvidence": {
+        "license": "This work is licensed under a Creative Commons Attribution 4.0 International License",
+        "attributionFormat": "'Tears In Rain' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au"
+      },
+      "sha256": "c56f817a5090e17a2def09e3623104a5474f144f81a595eb4ccae5f3ef9ab69f",
+      "bytes": 13602679,
+      "fetchedAt": "2026-10-30T12:35:30.677Z",
+      "pageSha256": "6786efeb6ae994e6c9efab519629a435db4e051f2042fe26b32816d9cb2e236d",
+      "pageFetchedAt": "2026-10-30T12:35:30.677Z",
+      "analysis": {
+        "key": "C# minor",
+        "keyScore": 0.81,
+        "alternatives": [
+          {
+            "key": "C# major",
+            "score": 0.686
+          },
+          {
+            "key": "F# major",
+            "score": 0.514
+          },
+          {
+            "key": "Ab minor",
+            "score": 0.511
+          }
+        ],
+        "palette": [
+          "E",
+          "F#",
+          "Ab",
+          "B",
+          "C#",
+          "Eb"
+        ],
+        "durationS": 339.974,
+        "segments": [
+          {
+            "fromS": 0.0,
+            "toS": 30.0,
+            "key": "C# minor",
+            "score": 0.878
+          },
+          {
+            "fromS": 30.0,
+            "toS": 60.0,
+            "key": "C# major",
+            "score": 0.772
+          },
+          {
+            "fromS": 60.0,
+            "toS": 90.0,
+            "key": "C# minor",
+            "score": 0.648
+          },
+          {
+            "fromS": 90.0,
+            "toS": 120.0,
+            "key": "C# minor",
+            "score": 0.702
+          },
+          {
+            "fromS": 120.0,
+            "toS": 150.0,
+            "key": "C# minor",
+            "score": 0.835
+          },
+          {
+            "fromS": 150.0,
+            "toS": 180.0,
+            "key": "C# major",
+            "score": 0.793
+          },
+          {
+            "fromS": 180.0,
+            "toS": 210.0,
+            "key": "C# minor",
+            "score": 0.785
+          },
+          {
+            "fromS": 210.0,
+            "toS": 240.0,
+            "key": "C# major",
+            "score": 0.77
+          },
+          {
+            "fromS": 240.0,
+            "toS": 270.0,
+            "key": "C# minor",
+            "score": 0.777
+          },
+          {
+            "fromS": 270.0,
+            "toS": 300.0,
+            "key": "C# minor",
+            "score": 0.745
+          },
+          {
+            "fromS": 300.0,
+            "toS": 330.0,
+            "key": "C# minor",
+            "score": 0.86
+          }
+        ],
+        "method": "chroma (STFT 8192, 55-2100 Hz) x Krumhansl-Kessler profiles; key signature is what the palette uses",
+        "analyzedAt": "2026-10-30"
+      }
+    },
+    {
+      "id": "emergent",
+      "title": "Emergent",
+      "artist": "Scott Buckley",
+      "mix": "main",
+      "role": "Chapter 04 build",
+      "page": "https://www.scottbuckley.com.au/library/emergent/",
+      "url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2019/11/sb_emergent.mp3",
+      "file": "emergent.mp3",
+      "license": "CC-BY-4.0",
+      "attribution": "'Emergent' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+      "licenseEvidence": {
+        "license": "This work is licensed under a Creative Commons Attribution 4.0 International License",
+        "attributionFormat": "'Emergent' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au"
+      },
+      "sha256": "653e6a1e22ae7a122d7d2db87ddb3183f7bd30fe9a9ff709e93647a8f71c48e5",
+      "bytes": 9247535,
+      "fetchedAt": "2026-10-30T12:35:30.677Z",
+      "pageSha256": "e99bccb9917848a011bd75b3016388aaa8beea93f0f6191b343a23d074193b17",
+      "pageFetchedAt": "2026-10-30T12:35:30.677Z",
+      "analysis": {
+        "key": "Bb minor",
+        "keyScore": 0.861,
+        "alternatives": [
+          {
+            "key": "F minor",
+            "score": 0.676
+          },
+          {
+            "key": "C# major",
+            "score": 0.633
+          },
+          {
+            "key": "Ab major",
+            "score": 0.498
+          }
+        ],
+        "palette": [
+          "C#",
+          "Eb",
+          "F",
+          "Ab",
+          "Bb",
+          "C"
+        ],
+        "durationS": 231.092,
+        "segments": [
+          {
+            "fromS": 0.0,
+            "toS": 30.0,
+            "key": "Bb minor",
+            "score": 0.923
+          },
+          {
+            "fromS": 30.0,
+            "toS": 60.0,
+            "key": "Bb minor",
+            "score": 0.914
+          },
+          {
+            "fromS": 60.0,
+            "toS": 90.0,
+            "key": "Bb minor",
+            "score": 0.857
+          },
+          {
+            "fromS": 90.0,
+            "toS": 120.0,
+            "key": "Bb minor",
+            "score": 0.875
+          },
+          {
+            "fromS": 120.0,
+            "toS": 150.0,
+            "key": "Bb minor",
+            "score": 0.769
+          },
+          {
+            "fromS": 150.0,
+            "toS": 180.0,
+            "key": "Bb minor",
+            "score": 0.777
+          },
+          {
+            "fromS": 180.0,
+            "toS": 210.0,
+            "key": "Bb minor",
+            "score": 0.826
+          },
+          {
+            "fromS": 210.0,
+            "toS": 231.1,
+            "key": "Bb minor",
+            "score": 0.829
+          }
+        ],
+        "method": "chroma (STFT 8192, 55-2100 Hz) x Krumhansl-Kessler profiles; key signature is what the palette uses",
+        "analyzedAt": "2026-10-30"
+      }
+    },
+    {
+      "id": "signal-to-noise",
+      "title": "Signal to Noise",
+      "artist": "Scott Buckley",
+      "mix": "no-melody",
+      "role": "Chapter 05 bed (no-melody mix)",
+      "page": "https://www.scottbuckley.com.au/library/signal-to-noise/",
+      "url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2020/04/sb_signaltonoise_nomelody.mp3",
+      "file": "signal-to-noise.mp3",
+      "license": "CC-BY-4.0",
+      "attribution": "'Signal to Noise' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+      "licenseEvidence": {
+        "license": "This work is licensed under a Creative Commons Attribution 4.0 International License",
+        "attributionFormat": "'Signal to Noise' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au"
+      },
+      "sha256": "8e20b496b0614053565d4f43c80f469c84abd2aefb3ba01e29dfa813f49b9594",
+      "bytes": 14178456,
+      "fetchedAt": "2026-10-30T12:35:30.677Z",
+      "pageSha256": "8ca61683c2b1e0aa69344f5138e1d57b16582a5fcfcc7cc8d8a24ebdbe7f1ee3",
+      "pageFetchedAt": "2026-10-30T12:35:30.677Z",
+      "analysis": {
+        "key": "A minor",
+        "keyScore": 0.779,
+        "alternatives": [
+          {
+            "key": "E minor",
+            "score": 0.618
+          },
+          {
+            "key": "E major",
+            "score": 0.57
+          },
+          {
+            "key": "A major",
+            "score": 0.489
+          }
+        ],
+        "palette": [
+          "C",
+          "D",
+          "E",
+          "G",
+          "A",
+          "B"
+        ],
+        "durationS": 354.353,
+        "segments": [
+          {
+            "fromS": 0.0,
+            "toS": 30.0,
+            "key": "E minor",
+            "score": 0.822
+          },
+          {
+            "fromS": 30.0,
+            "toS": 60.0,
+            "key": "E major",
+            "score": 0.679
+          },
+          {
+            "fromS": 60.0,
+            "toS": 90.0,
+            "key": "A minor",
+            "score": 0.753
+          },
+          {
+            "fromS": 90.0,
+            "toS": 120.0,
+            "key": "E major",
+            "score": 0.678
+          },
+          {
+            "fromS": 120.0,
+            "toS": 150.0,
+            "key": "A minor",
+            "score": 0.625
+          },
+          {
+            "fromS": 150.0,
+            "toS": 180.0,
+            "key": "E minor",
+            "score": 0.602
+          },
+          {
+            "fromS": 180.0,
+            "toS": 210.0,
+            "key": "D minor",
+            "score": 0.689
+          },
+          {
+            "fromS": 210.0,
+            "toS": 240.0,
+            "key": "A minor",
+            "score": 0.633
+          },
+          {
+            "fromS": 240.0,
+            "toS": 270.0,
+            "key": "A minor",
+            "score": 0.769
+          },
+          {
+            "fromS": 270.0,
+            "toS": 300.0,
+            "key": "A minor",
+            "score": 0.754
+          },
+          {
+            "fromS": 300.0,
+            "toS": 330.0,
+            "key": "E major",
+            "score": 0.773
+          },
+          {
+            "fromS": 330.0,
+            "toS": 354.4,
+            "key": "A minor",
+            "score": 0.774
+          }
+        ],
+        "method": "chroma (STFT 8192, 55-2100 Hz) x Krumhansl-Kessler profiles; key signature is what the palette uses",
+        "analyzedAt": "2026-10-30"
+      }
+    },
+    {
+      "id": "shadows-and-dust",
+      "title": "Shadows and Dust",
+      "artist": "Scott Buckley",
+      "mix": "main",
+      "role": "Chapter 08 drones",
+      "page": "https://www.scottbuckley.com.au/library/shadows-and-dust/",
+      "url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2023/11/ShadowsAndDust.mp3",
+      "file": "shadows-and-dust.mp3",
+      "license": "CC-BY-4.0",
+      "attribution": "'Shadows and Dust' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+      "licenseEvidence": {
+        "license": "This work is licensed under a Creative Commons Attribution 4.0 International License",
+        "attributionFormat": "'Shadows and Dust' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au"
+      },
+      "sha256": "5ea11efb8df8df8c97f944973dee2203a7b44fa1dbc21026a80035d4619a4ae5",
+      "bytes": 16339308,
+      "fetchedAt": "2026-10-30T12:35:30.677Z",
+      "pageSha256": "d2327d36e0474cb933a5bec7b00423431042ffa8b5cffce7f8b14283bb9c75ac",
+      "pageFetchedAt": "2026-10-30T12:35:30.677Z",
+      "analysis": {
+        "key": "C minor",
+        "keyScore": 0.608,
+        "alternatives": [
+          {
+            "key": "F minor",
+            "score": 0.585
+          },
+          {
+            "key": "C major",
+            "score": 0.506
+          },
+          {
+            "key": "F major",
+            "score": 0.419
+          }
+        ],
+        "palette": [
+          "Eb",
+          "F",
+          "G",
+          "Bb",
+          "C",
+          "D"
+        ],
+        "durationS": 408.38,
+        "segments": [
+          {
+            "fromS": 30.0,
+            "toS": 60.0,
+            "key": "C minor",
+            "score": 0.698
+          },
+          {
+            "fromS": 60.0,
+            "toS": 90.0,
+            "key": "F major",
+            "score": 0.524
+          },
+          {
+            "fromS": 90.0,
+            "toS": 120.0,
+            "key": "C minor",
+            "score": 0.679
+          },
+          {
+            "fromS": 120.0,
+            "toS": 150.0,
+            "key": "Ab major",
+            "score": 0.58
+          },
+          {
+            "fromS": 150.0,
+            "toS": 180.0,
+            "key": "C major",
+            "score": 0.66
+          },
+          {
+            "fromS": 180.0,
+            "toS": 210.0,
+            "key": "C major",
+            "score": 0.609
+          },
+          {
+            "fromS": 210.0,
+            "toS": 240.0,
+            "key": "F minor",
+            "score": 0.738
+          },
+          {
+            "fromS": 240.0,
+            "toS": 270.0,
+            "key": "F minor",
+            "score": 0.693
+          },
+          {
+            "fromS": 270.0,
+            "toS": 300.0,
+            "key": "F minor",
+            "score": 0.625
+          },
+          {
+            "fromS": 300.0,
+            "toS": 330.0,
+            "key": "Bb minor",
+            "score": 0.564
+          },
+          {
+            "fromS": 330.0,
+            "toS": 360.0,
+            "key": "F minor",
+            "score": 0.522
+          },
+          {
+            "fromS": 360.0,
+            "toS": 390.0,
+            "key": "F minor",
+            "score": 0.673
+          }
+        ],
+        "method": "chroma (STFT 8192, 55-2100 Hz) x Krumhansl-Kessler profiles; key signature is what the palette uses",
+        "analyzedAt": "2026-10-30"
+      }
+    },
+    {
+      "id": "filaments",
+      "title": "Filaments",
+      "artist": "Scott Buckley",
+      "mix": "main",
+      "role": "Chapter 09 pulse",
+      "page": "https://www.scottbuckley.com.au/library/filaments/",
+      "url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2019/10/sb_filaments.mp3",
+      "file": "filaments.mp3",
+      "license": "CC-BY-4.0",
+      "attribution": "'Filaments' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+      "licenseEvidence": {
+        "license": "This work is licensed under a Creative Commons Attribution 4.0 International License",
+        "attributionFormat": "'Filaments' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au"
+      },
+      "sha256": "880686f9e39b326862b084c9ae4100c9a1c9e2e91bf94a239cd5c1226acada07",
+      "bytes": 13599523,
+      "fetchedAt": "2026-10-30T12:35:30.677Z",
+      "pageSha256": "f8b364ef8d135a447b5b87cd99ebabc53458598e592f92c89ba87b029cc86cda",
+      "pageFetchedAt": "2026-10-30T12:35:30.677Z",
+      "analysis": {
+        "key": "E minor",
+        "keyScore": 0.881,
+        "alternatives": [
+          {
+            "key": "E major",
+            "score": 0.745
+          },
+          {
+            "key": "A major",
+            "score": 0.51
+          },
+          {
+            "key": "B minor",
+            "score": 0.489
+          }
+        ],
+        "palette": [
+          "G",
+          "A",
+          "B",
+          "D",
+          "E",
+          "F#"
+        ],
+        "durationS": 339.881,
+        "segments": [
+          {
+            "fromS": 0.0,
+            "toS": 30.0,
+            "key": "E major",
+            "score": 0.801
+          },
+          {
+            "fromS": 30.0,
+            "toS": 60.0,
+            "key": "E minor",
+            "score": 0.821
+          },
+          {
+            "fromS": 60.0,
+            "toS": 90.0,
+            "key": "E minor",
+            "score": 0.872
+          },
+          {
+            "fromS": 90.0,
+            "toS": 120.0,
+            "key": "E minor",
+            "score": 0.884
+          },
+          {
+            "fromS": 120.0,
+            "toS": 150.0,
+            "key": "E minor",
+            "score": 0.849
+          },
+          {
+            "fromS": 150.0,
+            "toS": 180.0,
+            "key": "E minor",
+            "score": 0.788
+          },
+          {
+            "fromS": 180.0,
+            "toS": 210.0,
+            "key": "E minor",
+            "score": 0.731
+          },
+          {
+            "fromS": 210.0,
+            "toS": 240.0,
+            "key": "E minor",
+            "score": 0.892
+          },
+          {
+            "fromS": 240.0,
+            "toS": 270.0,
+            "key": "E major",
+            "score": 0.768
+          },
+          {
+            "fromS": 270.0,
+            "toS": 300.0,
+            "key": "E minor",
+            "score": 0.822
+          },
+          {
+            "fromS": 300.0,
+            "toS": 330.0,
+            "key": "E minor",
+            "score": 0.841
+          }
+        ],
+        "method": "chroma (STFT 8192, 55-2100 Hz) x Krumhansl-Kessler profiles; key signature is what the palette uses",
+        "analyzedAt": "2026-10-30"
+      }
+    },
+    {
+      "id": "convergence",
+      "title": "Convergence",
+      "artist": "Scott Buckley",
+      "mix": "main",
+      "role": "Chapter 10 bed",
+      "page": "https://www.scottbuckley.com.au/library/convergence/",
+      "url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2026/04/Convergence.mp3",
+      "file": "convergence.mp3",
+      "license": "CC-BY-4.0",
+      "attribution": "'Convergence' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+      "licenseEvidence": {
+        "license": "This work is licensed under a Creative Commons Attribution 4.0 International License",
+        "attributionFormat": "'Convergence' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au"
+      },
+      "sha256": "c7fd63d6ad0e8902dbedbb08e7be1770902efb440f8e3896b1beb992ac18c0ae",
+      "bytes": 8786703,
+      "fetchedAt": "2026-10-30T12:35:30.677Z",
+      "pageSha256": "ee3516cbe6b0f9747b181403232a0164e41c0939071eab788f200a57ccd8087f",
+      "pageFetchedAt": "2026-10-30T12:35:30.677Z",
+      "analysis": {
+        "key": "A minor",
+        "keyScore": 0.814,
+        "alternatives": [
+          {
+            "key": "F major",
+            "score": 0.704
+          },
+          {
+            "key": "C major",
+            "score": 0.679
+          },
+          {
+            "key": "D minor",
+            "score": 0.55
+          }
+        ],
+        "palette": [
+          "C",
+          "D",
+          "E",
+          "G",
+          "A",
+          "B"
+        ],
+        "durationS": 219.579,
+        "segments": [
+          {
+            "fromS": 0.0,
+            "toS": 30.0,
+            "key": "D minor",
+            "score": 0.801
+          },
+          {
+            "fromS": 30.0,
+            "toS": 60.0,
+            "key": "A minor",
+            "score": 0.787
+          },
+          {
+            "fromS": 60.0,
+            "toS": 90.0,
+            "key": "A minor",
+            "score": 0.802
+          },
+          {
+            "fromS": 90.0,
+            "toS": 120.0,
+            "key": "F major",
+            "score": 0.705
+          },
+          {
+            "fromS": 120.0,
+            "toS": 150.0,
+            "key": "A minor",
+            "score": 0.786
+          },
+          {
+            "fromS": 150.0,
+            "toS": 180.0,
+            "key": "A minor",
+            "score": 0.795
+          },
+          {
+            "fromS": 180.0,
+            "toS": 210.0,
+            "key": "A minor",
+            "score": 0.759
+          },
+          {
+            "fromS": 210.0,
+            "toS": 219.6,
+            "key": "A minor",
+            "score": 0.938
+          }
+        ],
+        "method": "chroma (STFT 8192, 55-2100 Hz) x Krumhansl-Kessler profiles; key signature is what the palette uses",
+        "analyzedAt": "2026-10-30"
+      }
+    },
+    {
+      "id": "aphelion",
+      "title": "Aphelion",
+      "artist": "Scott Buckley",
+      "mix": "main",
+      "role": "Chapter 12 bed",
+      "page": "https://www.scottbuckley.com.au/library/aphelion/",
+      "url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2026/04/Aphelion.mp3",
+      "file": "aphelion.mp3",
+      "license": "CC-BY-4.0",
+      "attribution": "'Aphelion' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+      "licenseEvidence": {
+        "license": "This work is licensed under a Creative Commons Attribution 4.0 International License",
+        "attributionFormat": "'Aphelion' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au"
+      },
+      "sha256": "57ae03dbc122f0859e0f9a273e59503e34883728ddb5b06761fbf8244b0eb23e",
+      "bytes": 16894139,
+      "fetchedAt": "2026-10-30T12:35:30.677Z",
+      "pageSha256": "3726480091b1086bc9f1bbd64942b542b90c44e6c67b7961ee6d4500bb961395",
+      "pageFetchedAt": "2026-10-30T12:35:30.677Z",
+      "analysis": {
+        "key": "A minor",
+        "keyScore": 0.788,
+        "alternatives": [
+          {
+            "key": "A major",
+            "score": 0.522
+          },
+          {
+            "key": "C major",
+            "score": 0.383
+          },
+          {
+            "key": "E minor",
+            "score": 0.379
+          }
+        ],
+        "palette": [
+          "C",
+          "D",
+          "E",
+          "G",
+          "A",
+          "B"
+        ],
+        "durationS": 422.25,
+        "segments": [
+          {
+            "fromS": 0.0,
+            "toS": 30.0,
+            "key": "A major",
+            "score": 0.558
+          },
+          {
+            "fromS": 30.0,
+            "toS": 60.0,
+            "key": "A minor",
+            "score": 0.738
+          },
+          {
+            "fromS": 60.0,
+            "toS": 90.0,
+            "key": "A minor",
+            "score": 0.723
+          },
+          {
+            "fromS": 90.0,
+            "toS": 120.0,
+            "key": "A major",
+            "score": 0.584
+          },
+          {
+            "fromS": 120.0,
+            "toS": 150.0,
+            "key": "A minor",
+            "score": 0.733
+          },
+          {
+            "fromS": 150.0,
+            "toS": 180.0,
+            "key": "A minor",
+            "score": 0.725
+          },
+          {
+            "fromS": 180.0,
+            "toS": 210.0,
+            "key": "A minor",
+            "score": 0.736
+          },
+          {
+            "fromS": 210.0,
+            "toS": 240.0,
+            "key": "A minor",
+            "score": 0.697
+          },
+          {
+            "fromS": 240.0,
+            "toS": 270.0,
+            "key": "A minor",
+            "score": 0.734
+          },
+          {
+            "fromS": 270.0,
+            "toS": 300.0,
+            "key": "A minor",
+            "score": 0.787
+          },
+          {
+            "fromS": 300.0,
+            "toS": 330.0,
+            "key": "A minor",
+            "score": 0.749
+          },
+          {
+            "fromS": 330.0,
+            "toS": 360.0,
+            "key": "A minor",
+            "score": 0.757
+          },
+          {
+            "fromS": 360.0,
+            "toS": 390.0,
+            "key": "A minor",
+            "score": 0.756
+          },
+          {
+            "fromS": 390.0,
+            "toS": 420.0,
+            "key": "A major",
+            "score": 0.647
+          }
+        ],
+        "method": "chroma (STFT 8192, 55-2100 Hz) x Krumhansl-Kessler profiles; key signature is what the palette uses",
+        "analyzedAt": "2026-10-30"
+      }
+    }
+  ],
+  "sfx": {
+    "note": "Every sound effect in the film is synthesized by scripts/audio/sfx_synth.py (original work, deterministic from its cue). No third-party recordings are used, so there is no SFX license to record. If CC0 recordings are added later (audio.md 3.1: BigSoundBank, Kenney), list each here with url, license, sha256.",
+    "sources": []
+  }
+}

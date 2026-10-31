@@ -1,0 +1,413 @@
+{
+  "outDir": "public/recordings",
+  "shots": [
+    {
+      "name": "ch10-pocketos-phone",
+      "url": "https://anwardebes.github.io/PocketOS/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 2,
+      "mobile": true,
+      "colorScheme": "dark",
+      "clockStart": "2026-10-29T09:41:00+01:00",
+      "duration": 28,
+      "waitUntil": "networkidle",
+      "settleMs": 600,
+      "crf": 17,
+      "preset": "medium",
+      "cursor": {
+        "style": "touch",
+        "start": [
+          300,
+          980
+        ],
+        "size": 30
+      },
+      "actions": [
+        {
+          "at": 2.2,
+          "type": "move",
+          "to": [
+            195,
+            738
+          ],
+          "duration": 0.35,
+          "ease": "film"
+        },
+        {
+          "at": 2.6,
+          "type": "tap",
+          "to": [
+            195,
+            738
+          ]
+        },
+        {
+          "at": 2.6,
+          "type": "eval",
+          "script": "[...document.querySelectorAll('button')].find(b => b.textContent.includes('tap to unlock')).click()"
+        },
+        {
+          "at": 3.6,
+          "type": "move",
+          "to": [
+            150,
+            92
+          ],
+          "duration": 0.4,
+          "ease": "film"
+        },
+        {
+          "at": 4.05,
+          "type": "tap",
+          "to": [
+            150,
+            92
+          ]
+        },
+        {
+          "at": 4.05,
+          "type": "eval",
+          "script": "[...document.querySelectorAll('button')].find(b => b.textContent.trim() === 'Terminal').click()"
+        },
+        {
+          "at": 4.6,
+          "type": "cursor",
+          "visible": false,
+          "duration": 0.3
+        },
+        {
+          "at": 5.0,
+          "type": "eval",
+          "script": "document.querySelector('.xterm-helper-textarea').focus()"
+        },
+        {
+          "at": 5.3,
+          "type": "type",
+          "text": "ls",
+          "cps": 7
+        },
+        {
+          "at": 5.9,
+          "type": "press",
+          "key": "Enter"
+        },
+        {
+          "at": 6.7,
+          "type": "type",
+          "text": "cd Documents",
+          "cps": 12
+        },
+        {
+          "at": 7.9,
+          "type": "press",
+          "key": "Enter"
+        },
+        {
+          "at": 8.5,
+          "type": "type",
+          "text": "cat welcome.md",
+          "cps": 12
+        },
+        {
+          "at": 9.9,
+          "type": "press",
+          "key": "Enter"
+        },
+        {
+          "at": 11.7,
+          "type": "type",
+          "text": "frobnicate",
+          "cps": 11
+        },
+        {
+          "at": 12.8,
+          "type": "press",
+          "key": "Enter"
+        }
+      ]
+    },
+    {
+      "name": "ch10-pocketos-desktop",
+      "url": "https://anwardebes.github.io/PocketOS/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "deviceScaleFactor": 1.5,
+      "colorScheme": "dark",
+      "clockStart": "2026-10-29T09:41:00+01:00",
+      "duration": 12,
+      "waitUntil": "networkidle",
+      "settleMs": 600,
+      "crf": 17,
+      "preset": "medium",
+      "cursor": {
+        "start": [
+          1100,
+          640
+        ],
+        "size": 24
+      },
+      "actions": [
+        {
+          "at": 2.0,
+          "type": "eval",
+          "script": "[...document.querySelectorAll('button')].find(b => b.textContent.includes('tap to unlock')).click()"
+        },
+        {
+          "at": 2.8,
+          "type": "move",
+          "to": [
+            652,
+            861
+          ],
+          "duration": 0.7,
+          "ease": "film"
+        },
+        {
+          "at": 3.6,
+          "type": "click"
+        },
+        {
+          "at": 4.1,
+          "type": "move",
+          "to": [
+            700,
+            861
+          ],
+          "duration": 0.45,
+          "ease": "film"
+        },
+        {
+          "at": 4.7,
+          "type": "click"
+        },
+        {
+          "at": 5.6,
+          "type": "move",
+          "to": [
+            1180,
+            520
+          ],
+          "duration": 0.9,
+          "ease": "film",
+          "curve": 0.1
+        }
+      ]
+    },
+    {
+      "name": "ch10-skillbridge",
+      "url": "https://skill-bridge-norway.vercel.app/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "deviceScaleFactor": 1.5,
+      "colorScheme": "light",
+      "clockStart": "2026-10-29T09:41:00+01:00",
+      "duration": 7,
+      "waitUntil": "networkidle",
+      "settleMs": 800,
+      "crf": 17,
+      "preset": "medium",
+      "cursor": {
+        "start": [
+          980,
+          600
+        ],
+        "size": 24
+      },
+      "actions": [
+        {
+          "at": 0.5,
+          "type": "move",
+          "to": "button[aria-label='Switch to English']",
+          "duration": 0.8,
+          "ease": "film"
+        },
+        {
+          "at": 1.5,
+          "type": "click"
+        },
+        {
+          "at": 2.6,
+          "type": "move",
+          "to": [
+            602,
+            465
+          ],
+          "duration": 0.9,
+          "ease": "film",
+          "curve": -0.12
+        },
+        {
+          "at": 4.4,
+          "type": "move",
+          "to": [
+            1245,
+            32
+          ],
+          "duration": 0.8,
+          "ease": "film"
+        },
+        {
+          "at": 5.4,
+          "type": "click"
+        },
+        {
+          "at": 6.0,
+          "type": "move",
+          "to": [
+            1010,
+            330
+          ],
+          "duration": 0.9,
+          "ease": "film"
+        }
+      ]
+    },
+    {
+      "name": "ch10-cyfs",
+      "url": "https://cyfs.vercel.app/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "deviceScaleFactor": 1.5,
+      "colorScheme": "dark",
+      "clockStart": "2026-10-29T09:41:00+01:00",
+      "duration": 13,
+      "waitUntil": "networkidle",
+      "settleMs": 800,
+      "crf": 17,
+      "preset": "medium",
+      "cursor": {
+        "start": [
+          1200,
+          700
+        ],
+        "size": 24
+      },
+      "actions": [
+        {
+          "at": 0.4,
+          "type": "move",
+          "to": [
+            340,
+            423
+          ],
+          "duration": 0.7,
+          "ease": "film"
+        },
+        {
+          "at": 1.3,
+          "type": "move",
+          "to": [
+            492,
+            423
+          ],
+          "duration": 0.35,
+          "ease": "film"
+        },
+        {
+          "at": 1.8,
+          "type": "move",
+          "to": [
+            644,
+            423
+          ],
+          "duration": 0.35,
+          "ease": "film"
+        },
+        {
+          "at": 2.3,
+          "type": "move",
+          "to": [
+            796,
+            423
+          ],
+          "duration": 0.35,
+          "ease": "film"
+        },
+        {
+          "at": 2.8,
+          "type": "move",
+          "to": [
+            948,
+            423
+          ],
+          "duration": 0.35,
+          "ease": "film"
+        },
+        {
+          "at": 3.3,
+          "type": "move",
+          "to": [
+            1099,
+            423
+          ],
+          "duration": 0.35,
+          "ease": "film"
+        },
+        {
+          "at": 4.1,
+          "type": "move",
+          "to": [
+            997,
+            801
+          ],
+          "duration": 0.7,
+          "ease": "film",
+          "curve": 0.1
+        },
+        {
+          "at": 4.9,
+          "type": "down"
+        },
+        {
+          "at": 5.0,
+          "type": "move",
+          "to": [
+            1057,
+            801
+          ],
+          "duration": 0.9,
+          "ease": "inOut",
+          "curve": 0
+        },
+        {
+          "at": 6.0,
+          "type": "up"
+        }
+      ]
+    },
+    {
+      "name": "ch10-cookie-galaxy",
+      "url": "https://cookie-galaxy-two.vercel.app/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "deviceScaleFactor": 1.5,
+      "colorScheme": "dark",
+      "clockStart": "2026-10-29T09:41:00+01:00",
+      "duration": 11,
+      "waitUntil": "networkidle",
+      "settleMs": 1500,
+      "crf": 18,
+      "preset": "medium",
+      "actions": [
+        {
+          "at": 0.6,
+          "type": "scroll",
+          "to": 6904,
+          "duration": 9.9,
+          "ease": "linear"
+        }
+      ]
+    }
+  ]
+}

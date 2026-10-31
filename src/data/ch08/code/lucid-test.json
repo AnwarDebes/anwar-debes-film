@@ -1,0 +1,15 @@
+{"kind":"snippet","id":"lucid-test","repo":"AnwarDebes/lucid","ref":"4db5549cd4b5745b6f77b8c58f683076237671f1","path":"tests/test_agent.py","lang":"python","startLine":21,"lines":[
+[],
+[],
+[["def","kw"],[" ",""],["test_safety_shield_avoids_fatal_action","fn"],["():","punc"]],
+[["    ag ",""],["=","op"],[" ",""],["LucidAgent","fn"],["(","punc"],["seed","param"],["=","op"],["1","num"],[")","punc"]],
+[["    f ",""],["=","op"],[" ",""],["frame","fn"],["(","punc"],["base_grid","fn"],["(),","punc"],[" ",""],["[","punc"],["1","num"],[",","punc"],[" ",""],["2","num"],[",","punc"],[" ",""],["3","num"],[",","punc"],[" ",""],["4","num"],["])","punc"]],
+[["    dec ",""],["=","op"],[" ag",""],[".","punc"],["act","fn"],["(","punc"],["f",""],[",","punc"],[" ",""],["0","num"],[")","punc"]],
+[["    after_dead ",""],["=","op"],[" ",""],["frame","fn"],["(","punc"],["base_grid","fn"],["(),","punc"],[" ",""],["[","punc"],["1","num"],[",","punc"],[" ",""],["2","num"],[",","punc"],[" ",""],["3","num"],[",","punc"],[" ",""],["4","num"],["],","punc"],[" ",""],["state","param"],["=","op"],["\"GAME_OVER\"","str"],[")","punc"]],
+[["    ag",""],[".","punc"],["observe","fn"],["(","punc"],["dec",""],[",","punc"],[" f",""],[",","punc"],[" after_dead",""],[")","punc"],["              ",""],["# record (sig, action) as fatal","com"]],
+[["    ",""],["# from the same state, the agent must not repeat the fatal action","com"]],
+[["    ",""],["for","kw"],[" _ ",""],["in","kw"],[" ",""],["range","fn"],["(","punc"],["6","num"],["):","punc"]],
+[["        d2 ",""],["=","op"],[" ag",""],[".","punc"],["act","fn"],["(","punc"],["f",""],[",","punc"],[" ",""],["1","num"],[")","punc"]],
+[["        ",""],["assert","kw"],[" d2",""],[".","punc"],["action","prop"],[" ",""],["!=","op"],[" dec",""],[".","punc"],["action","prop"],[",","punc"],[" ",""],["\"agent repeated a known-fatal action\"","str"]],
+[]
+]}

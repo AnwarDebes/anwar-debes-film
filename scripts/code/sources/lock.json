@@ -1,0 +1,22 @@
+{
+  "AnwarDebes/Claude-Code-In-Motion@e4ab557fd3736df333e9ae042362bfbc8e07fc16:web/js/mascot.js": {
+    "bytes": 13013,
+    "lines": 361
+  },
+  "AnwarDebes/Claude-Code-In-Motion@e4ab557fd3736df333e9ae042362bfbc8e07fc16:web/js/app.js": {
+    "bytes": 7415,
+    "lines": 216
+  },
+  "AnwarDebes/trace@cc3a1a432ab010f58758f55caeec51d853086573:tracekit/ledger.py": {
+    "bytes": 11380,
+    "lines": 286
+  },
+  "AnwarDebes/trace@cc3a1a432ab010f58758f55caeec51d853086573:live/ledger.js": {
+    "bytes": 5962,
+    "lines": 109
+  },
+  "AnwarDebes/Claude-Code-In-Motion@12c44b2b2af55364bd362ca62b99827459039131:web/js/app.js": {
+    "bytes": 6985,
+    "lines": 207
+  }
+}

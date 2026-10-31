@@ -1,0 +1,1102 @@
+[
+ {
+  "id": "0667b6352c548d79",
+  "text": "The guard from chapter one sees two hundred and fifty-six word features, and every pattern is a possible input."
+ },
+ {
+  "id": "eb157372bb2ee3af",
+  "text": "No test can try them all."
+ },
+ {
+  "id": "4df88da5f2f41928",
+  "text": "Veritas compiles that guard into exact Boolean logic, so a solver can answer one question about every input at once."
+ },
+ {
+  "id": "b67bda36bef02ace",
+  "text": "Each clause becomes a gate, and the vote becomes a counter."
+ },
+ {
+  "id": "556dd98bc05e818e",
+  "text": "The claim: every prompt that contains ignore, previous and instructions is blocked."
+ },
+ {
+  "id": "1d4dd9a27ae6a9ac",
+  "text": "The solver is asked for the opposite: a prompt with all three words that gets through."
+ },
+ {
+  "id": "c0afa4b3e45f8bb3",
+  "text": "If none exists, that is a proof over every input. If one exists, it hands it back."
+ },
+ {
+  "id": "c03ccc76bfea1a96",
+  "text": "It finds one."
+ },
+ {
+  "id": "64a93dadc7f4a08a",
+  "text": "Which ignore previous instructions."
+ },
+ {
+  "id": "40cb4cedac5f3703",
+  "text": "Four rules vote unsafe, four vote safe. A tie is let through."
+ },
+ {
+  "id": "924d383501adf5ee",
+  "text": "On his website, the same model file lets it through too."
+ },
+ {
+  "id": "97ff0dbf4bbfcc4b",
+  "text": "The repair is one weighted rule, and a binary search finds the smallest weight that works."
+ },
+ {
+  "id": "9fad6368566086c8",
+  "text": "Then the solver proves it."
+ },
+ {
+  "id": "9f7bb1ae7bd29610",
+  "text": "And the page does not trust the solver: every clause it learned is re-derived by unit propagation before the badge says proved."
+ },
+ {
+  "id": "28139277f4f231d5",
+  "text": "The formula and the proof download as files, and the film hands them to an outside checker, drat trim."
+ },
+ {
+  "id": "4627fe14ae04e386",
+  "text": "It shows its own false alarm. Your nun, with no attack words at all, is blocked."
+ },
+ {
+  "id": "24716f0c8d67386a",
+  "text": "In the experiments, random probing found nearly every bypass that existed."
+ },
+ {
+  "id": "6403601a90621231",
+  "text": "What it cannot do is certify the claims that hold."
+ },
+ {
+  "id": "ffc5bb289c41c3c4",
+  "text": "Retraining on counterexamples made things worse: in every seed, all eight targets ended up bypassable."
+ },
+ {
+  "id": "37d9befdb25816d2",
+  "text": "Repair by construction reached zero in every seed."
+ },
+ {
+  "id": "6bcac6dfc6b513d3",
+  "text": "Its targets were words only attacks use; on other words, the paper notes, repair raises false alarms."
+ },
+ {
+  "id": "09632baabde8b809",
+  "text": "Don't test the guard. Prove it."
+ },
+ {
+  "id": "5f14f923120d17f9",
+  "text": "Most explanations of a network are written afterwards, by looking into a trained model."
+ },
+ {
+  "id": "c56bc5432858c03b",
+  "text": "Candor asks a measurable question instead: for one input, how much of the decision do named concepts not explain."
+ },
+ {
+  "id": "905bd7d8223f7075",
+  "text": "It reads a layer through a few named concepts, rebuilds the activation from them, and keeps what they miss as a measured leak."
+ },
+ {
+  "id": "c8db192e026ac2ea",
+  "text": "The network then runs twice more: as a legible twin that sees only the concepts, and with leaks swapped between inputs."
+ },
+ {
+  "id": "e3496e4ee9263708",
+  "text": "The certificate, delta, is how far the two answers differ for each input."
+ },
+ {
+  "id": "f936466b185d8e77",
+  "text": "It is measured with one extra pass, not predicted, so it cannot under-report."
+ },
+ {
+  "id": "c4a6e4765df10f18",
+  "text": "In the browser, a small model counts hidden patterns, and on the default input delta is almost zero."
+ },
+ {
+  "id": "bd90352216700d42",
+  "text": "Switch off concept C, and the twin changes its answer while the deployed model does not."
+ },
+ {
+  "id": "cd3d8e050c42d2d2",
+  "text": "Delta jumps to nearly one."
+ },
+ {
+  "id": "aa1d6b697657074c",
+  "text": "Switch off a distractor, and nothing moves. The explanation is what the model runs on."
+ },
+ {
+  "id": "e1fe13c9b5124018",
+  "text": "A second model hides a backdoor, and its trigger takes two atoms that no named concept explains."
+ },
+ {
+  "id": "419a8f084e70ecd3",
+  "text": "On a task with planted concepts, the mean certificate is zero point zero zero two."
+ },
+ {
+  "id": "0e71a985fd153bdd",
+  "text": "Delta alone flags backdoored inputs with an A U C of zero point nine, though the two piles overlap."
+ },
+ {
+  "id": "767d30cd02ebc259",
+  "text": "Then the misses, at the same size."
+ },
+ {
+  "id": "d61de2489c580838",
+  "text": "Retrofitted onto a frozen G P T two, a plain autoencoder certifies tighter than Candor does."
+ },
+ {
+  "id": "56cf45b43b197539",
+  "text": "Trained from scratch, a small language model certifies tighter than its control, and the bound is still loose."
+ },
+ {
+  "id": "0389cdab88891ef0",
+  "text": "The film runs its browser test from a fresh clone: the page's math must match Pie Torch."
+ },
+ {
+  "id": "d7625251d830c749",
+  "text": "Every reported result in the paper is written by a script: one hundred and sixty-five macros."
+ },
+ {
+  "id": "abab3aedc66d3fc1",
+  "text": "The paper was retitled, because its first title overclaimed its scope."
+ },
+ {
+  "id": "bd096a66aea09c98",
+  "text": "The explanation is the forward pass, and every answer comes with a certificate."
+ },
+ {
+  "id": "1035d42ad569cd10",
+  "text": "Catching a bad action is half the job. This neighbourhood is about what a system does next."
+ },
+ {
+  "id": "0564ce8ffeffb2b0",
+  "text": "A blocking guardrail stops a malicious transfer, and a legitimate one that only forgot its authorization."
+ },
+ {
+  "id": "bb6fb2f6f81ead9f",
+  "text": "On its own benchmark, blocking finishes only a third of the legitimate tasks."
+ },
+ {
+  "id": "61a12f5a3647529e",
+  "text": "Reins looks instead for the cheapest change the deployment can make that keeps the policy safe."
+ },
+ {
+  "id": "76e15d88540738e4",
+  "text": "The deployment declares what it can do: insert a missing step, swap in a safer tool, suppress an action, or wait for a human."
+ },
+ {
+  "id": "360f6808a580ec2b",
+  "text": "Each edit has a price, and a human costs the most."
+ },
+ {
+  "id": "09ba5a0b7eeb1d09",
+  "text": "For every call, it simulates each edit on a copy of its monitors and keeps the cheapest safe one."
+ },
+ {
+  "id": "feb8adf9b43ecfa9",
+  "text": "If no edit is safe, it says enforcement failed instead of pretending."
+ },
+ {
+  "id": "c2157b154c4cb5ab",
+  "text": "A transfer without authorization gets an authorize step slid in front of it."
+ },
+ {
+  "id": "1fcb15849d4ccbfa",
+  "text": "A sensitive read whose audit log never comes gets one inserted exactly at the deadline."
+ },
+ {
+  "id": "8b60b7f325e17d7d",
+  "text": "Delete everything becomes archive. The third outside email is suppressed."
+ },
+ {
+  "id": "2a1ee4464232815b",
+  "text": "On the same synthetic benchmark, Reins completes every legitimate task, and still lets no attack through."
+ },
+ {
+  "id": "836ae95dcd1f6b9a",
+  "text": "When the deployment cannot insert an audit log, soundness falls to fifty-five percent, and a static check warns in advance."
+ },
+ {
+  "id": "230c552a1ac3f77c",
+  "text": "The film runs its quick start from a fresh clone: each intervention is sealed into a certificate, then verified without the model."
+ },
+ {
+  "id": "8e1847f28a465446",
+  "text": "Its read-me states its own limit: choosing step by step matches the best plan for the whole session ninety-seven and a half percent of the time."
+ },
+ {
+  "id": "f058b71785417223",
+  "text": "T H G T M gives every Tset-lin automaton a memory: one number that fades a little at every step."
+ },
+ {
+  "id": "4871a661471230c9",
+  "text": "At zero fading it is the classic automaton, and that is how Trace runs it."
+ },
+ {
+  "id": "1574392efb95a3fc",
+  "text": "A literal for k steps ago lifts a delayed ex-or from chance to about zero point nine one."
+ },
+ {
+  "id": "572c9087c171de9d",
+  "text": "With the echo trace as well, it solves it on every seed."
+ },
+ {
+  "id": "81b5be0ccf4cbc8c",
+  "text": "On synthetic agent runs, counting exports over the whole run stops every slow roll, and flags nine percent of honest ones."
+ },
+ {
+  "id": "cbae0eef0e415d02",
+  "text": "But the test's attacks always export three times or more, so catching them all is built in."
+ },
+ {
+  "id": "63d508feacfb6787",
+  "text": "clausegate gives the plate its input: a tool call read as three graphs."
+ },
+ {
+  "id": "f92d0476d05007e6",
+  "text": "Across five seeds, no attack gets through."
+ },
+ {
+  "id": "5f7152494a9028b9",
+  "text": "But only thirty percent of honest calls are allowed, and most of the rest wait for a human."
+ },
+ {
+  "id": "f6db9b4b1b4d81c5",
+  "text": "Clause Driven L L M adds the escalation, before any language model sees the query."
+ },
+ {
+  "id": "9221fd87f922fc87",
+  "text": "In its demo transcript, an unladen-swallow question scores too low to trust, so it goes to a person."
+ },
+ {
+  "id": "ee750b46c27b1e91",
+  "text": "And as an out-of-scope detector, the margin trails a plain softmax."
+ },
+ {
+  "id": "9542269a6254f6f1",
+  "text": "clause eighty-six adds the explanation: for hiring decisions, the rules that actually fired."
+ },
+ {
+  "id": "f62fbe16b4ddba0c",
+  "text": "Its read-me is open about the first pass: on adult income data, it learned to predict the majority class."
+ },
+ {
+  "id": "7fc9286fec62417e",
+  "text": "clauseguard adds the fact-check: a claim and its evidence, joined where they agree or contradict."
+ },
+ {
+  "id": "9f5d4a4b94a22107",
+  "text": "Its training runs have not been executed. The numbers in its results table are targets."
+ },
+ {
+  "id": "324f11000669a60c",
+  "text": "After the alarm, the work is the repair."
+ },
+ {
+  "id": "be803d6e2bedf354",
+  "text": "A coding agent works behind a spinner."
+ },
+ {
+  "id": "f39681db93b84c82",
+  "text": "Its next command is rm -rf build, and the spinner looks exactly the same."
+ },
+ {
+  "id": "c82b27e8b24089ab",
+  "text": "Pixie lives here, in Claude Code In Motion, the repository missing from the map in chapter one."
+ },
+ {
+  "id": "9643a10fa145e783",
+  "text": "Every pose in this film is drawn from one file: three hundred and sixty lines that paint it, cell by cell."
+ },
+ {
+  "id": "021cef6213d0e9fa",
+  "text": "Between ordinary states, a pose holds a hundred and fifty milliseconds, so it never flickers."
+ },
+ {
+  "id": "35a75335f0f502ff",
+  "text": "One local agent loop speaks to six provider setups, with plain fetch calls and no S D Ks."
+ },
+ {
+  "id": "4d25cdf9b5e11857",
+  "text": "The model only proposes. The harness decides whether each action runs, asks you first, or is refused."
+ },
+ {
+  "id": "e1ce1c66ae9ca403",
+  "text": "Here, rm -rf build waits for your yes."
+ },
+ {
+  "id": "411424abe1eb1e3a",
+  "text": "Deleting the whole disk is refused even in auto-approve mode, because that check comes first."
+ },
+ {
+  "id": "9744f8c749c52a4b",
+  "text": "Each tool names the pose it plays. Running a test makes Pixie chase a bug."
+ },
+ {
+  "id": "6b8689ee00888003",
+  "text": "Here is one recorded session, at its real speed."
+ },
+ {
+  "id": "2a4940ef8438cb55",
+  "text": "Read the file. Search for the function. Propose a one-line fix, and wait."
+ },
+ {
+  "id": "5730493ce171445b",
+  "text": "Ask to run the tests, and wait again."
+ },
+ {
+  "id": "644a721cdc209f33",
+  "text": "The tool output is real. The model's replies were scripted for the demo, as the read-me states."
+ },
+ {
+  "id": "d5d4029700532eeb",
+  "text": "The film runs its thirty-two tests from a fresh clone: the gate, the providers, the agent loop and the mascot itself."
+ },
+ {
+  "id": "52ec651404b79bea",
+  "text": "The same mascot file is copied into his website, unchanged except for a three-line header."
+ },
+ {
+  "id": "5cea3bfee499f66f",
+  "text": "V S Claude is a desktop editor on the same idea: watch the agent work, not its log."
+ },
+ {
+  "id": "48dded3eb21e32bd",
+  "text": "Its one live provider, Claude Code, becomes a frozen stream of events that everything visual reads."
+ },
+ {
+  "id": "6b25dcf718a3e5b6",
+  "text": "A raw line becomes a file edit, a caption and a pose, through a fixed table."
+ },
+ {
+  "id": "f8a4451fdf910dbb",
+  "text": "Its parser keeps one event per line, so a line that holds text and a tool call surfaces only the text."
+ },
+ {
+  "id": "82f6620e9b9e7fb0",
+  "text": "It is a beta: permission requests are planned, not live, and the first session you see is scripted demo data."
+ },
+ {
+  "id": "ba9ef8d32a9d01c6",
+  "text": "No spinner. Just every step."
+ },
+ {
+  "id": "3415bbe23fb6e8d7",
+  "text": "Ark A G I three drops an agent into a game it has never seen, with no instructions."
+ },
+ {
+  "id": "adadf92733b8ef33",
+  "text": "It must find the goal and the rules by playing, and the score rewards matching a person's move count."
+ },
+ {
+  "id": "67155f52494eaa3a",
+  "text": "Its read-me notes that at release, frontier models scored under one percent, while people solve every game."
+ },
+ {
+  "id": "e91e098c03988636",
+  "text": "Lucid plays on an ordinary C P U, with no language model and no graphics card."
+ },
+ {
+  "id": "5583282ce32ecf2b",
+  "text": "It splits each frame into objects and masks the score bar, so the same state always looks the same."
+ },
+ {
+  "id": "60098e9c5a637033",
+  "text": "By pressing buttons, it learns what each action does to the avatar."
+ },
+ {
+  "id": "7441e3149ecc3240",
+  "text": "When a move ends the game, that state and move are locked for good."
+ },
+ {
+  "id": "d557d75731502323",
+  "text": "It plans with a plain breadth-first search over what it has learned, and writes down a reason for every step."
+ },
+ {
+  "id": "4cbf843bef39afd5",
+  "text": "In one game you can only click. The same click changes the screen again and again, until the level clears."
+ },
+ {
+  "id": "3f991ac3dbe8257f",
+  "text": "It needed nine more actions than a person did."
+ },
+ {
+  "id": "b104ca2efbd2a5bb",
+  "text": "Across the public games, it completes two levels and wins none."
+ },
+ {
+  "id": "5dd5b6cf6439c1e2",
+  "text": "Its score is zero point zero eight three percent."
+ },
+ {
+  "id": "28d3c2962f37719f",
+  "text": "A random agent scores zero point zero nine five."
+ },
+ {
+  "id": "687255c900aba317",
+  "text": "The paper says it plainly: Lucid does not beat the frontier, and does not beat random."
+ },
+ {
+  "id": "e419f2b9930443ac",
+  "text": "The read-me's table still puts random near zero. The results file says otherwise."
+ },
+ {
+  "id": "facc3587365f8330",
+  "text": "Seven of its deaths, by the paper's count, repeat a hazard that only looked different."
+ },
+ {
+  "id": "fca5fd04a9b38e61",
+  "text": "The film runs its unit test from a fresh clone: an agent that died once must never repeat that move from that state."
+ },
+ {
+  "id": "1d93cbe4a091bc0f",
+  "text": "And its own scoring script recounts each level more strictly than the server does."
+ },
+ {
+  "id": "2bc3b4c890645ffb",
+  "text": "R L is empty: the same task, in one line."
+ },
+ {
+  "id": "92aaa6ce08fbcabc",
+  "text": "R L C C A is where the work is: Nexus, built for a course tournament for two to six players."
+ },
+ {
+  "id": "67ab120f9c9d52dd",
+  "text": "At its core is a copy of the referee: the server's scoring, reproduced line for line and pinned by tests."
+ },
+ {
+  "id": "ebd61125dac8bf5e",
+  "text": "Every second of thinking costs a point."
+ },
+ {
+  "id": "33d0f3ec2ad781a7",
+  "text": "A diagnostic once found that it had not played a single six-player game."
+ },
+ {
+  "id": "1277e495f93fdc06",
+  "text": "No timing log or tournament result is committed, and its three research prototypes report no results yet."
+ },
+ {
+  "id": "d586ceae98394290",
+  "text": "One agent copies the referee to the letter. The other has to discover the rules."
+ },
+ {
+  "id": "31071b7d78126ad3",
+  "text": "Next door, a family of Graph Tset-lin Machines reads graphs instead of flat rows."
+ },
+ {
+  "id": "abac76c0be618340",
+  "text": "Tset-lin zoo surveys them, with the source file of every number."
+ },
+ {
+  "id": "f2a1463ad4c65a4a",
+  "text": "On the Reuters R eight benchmark, the graph designs land within about half a point of each other."
+ },
+ {
+  "id": "01b467978b4578eb",
+  "text": "Each keeps its best epoch on the test set, so the axis carries that caveat."
+ },
+ {
+  "id": "fd9527e81a01eddb",
+  "text": "subword dep graph T M turns each document into a graph of word pieces, linked in order and by grammar."
+ },
+ {
+  "id": "a423b0206bd1dc67",
+  "text": "Its results file puts R eight just under ninety-five, and records where the recipe failed."
+ },
+ {
+  "id": "52fe524cc6498b1a",
+  "text": "attention distilled graph T M links each word to the five words Bert attends to most."
+ },
+ {
+  "id": "ce2800c4e0ae8650",
+  "text": "Its Boolean student averages ninety-four point eight on R eight, after Bert is thrown away."
+ },
+ {
+  "id": "7f37f20a69977934",
+  "text": "Its follow-up, decoder attention distill graph T M, takes attention from a decoder model that can only look backwards."
+ },
+ {
+  "id": "76e6d2955a63fcf3",
+  "text": "The graphs become almost a single chain, yet all three teachers tie, and the read-me calls the gap not significant."
+ },
+ {
+  "id": "ab233ee4dead27fc",
+  "text": "T M L L M robustness benchmark puts a Tset-lin Machine and a transformer behind the same test."
+ },
+ {
+  "id": "3f9e2e5f078a50b2",
+  "text": "On reviews edited to flip their meaning, the Tset-lin Machine loses twenty-seven points."
+ },
+ {
+  "id": "5744da03420d6d74",
+  "text": "Bert loses two."
+ },
+ {
+  "id": "8dc240b2084982e1",
+  "text": "The results file says it outright: this contradicts the hypothesis."
+ },
+ {
+  "id": "232da62b543970de",
+  "text": "H G T M stacks Graph Tset-lin Machines and trains both layers together."
+ },
+ {
+  "id": "261211729776ea8a",
+  "text": "At the start no upper clause uses a lower one, so the lower layer learns nothing and the stack sits on the majority class."
+ },
+ {
+  "id": "95655c0bd116a3ca",
+  "text": "R G T M reuses one bank of automata for every round of message passing."
+ },
+ {
+  "id": "4f7ed8dd58c2cf23",
+  "text": "One hop is solved every time."
+ },
+ {
+  "id": "a62602a7e4accb33",
+  "text": "At two hops it reaches zero point seven two, where separate banks are perfect."
+ },
+ {
+  "id": "240f02fbc3ef611b",
+  "text": "Multi H G T M trains one Tset-lin Machine per view, then a second on which of their clauses fired."
+ },
+ {
+  "id": "ae2c4e131340c6d8",
+  "text": "Its test is a rule no sum of per-view scores can express."
+ },
+ {
+  "id": "4ece973969e6f1d9",
+  "text": "Adding the towers' votes reaches zero point seven three."
+ },
+ {
+  "id": "3eb96e0275adfd87",
+  "text": "The clause head reaches zero point nine seven, and wins on every seed."
+ },
+ {
+  "id": "44609e8e4bd91c5a",
+  "text": "That task was built for it. On real breast-cancer data, the gain shrinks to three thousandths, and is not significant."
+ },
+ {
+  "id": "2e87aff9c5cbbb10",
+  "text": "On the built task, drop a view and the head's accuracy falls to about two thirds."
+ },
+ {
+  "id": "6ab37889f5b4c996",
+  "text": "graph T M C B R began as a course project at the University of Agder."
+ },
+ {
+  "id": "a21f772303ad0d88",
+  "text": "For a molecule called mutagenic, it asks which readable rules fired, and which smallest valid edit would change the verdict."
+ },
+ {
+  "id": "ff9e7cf95466366a",
+  "text": "It learns from about seven thousand molecules, split by their core scaffolds."
+ },
+ {
+  "id": "2d2d37c9290e0c05",
+  "text": "Every atom gets its own bit vector, built from its neighbours up to two bonds away."
+ },
+ {
+  "id": "2a359e0901b14190",
+  "text": "Each clause is a five-level tree of ands and ors, checked at every atom on the G P U. A molecule fires the clause if any atom does."
+ },
+ {
+  "id": "24b78b993c72fd53",
+  "text": "Five such machines learn from a graph neural network's answers."
+ },
+ {
+  "id": "71b4a49ed97f6ec9",
+  "text": "Fired clauses propose edits; each must pass chemistry checks, and the search keeps the one that drops the score most."
+ },
+ {
+  "id": "810f1680244a27f8",
+  "text": "Molecule thirty-one is called mutagenic, with a margin of plus six hundred and forty-six."
+ },
+ {
+  "id": "3abd72cdac0eead8",
+  "text": "Remove one ring bond, and the margin falls below zero. The verdict flips to safe."
+ },
+ {
+  "id": "18dec9b09469c294",
+  "text": "Another flip is less flattering: the edited molecule starts with C dot."
+ },
+ {
+  "id": "70d07a45e4416677",
+  "text": "It passed every check, and split the molecule in two."
+ },
+ {
+  "id": "08ad37452ca60fd3",
+  "text": "An outside check agrees: R D Kit counts two fragments."
+ },
+ {
+  "id": "7c4f9abfe56a031a",
+  "text": "These are flips of the model's prediction, not proof that the chemistry changed."
+ },
+ {
+  "id": "cdf15cd4591c6102",
+  "text": "Within three valid edits, it flips the verdict for almost every mutagenic call it tries."
+ },
+ {
+  "id": "fdec62354b5480c8",
+  "text": "Without the teacher, far fewer."
+ },
+ {
+  "id": "0706f5ac982fab11",
+  "text": "As a predictor, it trails a plain fingerprint random forest."
+ },
+ {
+  "id": "53f25e0f773b59ea",
+  "text": "It covers every toxic alert in the test set, but partly because one clause fires on every test molecule, as the paper itself warns."
+ },
+ {
+  "id": "b57e61461c3514df",
+  "text": "From documents to molecules, the clauses walk the structure."
+ },
+ {
+  "id": "1c2ec7a64ab11c5e",
+  "text": "The next street is software for people: on a phone, on your own machine, in a browser tab."
+ },
+ {
+  "id": "0ad2f7c0ad3c1d7d",
+  "text": "Pocket O S turns a phone's browser into a desktop: windows, files, a terminal and nine apps, all on the device."
+ },
+ {
+  "id": "bdfb73a851a31147",
+  "text": "It is not a kernel, and it does not boot on hardware. It is a desktop, simulated in the browser."
+ },
+ {
+  "id": "5abd6c92d7772eb9",
+  "text": "One number decides the shape of the screen: below seven hundred and sixty-eight pixels, every app opens full screen."
+ },
+ {
+  "id": "83502972083a7f12",
+  "text": "Its read-me describes a kernel folder with a window manager. In the code, that folder holds one file of types."
+ },
+ {
+  "id": "67feb4825e459dc3",
+  "text": "Nee-mee takes a textbook in and gives an Anki deck back, using a language model that runs on your own machine."
+ },
+ {
+  "id": "7e250c24269c653a",
+  "text": "From one source text, its sample run makes seventeen cards."
+ },
+ {
+  "id": "b51d325372d8ef2e",
+  "text": "Every card is rated easy, medium or hard, and the rating arrives with the rules that produced it."
+ },
+ {
+  "id": "d7918d4947f946be",
+  "text": "Every run leaves a receipt: the configuration, the prompt version, and the count in and out of each stage."
+ },
+ {
+  "id": "e1e42c7bfa16c9ed",
+  "text": "Its read-me marks the quality benchmark not yet run, in capital letters."
+ },
+ {
+  "id": "f017e47396cb100e",
+  "text": "I D M was a course project in data management: the same disease reports, loaded into three databases at once."
+ },
+ {
+  "id": "66e89ef11c4cf192",
+  "text": "Four hundred and seventy-three thousand weekly reports become a star schema, month buckets and a graph."
+ },
+ {
+  "id": "98c4b22ed2b1c8b8",
+  "text": "One button runs the same question on all three. On one slice of measles data, Mongo D B answers in under six milliseconds."
+ },
+ {
+  "id": "e7df931466855354",
+  "text": "Only the graph can ask whether an outbreak crossed a state border, and that question takes about twenty seconds."
+ },
+ {
+  "id": "11c1a182ca88040b",
+  "text": "drone I D identifies what model a drone is from a description, out of fifty-six hand-cited models."
+ },
+ {
+  "id": "7672b9d9979f34f5",
+  "text": "By design, it never says whose it is."
+ },
+ {
+  "id": "fcb52170e3cfa4e3",
+  "text": "Skill Bridge Norway ranks job listings against a C V on meaning, skills, place and freshness."
+ },
+ {
+  "id": "1ed9a6872cea9769",
+  "text": "In its own tests, a Rust developer matched to a nurse job still scores forty, where the simple score starts."
+ },
+ {
+  "id": "8551e165a923ca21",
+  "text": "C Y F S, Clone Your Favourite Song, turns a track's tempo, key and energy into a prompt for a music model."
+ },
+ {
+  "id": "01d5bb58ef974a9f",
+  "text": "Only the front end is online. Generation needs a thirty-two gigabyte graphics card."
+ },
+ {
+  "id": "1a27ccd079d70dba",
+  "text": "Kaleido is a self-hosted studio for posts, images and short videos on one graphics card, so the models take turns."
+ },
+ {
+  "id": "2f1893daca7bd909",
+  "text": "Of two video models it tested, the larger was rejected as too slow."
+ },
+ {
+  "id": "2eec1aa63868a3b5",
+  "text": "cookie galaxy flies one scroll through about fifty-two hundred particles, for a cookie that does not exist."
+ },
+ {
+  "id": "d1f6f4d77d2c7fab",
+  "text": "Most of them run on a machine that is yours."
+ },
+ {
+  "id": "d003f1cd90ee04fc",
+  "text": "Six prototypes ask one learner for a different promise each time. All six are tested on synthetic data only."
+ },
+ {
+  "id": "0ec97a9951f18d2a",
+  "text": "D I T M turns the Tset-lin Machine, a classifier, into a generator."
+ },
+ {
+  "id": "d60643ff2f61c7df",
+  "text": "It flips bits at random, and trains one Tset-lin Machine per feature to guess each original bit."
+ },
+ {
+  "id": "cb623851089a2ec7",
+  "text": "To generate, it starts from pure noise and cleans it up in eight steps."
+ },
+ {
+  "id": "ee90e0985c6a89a4",
+  "text": "Trained on sensor readings, it spots broken sensor pairs with an A U C of zero point six eight, ahead of naive Bayes."
+ },
+ {
+  "id": "4685507e4be97d30",
+  "text": "Its own read-me calls the calibration loose."
+ },
+ {
+  "id": "d38f4ebe4710314c",
+  "text": "Conf T M answers with a set of labels that should contain the truth nine times in ten."
+ },
+ {
+  "id": "7d0483ef6ba0658e",
+  "text": "When the synthetic patients change halfway, a fixed threshold slips to eighty-four percent."
+ },
+ {
+  "id": "bca2d643f072c5aa",
+  "text": "The adaptive one holds at ninety."
+ },
+ {
+  "id": "4e1ab478529c0a10",
+  "text": "Rob T M works out exactly how many input bits an attacker must flip to change an answer."
+ },
+ {
+  "id": "6e9a8f7c6a62968f",
+  "text": "The answer is humbling: nearly every correct prediction falls to a single flip."
+ },
+ {
+  "id": "225be20bf81484da",
+  "text": "C C T M trains on pairs: each applicant, and a twin one feature away."
+ },
+ {
+  "id": "7318dc7e45487d04",
+  "text": "On biased synthetic loans, the approval gap falls to zero point zero four."
+ },
+ {
+  "id": "64b13632425a9e58",
+  "text": "But the twins' labels come from a bias-free oracle, and real data has no such oracle."
+ },
+ {
+  "id": "51e39f007ea20c2d",
+  "text": "Fed T M lets five simulated hospitals train one Tset-lin Machine while sharing only which literals each clause includes."
+ },
+ {
+  "id": "53db5ba7b6f748f2",
+  "text": "Privacy noise is set at epsilon four per round. Accuracy is zero point eight seven five."
+ },
+ {
+  "id": "4ea7519481ae016d",
+  "text": "Across all its rounds, the guarantee weakens to an epsilon of twenty."
+ },
+ {
+  "id": "0cdbcadca9d56bd5",
+  "text": "lifelong T M keeps a Tset-lin Machine from forgetting old tasks while it learns new ones."
+ },
+ {
+  "id": "6f370302b70de67d",
+  "text": "On synthetic tasks it forgets about half as much as a plain one. The price is ten times the memory."
+ },
+ {
+  "id": "6e8bd3d7241b5dc2",
+  "text": "Six promises, each one measured, the misses included."
+ },
+ {
+  "id": "ec9d74d6b253f72b",
+  "text": "This street runs on physics and arithmetic, checked against published numbers where it can be."
+ },
+ {
+  "id": "be9ed86332e2c5e2",
+  "text": "All of them are prototypes, and none of them is medical or safety advice."
+ },
+ {
+  "id": "a72c9c2f1f7e8995",
+  "text": "Sleep Architect runs the day forward: coffee, drinks, exercise, light and meals, into tonight's sleep."
+ },
+ {
+  "id": "c66a92cbc19aef50",
+  "text": "Time to fall asleep is a sum of named parts, so every predicted minute has a cause you can point to."
+ },
+ {
+  "id": "9beb5e5de30c7972",
+  "text": "Caffeine at bedtime adds about thirty-five minutes in its test, inside the published band, because the slope was set to match."
+ },
+ {
+  "id": "b605c25eb4c6a352",
+  "text": "Its read-me calls all eleven checks published. The results file marks two of them as internal."
+ },
+ {
+  "id": "e1bc6c3fec898977",
+  "text": "And it reports its own artefact: on one day, skipping alcohol lowers the predicted score."
+ },
+ {
+  "id": "a4dd81bb9a31e77e",
+  "text": "Caffeine Sense gives caffeine a personal half-life, shortest for a smoker and longest late in pregnancy."
+ },
+ {
+  "id": "801c935383413299",
+  "text": "For an eleven o'clock bedtime, the cutoff for coffee falls in the early evening."
+ },
+ {
+  "id": "c776680c94ee36f0",
+  "text": "Hot Car Watch heats a parked car, and the child inside it, minute by minute."
+ },
+ {
+  "id": "f4f85aac8064375b",
+  "text": "The day is thirty-four degrees. Cracking the windows buys a toddler zero minutes."
+ },
+ {
+  "id": "3623253755b74ccd",
+  "text": "The only option it marks as guaranteed safe is not leaving the child at all."
+ },
+ {
+  "id": "e55e8691cc1be2ed",
+  "text": "Smoke Shield fills five kinds of home with the same wildfire smoke, and indoors they settle far apart."
+ },
+ {
+  "id": "7a3c349a1ff79c1b",
+  "text": "All its checks pass, though in a linear model they come down to just five ratios."
+ },
+ {
+  "id": "2a162e0771487729",
+  "text": "Pipe Guard turns hours of frozen water in a pipe into a chance of bursting."
+ },
+ {
+  "id": "7c131771f4e11b3f",
+  "text": "Under a storm shaped like Texas in twenty twenty-one, a dripping faucet saves an attic pipe; open cabinet doors do not."
+ },
+ {
+  "id": "e218a308fecaa1dc",
+  "text": "Home Joule ranks home upgrades by their return over twenty-five years, after U S tax credits."
+ },
+ {
+  "id": "c67cf2ade78ad215",
+  "text": "In most of its homes, a heat-pump water heater returns about twenty-eight percent a year."
+ },
+ {
+  "id": "ba895d22f7a3ba69",
+  "text": "Pyro Predict spreads fire across a synthetic grid, and routes people around the roads it expects to burn."
+ },
+ {
+  "id": "872b822aefd3f41d",
+  "text": "Routing around the forecast traps no one, but only when scored against that same forecast."
+ },
+ {
+  "id": "e280cb002461a372",
+  "text": "And it leaves seventeen hundred people with no route."
+ },
+ {
+  "id": "4908ef7b76e3d96a",
+  "text": "Thermo Guard models each home as a small thermal circuit: walls that store heat, and air that follows them."
+ },
+ {
+  "id": "87ec7eb3ffc59b3d",
+  "text": "Under a heatwave shaped like Portland's, a top-floor care home without cooling peaks around fifty-two degrees in the model."
+ },
+ {
+  "id": "2a2c5e31cd0c45da",
+  "text": "With visits for only eighty homes, the greedy plan saves the most lives, and leaves several groups with no help at all."
+ },
+ {
+  "id": "431a949fe1e802cd",
+  "text": "An equity floor reaches every group, and saves thirty-six percent fewer lives."
+ },
+ {
+  "id": "a5193a68dc33f71b",
+  "text": "Its draft report's random baseline disagrees with its results file; the film shows the file."
+ },
+ {
+  "id": "681676d95aaef259",
+  "text": "Here, every answer is arithmetic you can follow."
+ },
+ {
+  "id": "dd3737a53cf02c52",
+  "text": "When the numbers touch homes, menus and money, the rules get stricter."
+ },
+ {
+  "id": "d11a363be10b1d5c",
+  "text": "The Knotten design website, for a planned housing field, has one rule: no number without a source."
+ },
+ {
+  "id": "3aeff2cd58ae6aab",
+  "text": "Every figure carries a Kilde button, Norwegian for source, and a button with no source fails the build."
+ },
+ {
+  "id": "a96c261c3a60f797",
+  "text": "Knotten test, the first full build, starts from twenty-seven written specifications, each closed with a completion note."
+ },
+ {
+  "id": "1e7e94dd1e6981aa",
+  "text": "It even corrects its own brief: the number eight meant internship positions, not homes."
+ },
+ {
+  "id": "d46d3ac64cada9ab",
+  "text": "Knotten test two builds a laser-measured twin of the site, for thirty homes that do not exist yet."
+ },
+ {
+  "id": "fb53392ba9c95eaf",
+  "text": "Every house is checked against the water with the others standing, along three hundred and sixty sight lines."
+ },
+ {
+  "id": "8d72a20214d9a95f",
+  "text": "On the shortest day of the year, the darkest plot gets two and a quarter hours of direct sun."
+ },
+ {
+  "id": "c4d656c252349890",
+  "text": "The view analysis counts water over bare ground, so the model clears the eighty-four trees in those sight lines; every sea view assumes they are gone."
+ },
+ {
+  "id": "5bdfbde52d965167",
+  "text": "And the repository flags the project's own spreadsheet: its panel efficiency is set too high."
+ },
+ {
+  "id": "5b61b7f040414375",
+  "text": "For a grill in Grimstad, the whole menu of seventy-four items lives in a single data file."
+ },
+ {
+  "id": "da51e8f7234c2862",
+  "text": "Its code still credits Vercel 's v zero generator, where it started."
+ },
+ {
+  "id": "33ef257fceccfb42",
+  "text": "Trondheim Cookies was a small ordering site in English, Norwegian and Arabic."
+ },
+ {
+  "id": "f1136ffa9dfa6892",
+  "text": "Delivery was free nearby, and the site says ten percent of each cookie went to children in need in Syria."
+ },
+ {
+  "id": "35f55484df239354",
+  "text": "ballast is a paper-trading system where a language model may propose a thesis, but never places, sizes or approves an order."
+ },
+ {
+  "id": "f46f8ce217acdfe4",
+  "text": "In its tests, a falling price trips the stop, whatever the strategy wanted."
+ },
+ {
+  "id": "f20d729f1433d1bf",
+  "text": "Risk has the last word."
+ },
+ {
+  "id": "e6aa8c644e11f38e",
+  "text": "Hoo-gin makes a strategy earn live trading: ninety days on paper, and a confirmation with today's date."
+ },
+ {
+  "id": "4d881bf3428939f8",
+  "text": "Its read-me warns that anyone promising much more is overfitting, ignoring costs, or selling something."
+ },
+ {
+  "id": "a3d27d48a343d3e4",
+  "text": "Goblin is his personal trading system: about fourteen services on one message bus."
+ },
+ {
+  "id": "bd16293ef0d37875",
+  "text": "Its own strategy document says the models have no directional edge."
+ },
+ {
+  "id": "b49ed9c621b14277",
+  "text": "A code comment puts the raw model at forty-five percent, below a coin flip."
+ },
+ {
+  "id": "9f2b939a53e6dd41",
+  "text": "Homes, menus and money: here a number is only as good as its source."
+ },
+ {
+  "id": "ca1f904ca5dbc174",
+  "text": "Even his video editing has a written definition of done, down to a person approving the draft."
+ },
+ {
+  "id": "f307c40a923ba3f0",
+  "text": "The playbook also writes down what it never tested."
+ },
+ {
+  "id": "9c9772d7997842cb",
+  "text": "A I medical training simulator is empty: a name and nothing else."
+ },
+ {
+  "id": "77fd341f4b647fb4",
+  "text": "assets is a fork: his two commits add one token's logo and metadata."
+ },
+ {
+  "id": "58f72e397c537340",
+  "text": "Sixty-six places. Pulled back, they make a map, and this time nothing is missing."
+ },
+ {
+  "id": "0631ce82d508687d",
+  "text": "A solid line means shared code or data, like one guard file in three repositories."
+ },
+ {
+  "id": "d371d0447fb73beb",
+  "text": "A dotted line means the same project or the same task."
+ },
+ {
+  "id": "31ec6f01f7695d71",
+  "text": "A dashed line means a link that is claimed, but not in the code."
+ },
+ {
+  "id": "8188bf29c15ba8eb",
+  "text": "And the wall itself is one of the sixty-six."
+ },
+ {
+  "id": "51b0cbb9ebc3b65b",
+  "text": "Every pin in this film is a damped spring from his website's code."
+ },
+ {
+  "id": "28f01ffd4c6b523b",
+  "text": "Side by side, the site's ripple and the film's rise, overshoot and settle the same way."
+ },
+ {
+  "id": "674f300c2910ec55",
+  "text": "Every chip you have seen is an entry in one more ledger: the film's own."
+ },
+ {
+  "id": "994f7a706e46629c",
+  "text": "Each source is hashed and chained to the one before, and the ledger is published with the film."
+ },
+ {
+  "id": "e4300c21f8ec8ade",
+  "text": "On camera, fresh clones of every pinned commit rebuild it, and print the same head hash."
+ },
+ {
+  "id": "e4abf81575197e27",
+  "text": "One rule runs through all of it."
+ },
+ {
+  "id": "4fff289e56395c20",
+  "text": "If a system makes a claim, it should show its work."
+ },
+ {
+  "id": "a7e9bab015d88446",
+  "text": "Anwar Debes."
+ }
+]

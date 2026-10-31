@@ -1,0 +1,3 @@
+# Licensed music is fetched by scripts/audio/fetch-music.mjs, never committed.
+*
+!.gitignore

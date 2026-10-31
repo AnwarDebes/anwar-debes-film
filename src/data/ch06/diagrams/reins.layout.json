@@ -1,0 +1,483 @@
+{
+ "id": "reins",
+ "title": "REINS",
+ "repo": "github.com/AnwarDebes/reins",
+ "commit": "6f0cf551db70cf628683ed80958360110e27a6e2",
+ "about": "reinskit, read module by module: every edge is a call site in the code, cited by file and line; arrows point the way the data moves.",
+ "generated": {
+  "by": "scripts/diagram/layout.mjs",
+  "elk": "layered",
+  "routing": "orthogonal",
+  "measured": true,
+  "cyclic": false
+ },
+ "unit": "u = 1/1000 of the frame height at camera zoom 1",
+ "style": {
+  "unit": "u = 1/1000 of the frame height at camera zoom 1",
+  "card": {
+   "padX": 21,
+   "padTop": 19,
+   "padBottom": 21,
+   "radius": 14,
+   "minW": 196,
+   "glyph": 12,
+   "glyphGap": 10,
+   "kind": {
+    "font": "mono",
+    "size": 17,
+    "weight": 500,
+    "tracking": 0.14,
+    "lineH": 20
+   },
+   "gapKindTitle": 11,
+   "title": {
+    "font": "sans",
+    "size": 29,
+    "weight": 650,
+    "tracking": -0.015,
+    "lineH": 32
+   },
+   "gapTitleSub": 6,
+   "sub": {
+    "font": "mono",
+    "size": 19,
+    "weight": 450,
+    "tracking": 0,
+    "lineH": 22
+   },
+   "detail": {
+    "font": "mono",
+    "size": 13,
+    "weight": 450,
+    "tracking": 0,
+    "lineH": 20,
+    "gapTop": 18,
+    "padBottom": 22
+   },
+   "detailHead": {
+    "font": "mono",
+    "size": 11.5,
+    "weight": 500,
+    "tracking": 0.12,
+    "lineH": 16,
+    "gapBelow": 10
+   }
+  },
+  "group": {
+   "pad": 22,
+   "clearance": 8,
+   "radius": 22,
+   "legendInset": 26,
+   "legendGap": 10,
+   "pathGap": 14,
+   "label": {
+    "font": "mono",
+    "size": 16,
+    "weight": 500,
+    "tracking": 0.2,
+    "lineH": 19
+   },
+   "path": {
+    "font": "mono",
+    "size": 16,
+    "weight": 450,
+    "tracking": 0,
+    "lineH": 19
+   }
+  },
+  "edge": {
+   "cornerRadius": 16,
+   "arrow": 8,
+   "label": {
+    "font": "mono",
+    "size": 15,
+    "weight": 500,
+    "tracking": 0.02,
+    "lineH": 18
+   },
+   "labelPadX": 9,
+   "labelPadY": 5
+  },
+  "spacing": {
+   "betweenLayers": 92,
+   "nodeNode": 40,
+   "edgeNode": 24,
+   "edgeEdge": 15,
+   "portPort": 16,
+   "componentGap": 60,
+   "rowGap": 38,
+   "innerGap": 54
+  }
+ },
+ "bounds": {
+  "w": 1826,
+  "h": 501
+ },
+ "ranks": 5,
+ "order": [
+  "agent",
+  "engine",
+  "ledger",
+  "enact",
+  "guard",
+  "verify",
+  "shield"
+ ],
+ "nodes": [
+  {
+   "id": "agent",
+   "label": "Agent tool call",
+   "kind": "data",
+   "sub": "OpenAI or Anthropic format",
+   "x": 0,
+   "y": 185,
+   "w": 344,
+   "h": 131,
+   "rank": 0,
+   "path": "reinskit/adapters.py",
+   "order": 0
+  },
+  {
+   "id": "engine",
+   "label": "ShieldEngine",
+   "kind": "service",
+   "sub": "engine.py",
+   "x": 436,
+   "y": 185,
+   "w": 224,
+   "h": 131,
+   "rank": 1,
+   "path": "reinskit/engine.py",
+   "loc": 61,
+   "order": 1
+  },
+  {
+   "id": "enact",
+   "label": "Capabilities, costs",
+   "kind": "module",
+   "sub": "enact.py",
+   "x": 1164,
+   "y": 0,
+   "w": 296,
+   "h": 131,
+   "rank": 3,
+   "path": "reinskit/enact.py",
+   "loc": 194,
+   "order": 3
+  },
+  {
+   "id": "guard",
+   "label": "BehaviorGuard",
+   "kind": "module",
+   "sub": "simulate() on a copy",
+   "x": 1164,
+   "y": 185,
+   "w": 296,
+   "h": 131,
+   "rank": 3,
+   "path": "reinskit/behavior_guard.py",
+   "loc": 111,
+   "order": 4
+  },
+  {
+   "id": "shield",
+   "label": "Shield.decide",
+   "kind": "model",
+   "sub": "least-cost safe edit",
+   "x": 1552,
+   "y": 185,
+   "w": 274,
+   "h": 131,
+   "rank": 4,
+   "path": "reinskit/shield.py",
+   "loc": 179,
+   "order": 6
+  },
+  {
+   "id": "ledger",
+   "label": "InterventionLedger",
+   "kind": "module",
+   "sub": "hash-chained certificate",
+   "x": 752,
+   "y": 370,
+   "w": 320,
+   "h": 131,
+   "rank": 2,
+   "path": "reinskit/ledger.py",
+   "loc": 301,
+   "order": 2
+  },
+  {
+   "id": "verify",
+   "label": "verify_shield",
+   "kind": "step",
+   "sub": "model-free re-check",
+   "x": 1164,
+   "y": 370,
+   "w": 296,
+   "h": 131,
+   "rank": 3,
+   "path": "reinskit/ledger.py",
+   "order": 5
+  }
+ ],
+ "groups": [],
+ "edges": [
+  {
+   "id": "e0:agent->engine",
+   "from": "agent",
+   "to": "engine",
+   "label": "observe",
+   "points": [
+    [
+     344,
+     250.5
+    ],
+    [
+     436,
+     250.5
+    ]
+   ],
+   "labelBox": {
+    "x": 348.45,
+    "y": 215.5,
+    "w": 83.1,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "reinskit/engine.py",
+     "line": 47,
+     "code": "return self.observe_action(self.adapter.parse(call, provider))"
+    }
+   ]
+  },
+  {
+   "id": "e1:engine->shield",
+   "from": "engine",
+   "to": "shield",
+   "label": "decide",
+   "points": [
+    [
+     660,
+     242.5
+    ],
+    [
+     684,
+     242.5
+    ],
+    [
+     684,
+     158
+    ],
+    [
+     1484,
+     158
+    ],
+    [
+     1484,
+     234.5
+    ],
+    [
+     1552,
+     234.5
+    ]
+   ],
+   "labelBox": {
+    "x": 1047.1,
+    "y": 123,
+    "w": 73.8,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "reinskit/engine.py",
+     "line": 50,
+     "code": "dec = self.shield.decide(action)"
+    }
+   ]
+  },
+  {
+   "id": "e2:enact->shield",
+   "from": "enact",
+   "to": "shield",
+   "label": "candidates",
+   "points": [
+    [
+     1460,
+     65.5
+    ],
+    [
+     1499,
+     65.5
+    ],
+    [
+     1499,
+     218.5
+    ],
+    [
+     1552,
+     218.5
+    ]
+   ],
+   "labelBox": {
+    "x": 1443.5,
+    "y": 128,
+    "w": 111,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "reinskit/shield.py",
+     "line": 96,
+     "code": "for edit in self.caps.candidate_edits(action):"
+    }
+   ]
+  },
+  {
+   "id": "e3:guard->shield",
+   "from": "guard",
+   "to": "shield",
+   "label": "simulate",
+   "points": [
+    [
+     1460,
+     250.5
+    ],
+    [
+     1552,
+     250.5
+    ]
+   ],
+   "labelBox": {
+    "x": 1459.8,
+    "y": 215.5,
+    "w": 92.4,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "reinskit/shield.py",
+     "line": 114,
+     "code": "safe = [c for c in cands if self.guard.simulate(c.out_events)]"
+    }
+   ]
+  },
+  {
+   "id": "e4:engine->ledger",
+   "from": "engine",
+   "to": "ledger",
+   "label": "append",
+   "points": [
+    [
+     660,
+     258.5
+    ],
+    [
+     684,
+     258.5
+    ],
+    [
+     684,
+     435.5
+    ],
+    [
+     752,
+     435.5
+    ]
+   ],
+   "labelBox": {
+    "x": 647.1,
+    "y": 333,
+    "w": 73.8,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "reinskit/engine.py",
+     "line": 51,
+     "code": "self.ledger.append(dec, dec.input_events)"
+    }
+   ]
+  },
+  {
+   "id": "e5:ledger->verify",
+   "from": "ledger",
+   "to": "verify",
+   "label": "certificate",
+   "points": [
+    [
+     1072,
+     435.5
+    ],
+    [
+     1164,
+     435.5
+    ]
+   ],
+   "labelBox": {
+    "x": 1057.85,
+    "y": 400.5,
+    "w": 120.3,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "reinskit/ledger.py",
+     "line": 213,
+     "code": "entries = InterventionLedger.entries_from_dict(ledger_dict)"
+    }
+   ]
+  },
+  {
+   "id": "e6:verify->shield",
+   "from": "verify",
+   "to": "shield",
+   "label": "replay",
+   "points": [
+    [
+     1460,
+     435.5
+    ],
+    [
+     1484,
+     435.5
+    ],
+    [
+     1484,
+     266.5
+    ],
+    [
+     1552,
+     266.5
+    ]
+   ],
+   "labelBox": {
+    "x": 1447.1,
+    "y": 337,
+    "w": 73.8,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "reinskit/ledger.py",
+     "line": 278,
+     "code": "dec = replay.decide(action)"
+    }
+   ]
+  }
+ ],
+ "paths": {
+  "call": [
+   "agent",
+   "engine",
+   "shield"
+  ],
+  "audit": [
+   "engine",
+   "ledger",
+   "verify",
+   "shield"
+  ]
+ }
+}

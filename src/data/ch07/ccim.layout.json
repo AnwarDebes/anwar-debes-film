@@ -1,0 +1,992 @@
+{
+ "id": "ccim",
+ "title": "Claude-Code-In-Motion",
+ "repo": "github.com/AnwarDebes/Claude-Code-In-Motion",
+ "commit": "2c79ee05a8cbfa93eaafbe7372a04ef29ce992a1",
+ "about": "The local agent, module by module. Every edge is an import or a call site in the code, cited by file and line; arrows point the way the call goes. Provider model ids are left out on purpose.",
+ "generated": {
+  "by": "scripts/diagram/layout.mjs",
+  "elk": "layered",
+  "routing": "orthogonal",
+  "measured": true,
+  "cyclic": false
+ },
+ "unit": "u = 1/1000 of the frame height at camera zoom 1",
+ "style": {
+  "unit": "u = 1/1000 of the frame height at camera zoom 1",
+  "card": {
+   "padX": 21,
+   "padTop": 19,
+   "padBottom": 21,
+   "radius": 14,
+   "minW": 196,
+   "glyph": 12,
+   "glyphGap": 10,
+   "kind": {
+    "font": "mono",
+    "size": 17,
+    "weight": 500,
+    "tracking": 0.14,
+    "lineH": 20
+   },
+   "gapKindTitle": 11,
+   "title": {
+    "font": "sans",
+    "size": 29,
+    "weight": 650,
+    "tracking": -0.015,
+    "lineH": 32
+   },
+   "gapTitleSub": 6,
+   "sub": {
+    "font": "mono",
+    "size": 19,
+    "weight": 450,
+    "tracking": 0,
+    "lineH": 22
+   },
+   "detail": {
+    "font": "mono",
+    "size": 13,
+    "weight": 450,
+    "tracking": 0,
+    "lineH": 20,
+    "gapTop": 18,
+    "padBottom": 22
+   },
+   "detailHead": {
+    "font": "mono",
+    "size": 11.5,
+    "weight": 500,
+    "tracking": 0.12,
+    "lineH": 16,
+    "gapBelow": 10
+   }
+  },
+  "group": {
+   "pad": 22,
+   "clearance": 8,
+   "radius": 22,
+   "legendInset": 26,
+   "legendGap": 10,
+   "pathGap": 14,
+   "label": {
+    "font": "mono",
+    "size": 16,
+    "weight": 500,
+    "tracking": 0.2,
+    "lineH": 19
+   },
+   "path": {
+    "font": "mono",
+    "size": 16,
+    "weight": 450,
+    "tracking": 0,
+    "lineH": 19
+   }
+  },
+  "edge": {
+   "cornerRadius": 16,
+   "arrow": 8,
+   "label": {
+    "font": "mono",
+    "size": 15,
+    "weight": 500,
+    "tracking": 0.02,
+    "lineH": 18
+   },
+   "labelPadX": 9,
+   "labelPadY": 5
+  },
+  "spacing": {
+   "betweenLayers": 92,
+   "nodeNode": 40,
+   "edgeNode": 24,
+   "edgeEdge": 15,
+   "portPort": 16,
+   "componentGap": 60,
+   "rowGap": 38,
+   "innerGap": 54
+  }
+ },
+ "bounds": {
+  "w": 3286,
+  "h": 916.17
+ },
+ "ranks": 8,
+ "order": [
+  "cli",
+  "server",
+  "agent",
+  "config",
+  "prompt",
+  "providers",
+  "tools",
+  "hub",
+  "anthropic",
+  "gemini",
+  "openai",
+  "safety",
+  "app",
+  "mascot",
+  "transcript"
+ ],
+ "nodes": [
+  {
+   "id": "cli",
+   "label": "CLI",
+   "kind": "module",
+   "sub": "flags, start, open the browser",
+   "x": 0,
+   "y": 185,
+   "w": 388,
+   "h": 131,
+   "rank": 0,
+   "path": "bin/pixie.js",
+   "loc": 116,
+   "order": 0
+  },
+  {
+   "id": "server",
+   "label": "Server",
+   "kind": "service",
+   "sub": "HTTP + SSE, binds 127.0.0.1",
+   "x": 480,
+   "y": 185,
+   "w": 354,
+   "h": 131,
+   "rank": 1,
+   "path": "src/server.js",
+   "loc": 179,
+   "order": 1
+  },
+  {
+   "id": "config",
+   "label": "Config",
+   "kind": "data",
+   "sub": "~/.pixie/config.json",
+   "x": 926,
+   "y": 426.43,
+   "w": 310,
+   "h": 131,
+   "rank": 2,
+   "path": "src/config.js",
+   "loc": 103,
+   "order": 3
+  },
+  {
+   "id": "agent",
+   "label": "Agent loop",
+   "kind": "module",
+   "sub": "up to 60 steps per turn",
+   "x": 926,
+   "y": 185,
+   "w": 310,
+   "h": 131,
+   "rank": 2,
+   "path": "src/agent.js",
+   "loc": 232,
+   "order": 2
+  },
+  {
+   "id": "prompt",
+   "label": "Prompt",
+   "kind": "module",
+   "sub": "system prompt, 7 tools",
+   "x": 1328,
+   "y": 0,
+   "w": 298,
+   "h": 131,
+   "rank": 3,
+   "path": "src/prompt.js",
+   "loc": 37,
+   "order": 4
+  },
+  {
+   "id": "safety",
+   "label": "Safety gate",
+   "kind": "module",
+   "sub": "decide(): allow / ask / deny",
+   "x": 2508,
+   "y": 296,
+   "w": 378,
+   "h": 131,
+   "rank": 6,
+   "path": "src/safety.js",
+   "loc": 196,
+   "order": 11
+  },
+  {
+   "id": "tools",
+   "label": "Tools",
+   "kind": "module",
+   "sub": "each names the pose it plays",
+   "x": 1718,
+   "y": 482.87,
+   "w": 388,
+   "h": 131,
+   "rank": 4,
+   "path": "src/tools/index.js",
+   "loc": 26,
+   "order": 6
+  },
+  {
+   "id": "providers",
+   "label": "Providers",
+   "kind": "module",
+   "sub": "6 setups, plain fetch",
+   "x": 1718,
+   "y": 0,
+   "w": 388,
+   "h": 131,
+   "rank": 4,
+   "path": "src/providers/index.js",
+   "loc": 134,
+   "order": 5
+  },
+  {
+   "id": "anthropic",
+   "label": "anthropic",
+   "kind": "service",
+   "sub": "Messages API",
+   "x": 2198,
+   "y": 0,
+   "w": 218,
+   "h": 131,
+   "rank": 5,
+   "path": "src/providers/anthropic.js",
+   "loc": 119,
+   "order": 8
+  },
+  {
+   "id": "openai",
+   "label": "openai-compatible",
+   "kind": "service",
+   "sub": "chat/completions",
+   "x": 2508,
+   "y": 0,
+   "w": 378,
+   "h": 131,
+   "rank": 6,
+   "path": "src/providers/openai.js",
+   "loc": 111,
+   "order": 10
+  },
+  {
+   "id": "gemini",
+   "label": "gemini",
+   "kind": "service",
+   "sub": "generateContent",
+   "x": 2198,
+   "y": 185,
+   "w": 218,
+   "h": 131,
+   "rank": 5,
+   "path": "src/providers/gemini.js",
+   "loc": 85,
+   "order": 9
+  },
+  {
+   "id": "hub",
+   "label": "Event hub",
+   "kind": "module",
+   "sub": "SSE, 2,000-event replay buffer",
+   "x": 1718,
+   "y": 652.17,
+   "w": 388,
+   "h": 131,
+   "rank": 4,
+   "path": "src/events.js",
+   "loc": 50,
+   "order": 7
+  },
+  {
+   "id": "app",
+   "label": "App",
+   "kind": "ui",
+   "sub": "events to transcript + mascot",
+   "x": 2508,
+   "y": 652.17,
+   "w": 378,
+   "h": 131,
+   "rank": 6,
+   "path": "web/js/app.js",
+   "group": "ui",
+   "loc": 215,
+   "order": 12
+  },
+  {
+   "id": "mascot",
+   "label": "Mascot",
+   "kind": "ui",
+   "sub": "Pixie, 11 states",
+   "x": 2978,
+   "y": 539.3,
+   "w": 286,
+   "h": 131,
+   "rank": 7,
+   "path": "web/js/mascot.js",
+   "group": "ui",
+   "loc": 360,
+   "order": 13
+  },
+  {
+   "id": "transcript",
+   "label": "Transcript",
+   "kind": "ui",
+   "sub": "tool cards, approvals",
+   "x": 2978,
+   "y": 763.17,
+   "w": 286,
+   "h": 131,
+   "rank": 7,
+   "path": "web/js/transcript.js",
+   "group": "ui",
+   "loc": 153,
+   "order": 14
+  }
+ ],
+ "groups": [
+  {
+   "id": "ui",
+   "label": "Browser UI",
+   "path": "web/js/",
+   "rects": [
+    {
+     "x": 2486,
+     "y": 517.3,
+     "w": 800,
+     "h": 398.87
+    }
+   ],
+   "labelW": 128,
+   "pathW": 67.2,
+   "nodes": [
+    "app",
+    "mascot",
+    "transcript"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0:cli->server",
+   "from": "cli",
+   "to": "server",
+   "label": "startServer(opts)",
+   "points": [
+    [
+     388,
+     250.5
+    ],
+    [
+     480,
+     250.5
+    ]
+   ],
+   "labelBox": {
+    "x": 345.95,
+    "y": 215.5,
+    "w": 176.1,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "bin/pixie.js",
+     "line": 5,
+     "code": "import { startServer } from \"../src/server.js\";"
+    },
+    {
+     "file": "bin/pixie.js",
+     "line": 98,
+     "code": "const { url } = await startServer(opts);"
+    }
+   ]
+  },
+  {
+   "id": "e1:server->agent",
+   "from": "server",
+   "to": "agent",
+   "label": "new Agent()",
+   "points": [
+    [
+     834,
+     250.5
+    ],
+    [
+     926,
+     250.5
+    ]
+   ],
+   "labelBox": {
+    "x": 819.85,
+    "y": 215.5,
+    "w": 120.3,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "src/server.js",
+     "line": 8,
+     "code": "import { Agent } from \"./agent.js\";"
+    },
+    {
+     "file": "src/server.js",
+     "line": 85,
+     "code": "const agent = new Agent({ hub, cwd, getConfig });"
+    }
+   ]
+  },
+  {
+   "id": "e2:server->config",
+   "from": "server",
+   "to": "config",
+   "label": "loadConfig()",
+   "points": [
+    [
+     834,
+     266.5
+    ],
+    [
+     858,
+     266.5
+    ],
+    [
+     858,
+     491.93
+    ],
+    [
+     926,
+     491.93
+    ]
+   ],
+   "labelBox": {
+    "x": 793.2,
+    "y": 365.22,
+    "w": 129.6,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "src/server.js",
+     "line": 9,
+     "code": "import { loadConfig, saveConfig, publicConfig } from \"./config.js\";"
+    }
+   ]
+  },
+  {
+   "id": "e3:agent->prompt",
+   "from": "agent",
+   "to": "prompt",
+   "label": "buildSystemPrompt()",
+   "points": [
+    [
+     1236,
+     230
+    ],
+    [
+     1260,
+     230
+    ],
+    [
+     1260,
+     65.5
+    ],
+    [
+     1328,
+     65.5
+    ]
+   ],
+   "labelBox": {
+    "x": 1162.65,
+    "y": 133.75,
+    "w": 194.7,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "src/agent.js",
+     "line": 6,
+     "code": "import { buildSystemPrompt } from \"./prompt.js\";"
+    },
+    {
+     "file": "src/agent.js",
+     "line": 84,
+     "code": "const system = buildSystemPrompt(this.cwd, { approvalMode: config.approvalMode });"
+    }
+   ]
+  },
+  {
+   "id": "e4:agent->providers",
+   "from": "agent",
+   "to": "providers",
+   "label": "chat()",
+   "points": [
+    [
+     1236,
+     246
+    ],
+    [
+     1260,
+     246
+    ],
+    [
+     1260,
+     250.5
+    ],
+    [
+     1650,
+     250.5
+    ],
+    [
+     1650,
+     65.5
+    ],
+    [
+     1718,
+     65.5
+    ]
+   ],
+   "labelBox": {
+    "x": 1418.1,
+    "y": 215.5,
+    "w": 73.8,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "src/agent.js",
+     "line": 3,
+     "code": "import { chat, toolShimParse } from \"./providers/index.js\";"
+    },
+    {
+     "file": "src/agent.js",
+     "line": 105,
+     "code": "result = await chat(config, {"
+    }
+   ]
+  },
+  {
+   "id": "e5:providers->anthropic",
+   "from": "providers",
+   "to": "anthropic",
+   "label": "fetch",
+   "points": [
+    [
+     2106,
+     65.5
+    ],
+    [
+     2198,
+     65.5
+    ]
+   ],
+   "labelBox": {
+    "x": 2119.75,
+    "y": 30.5,
+    "w": 64.5,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "src/providers/index.js",
+     "line": 5,
+     "code": "import { streamChat as anthropic } from \"./anthropic.js\";"
+    },
+    {
+     "file": "src/providers/anthropic.js",
+     "line": 52,
+     "code": "const response = await fetch(`${baseUrl}/v1/messages`, {"
+    }
+   ]
+  },
+  {
+   "id": "e6:providers->openai",
+   "from": "providers",
+   "to": "openai",
+   "label": "fetch",
+   "points": [
+    [
+     2106,
+     81.5
+    ],
+    [
+     2145,
+     81.5
+    ],
+    [
+     2145,
+     158
+    ],
+    [
+     2440,
+     158
+    ],
+    [
+     2440,
+     65.5
+    ],
+    [
+     2508,
+     65.5
+    ]
+   ],
+   "labelBox": {
+    "x": 2112.75,
+    "y": 105.75,
+    "w": 64.5,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "src/providers/index.js",
+     "line": 6,
+     "code": "import { streamChat as openaiCompatible } from \"./openai.js\";"
+    },
+    {
+     "file": "src/providers/openai.js",
+     "line": 56,
+     "code": "const response = await fetch(`${baseUrl}/chat/completions`, {"
+    }
+   ]
+  },
+  {
+   "id": "e7:providers->gemini",
+   "from": "providers",
+   "to": "gemini",
+   "label": "fetch",
+   "points": [
+    [
+     2106,
+     97.5
+    ],
+    [
+     2130,
+     97.5
+    ],
+    [
+     2130,
+     250.5
+    ],
+    [
+     2198,
+     250.5
+    ]
+   ],
+   "labelBox": {
+    "x": 2097.75,
+    "y": 160,
+    "w": 64.5,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "src/providers/index.js",
+     "line": 7,
+     "code": "import { streamChat as gemini } from \"./gemini.js\";"
+    },
+    {
+     "file": "src/providers/gemini.js",
+     "line": 43,
+     "code": "const response = await fetch(url, {"
+    }
+   ]
+  },
+  {
+   "id": "e8:agent->safety",
+   "from": "agent",
+   "to": "safety",
+   "label": "decide() per tool call",
+   "points": [
+    [
+     1236,
+     262
+    ],
+    [
+     1290,
+     262
+    ],
+    [
+     1290,
+     361.5
+    ],
+    [
+     2508,
+     361.5
+    ]
+   ],
+   "labelBox": {
+    "x": 1787.7,
+    "y": 326.5,
+    "w": 222.6,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "src/agent.js",
+     "line": 5,
+     "code": "import { decide } from \"./safety.js\";"
+    },
+    {
+     "file": "src/agent.js",
+     "line": 163,
+     "code": "const d = decide({"
+    }
+   ]
+  },
+  {
+   "id": "e9:agent->tools",
+   "from": "agent",
+   "to": "tools",
+   "label": "getTool()",
+   "points": [
+    [
+     1236,
+     278
+    ],
+    [
+     1275,
+     278
+    ],
+    [
+     1275,
+     548.37
+    ],
+    [
+     1718,
+     548.37
+    ]
+   ],
+   "labelBox": {
+    "x": 1445.65,
+    "y": 513.37,
+    "w": 101.7,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "src/agent.js",
+     "line": 4,
+     "code": "import { toolSpecs, getTool, resolveActivity } from \"./tools/index.js\";"
+    },
+    {
+     "file": "src/agent.js",
+     "line": 151,
+     "code": "const tool = getTool(tc.name);"
+    }
+   ]
+  },
+  {
+   "id": "e10:tools->safety",
+   "from": "tools",
+   "to": "safety",
+   "label": "resolveSafePath()",
+   "points": [
+    [
+     2106,
+     548.37
+    ],
+    [
+     2130,
+     548.37
+    ],
+    [
+     2130,
+     346.5
+    ],
+    [
+     2440,
+     346.5
+    ],
+    [
+     2440,
+     345.5
+    ],
+    [
+     2508,
+     345.5
+    ]
+   ],
+   "labelBox": {
+    "x": 2196.95,
+    "y": 353.5,
+    "w": 176.1,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "src/tools/fs-tools.js",
+     "line": 4,
+     "code": "import { resolveSafePath } from \"../safety.js\";"
+    }
+   ]
+  },
+  {
+   "id": "e11:agent->hub",
+   "from": "agent",
+   "to": "hub",
+   "label": "emit(tool_start …)",
+   "points": [
+    [
+     1236,
+     294
+    ],
+    [
+     1260,
+     294
+    ],
+    [
+     1260,
+     717.67
+    ],
+    [
+     1718,
+     717.67
+    ]
+   ],
+   "labelBox": {
+    "x": 1396.3,
+    "y": 682.67,
+    "w": 185.4,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "src/agent.js",
+     "line": 154,
+     "code": "this.hub.emit(\"tool_start\", { id: tc.id, name: tc.name, activity, title, input: tc.input, turnId });"
+    }
+   ]
+  },
+  {
+   "id": "e12:hub->app",
+   "from": "hub",
+   "to": "app",
+   "label": "SSE /api/events",
+   "points": [
+    [
+     2106,
+     717.67
+    ],
+    [
+     2508,
+     717.67
+    ]
+   ],
+   "labelBox": {
+    "x": 2228.25,
+    "y": 682.67,
+    "w": 157.5,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "src/server.js",
+     "line": 101,
+     "code": "hub.addClient(res, req.headers[\"last-event-id\"]);"
+    },
+    {
+     "file": "web/js/app.js",
+     "line": 58,
+     "code": "const es = new EventSource(\"/api/events\");"
+    }
+   ]
+  },
+  {
+   "id": "e13:app->mascot",
+   "from": "app",
+   "to": "mascot",
+   "label": "setActivity()",
+   "points": [
+    [
+     2886,
+     709.67
+    ],
+    [
+     2910,
+     709.67
+    ],
+    [
+     2910,
+     604.8
+    ],
+    [
+     2978,
+     604.8
+    ]
+   ],
+   "labelBox": {
+    "x": 2840.55,
+    "y": 643.23,
+    "w": 138.9,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "web/js/app.js",
+     "line": 2,
+     "code": "import { Mascot } from \"./mascot.js\";"
+    },
+    {
+     "file": "web/js/app.js",
+     "line": 51,
+     "code": "if (mascot) mascot.setActivity(activity);"
+    }
+   ]
+  },
+  {
+   "id": "e14:app->transcript",
+   "from": "app",
+   "to": "transcript",
+   "label": "toolStart()",
+   "points": [
+    [
+     2886,
+     725.67
+    ],
+    [
+     2910,
+     725.67
+    ],
+    [
+     2910,
+     828.67
+    ],
+    [
+     2978,
+     828.67
+    ]
+   ],
+   "labelBox": {
+    "x": 2849.85,
+    "y": 763.17,
+    "w": 120.3,
+    "h": 28
+   },
+   "evidence": [
+    {
+     "file": "web/js/app.js",
+     "line": 3,
+     "code": "import { Transcript } from \"./transcript.js\";"
+    },
+    {
+     "file": "web/js/app.js",
+     "line": 104,
+     "code": "transcript.toolStart(d.id, { title: d.title, name: d.name, activity: d.activity });"
+    }
+   ]
+  }
+ ],
+ "paths": {
+  "call": [
+   "agent",
+   "safety"
+  ],
+  "events": [
+   "agent",
+   "hub",
+   "app",
+   "mascot"
+  ]
+ }
+}

@@ -1,0 +1,27 @@
+{
+  "outDir": "public/recordings",
+  "shots": [
+    {
+      "name": "ch05-glassbox",
+      "url": "https://anwardebes.github.io/candor/?film",
+      "viewport": {"width": 1280, "height": 800},
+      "deviceScaleFactor": 1.5,
+      "colorScheme": "light",
+      "duration": 11,
+      "crf": 17,
+      "waitUntil": "networkidle",
+      "waitFor": ["#atoms .atom", "#delta"],
+      "settleMs": 800,
+      "cursor": {"visible": false},
+      "actions": [
+        {"at": 0, "type": "scroll", "to": "#in-title", "offset": -46, "duration": 0.02},
+        {"at": 2.0, "type": "eval", "script": "window.__candor.toggleAtom(0)"},
+        {"at": 4.0, "type": "eval", "script": "window.__candor.toggleAtom(0)"},
+        {"at": 5.0, "type": "eval", "script": "window.__candor.toggleAtom(18)"},
+        {"at": 7.0, "type": "eval", "script": "window.__candor.toggleAtom(18)"},
+        {"at": 7.4, "type": "scroll", "to": "#tro-title", "offset": -30, "duration": 0.9, "ease": "film"},
+        {"at": 9.0, "type": "eval", "script": "(() => { const C = window.__candor; C.B.trig = true; C.renderB(); })()"}
+      ]
+    }
+  ]
+}

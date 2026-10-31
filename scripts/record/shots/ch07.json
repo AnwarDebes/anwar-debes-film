@@ -1,0 +1,27 @@
+{
+  "outDir": "public/recordings",
+  "shots": [
+    {
+      "name": "ch07-ccim-replay",
+      "url": "https://anwardebes.github.io/Claude-Code-In-Motion/",
+      "viewport": {"width": 1280, "height": 800},
+      "deviceScaleFactor": 2,
+      "colorScheme": "dark",
+      "duration": 25,
+      "waitUntil": "networkidle",
+      "waitFor": ["#input", "canvas"],
+      "crf": 17,
+      "cursor": {"start": [1160, 740], "size": 24, "visible": false},
+      "actions": [
+        {"frame": 838, "type": "cursor", "visible": true, "duration": 0.25},
+        {"frame": 847, "type": "move", "to": ".approval:not(.resolved) .btn.allow", "anchor": [0.55, 0.6], "duration": 0.75, "ease": "film", "curve": 0.12},
+        {"frame": 901, "type": "click"},
+        {"frame": 935, "type": "cursor", "visible": false, "duration": 0.4},
+        {"frame": 1050, "type": "cursor", "visible": true, "duration": 0.25},
+        {"frame": 1059, "type": "move", "to": ".approval:not(.resolved) .btn.allow", "anchor": [0.55, 0.6], "duration": 0.75, "ease": "film", "curve": -0.1},
+        {"frame": 1113, "type": "click"},
+        {"frame": 1147, "type": "cursor", "visible": false, "duration": 0.4}
+      ]
+    }
+  ]
+}
