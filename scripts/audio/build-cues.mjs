@@ -46,14 +46,17 @@ const sheet = {
   out: 'public/audio/film',
   voiceTargetLufs: -16,
   voice: {clips, targetLufs: -16, highpassHz: 70, wordsFrom: 'src/data/timeline.json'},
-  duck: {depthDb: 19},
+  duck: {underVoiceLU: 18.5, mergeGapS: 2.5, fullSwellGapS: 6.0, swellMinGapS: 6.0, preS: 0.1, attackS: 0.3, holdS: 0.3, releaseS: 1.0},
   music: {level: -5, cues: music.sort((a, b) => (a.in ?? 0) - (b.in ?? 0))},
   sfx: {cues: sfx.sort((a, b) => (a.frame ?? a.at * tl.fps) - (b.frame ?? b.at * tl.fps))},
-  master: {lufs: -15, ceilingDb: -2.0, truePeakMaxDb: -1.5},
+  master: {lufs: -14, ceilingDb: -2.0, truePeakMaxDb: -1.5},
   files: {format: 'flac'},
 };
 fs.mkdirSync(path.dirname(outPath), {recursive: true});
 fs.writeFileSync(outPath, JSON.stringify(sheet, null, 1));
+// Shorts are heard on phone speakers: the same mix with the background 2 LU further under the voice.
+const shorts = {...sheet, name: 'film-shorts', out: 'public/audio/film-shorts', duck: {...sheet.duck, underVoiceLU: 20.5, balance: {median: [18.5, 23.5], p10Min: 15}}};
+fs.writeFileSync(outPath.replace(/\.json$/, '-shorts.json'), JSON.stringify(shorts, null, 1));
 fs.rmSync(entry, {force: true});
 fs.rmSync(bundle, {force: true});
 console.log(`cue sheet: ${clips.length} voice clips, ${music.length} music cues, ${sfx.length} sfx cues, ${tl.durationS.toFixed(1)} s -> ${outPath}`);

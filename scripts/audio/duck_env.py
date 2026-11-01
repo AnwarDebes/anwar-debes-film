@@ -39,7 +39,7 @@ def duck_envelope(words, total_s, rate=60, duck_db=-10.0, merge_gap=1.5,
         d = np.minimum(up, down)
         d = 0.5 - 0.5 * np.cos(np.pi * d)             # raised-cosine ramps (smooth)
         depth = np.maximum(depth, d)
-    return 10 ** (duck_db * depth / 20)
+    return 10 ** (-abs(duck_db) * depth / 20)
 
 
 DEFAULTS = dict(depth_db=-10.0, merge_gap=1.5, pre=0.15, attack=0.25, hold=0.35, release=0.6,
@@ -105,7 +105,10 @@ def music_curve(words, total_s, rate=48_000, t0=0.0, **kw):
         up = np.ones(n) if fa == -np.inf else _rc((t - fa) / rise)
         dn = np.ones(n) if fb == np.inf else _rc((fb - t) / fall)
         bump = np.maximum(bump, np.minimum(up, dn))
-    gain_db = p["depth_db"] * depth + p["swell_db"] * bump
+    # depth_db is a cut: "duck 19 dB" and "duck -19 dB" both lower the bed by 19 dB under speech.
+    # (A positive value used to be added as written, which raised the music over the narrator.)
+    cut_db = -abs(float(p["depth_db"]))
+    gain_db = cut_db * depth + p["swell_db"] * bump
     return gain_db, depth, ph
 
 

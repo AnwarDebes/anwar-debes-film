@@ -61,6 +61,7 @@ def limit(x: np.ndarray, ceiling_db: float = -2.0, lookahead_ms: float = 4.0, re
         "iterations": it + 1,
         "maxGainReductionDb": round(float(gr.max()), 2),
         "pctTimeLimiting": round(100.0 * float(np.mean(gr > 0.1)), 2),
+        "pctTimeOver1Db": round(100.0 * float(np.mean(gr > 1.0)), 3),
         "truePeakDb": round(loudness.true_peak(y), 2),
     }
     return y, info

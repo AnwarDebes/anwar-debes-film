@@ -141,7 +141,7 @@ export const makeMusicCurve = (words: WordTimes, spec: DuckSpec = {}): MusicCurv
     phrases: ph,
     params: p,
     depth,
-    gainDb: (t: number) => p.depthDb * depth(t) + p.swellDb * bump(t),
+    gainDb: (t: number) => -Math.abs(p.depthDb) * depth(t) + p.swellDb * bump(t),
   };
 };
 

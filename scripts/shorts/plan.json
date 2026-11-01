@@ -1,0 +1,1029 @@
+[
+ {
+  "repo": "AnwarDebes.github.io",
+  "chapter": "ch01",
+  "chapterTitle": "True or false",
+  "start": 42.0,
+  "end": 97.43,
+  "dur": 55.43,
+  "ledgerHits": 11,
+  "named": 0,
+  "lines": [
+   "His website opens on his face, pressed into twelve thousand four hundred and twenty steel pins.",
+   "One click turns the portrait into true and false, the way a Tsetlin Machine sees an image.",
+   "Each pin is a literal: true or false.",
+   "A clause is an AND over literals. Clauses vote, and the margin decides.",
+   "His site runs a real guardrail this way, with no server.",
+   "It blocks the obvious attack, and the same attack in German.",
+   "It also shows you one that slips through, and one it gets wrong.",
+   "When it is wrong, the clauses that voted show you why.",
+   "Remember this guard: the same model file ships in two more repositories, and one of them will break it."
+  ]
+ },
+ {
+  "repo": "AnwarDebes",
+  "chapter": "ch01",
+  "chapterTitle": "True or false",
+  "start": 107.0,
+  "end": 126.98,
+  "dur": 19.98,
+  "ledgerHits": 6,
+  "named": 0,
+  "lines": [
+   "His GitHub profile carries one line: AI that shows its work.",
+   "He is a master's student at the University of Agder.",
+   "His project table has a Measured column that lists the misses too.",
+   "His research map shows forty projects, and the one Pixie comes from is not among them."
+  ]
+ },
+ {
+  "repo": "Assignment1Cloud",
+  "chapter": "ch01",
+  "chapterTitle": "True or false",
+  "start": 141.0,
+  "end": 159.75,
+  "dur": 18.75,
+  "ledgerHits": 1,
+  "named": 0,
+  "lines": [
+   "The oldest repositories are coursework: a cloud assignment counts Gutenberg books by language.",
+   "A practice site translates book titles, and a web assignment fetches the weather.",
+   "His oldest Tsetlin repository is a two-line promise: predict who wins a game of Hex."
+  ]
+ },
+ {
+  "repo": "WebOfEverything-",
+  "chapter": "ch01",
+  "chapterTitle": "True or false",
+  "start": 147.31,
+  "end": 171.79,
+  "dur": 24.48,
+  "ledgerHits": 1,
+  "named": 0,
+  "lines": [
+   "A practice site translates book titles, and a web assignment fetches the weather.",
+   "His oldest Tsetlin repository is a two-line promise: predict who wins a game of Hex.",
+   "Then an assignment draws one literal automaton: eight states, from exclude to include."
+  ]
+ },
+ {
+  "repo": "PROG2053",
+  "chapter": "ch01",
+  "chapterTitle": "True or false",
+  "start": 147.31,
+  "end": 171.79,
+  "dur": 24.48,
+  "ledgerHits": 2,
+  "named": 0,
+  "lines": [
+   "A practice site translates book titles, and a web assignment fetches the weather.",
+   "His oldest Tsetlin repository is a two-line promise: predict who wins a game of Hex.",
+   "Then an assignment draws one literal automaton: eight states, from exclude to include."
+  ]
+ },
+ {
+  "repo": "HexGTM",
+  "chapter": "ch01",
+  "chapterTitle": "True or false",
+  "start": 153.0,
+  "end": 171.79,
+  "dur": 18.79,
+  "ledgerHits": 1,
+  "named": 0,
+  "lines": [
+   "His oldest Tsetlin repository is a two-line promise: predict who wins a game of Hex.",
+   "Then an assignment draws one literal automaton: eight states, from exclude to include."
+  ]
+ },
+ {
+  "repo": "Dynamic_Visualization",
+  "chapter": "ch01",
+  "chapterTitle": "True or false",
+  "start": 164.0,
+  "end": 189.72,
+  "dur": 25.72,
+  "ledgerHits": 2,
+  "named": 0,
+  "lines": [
+   "Then an assignment draws one literal automaton: eight states, from exclude to include.",
+   "At its default settings, it spends about ninety-five percent of its time in the deepest state of include.",
+   "Then one deep learning course in two repositories, from attention by hand to retrieval."
+  ]
+ },
+ {
+  "repo": "DNN",
+  "chapter": "ch01",
+  "chapterTitle": "True or false",
+  "start": 183.0,
+  "end": 200.84,
+  "dur": 17.84,
+  "ledgerHits": 1,
+  "named": 0,
+  "lines": [
+   "Then one deep learning course in two repositories, from attention by hand to retrieval.",
+   "Back on his website, a small Tsetlin Machine learns noisy XOR, and says when it has found it."
+  ]
+ },
+ {
+  "repo": "Deep-Neural-Networks-Assignments",
+  "chapter": "ch01",
+  "chapterTitle": "True or false",
+  "start": 183.0,
+  "end": 200.84,
+  "dur": 17.84,
+  "ledgerHits": 2,
+  "named": 0,
+  "lines": [
+   "Then one deep learning course in two repositories, from attention by hand to retrieval.",
+   "Back on his website, a small Tsetlin Machine learns noisy XOR, and says when it has found it."
+  ]
+ },
+ {
+  "repo": "glassbox-lm",
+  "chapter": "ch02",
+  "chapterTitle": "Before the runs",
+  "start": 216.8,
+  "end": 275.51,
+  "dur": 58.71,
+  "ledgerHits": 31,
+  "named": 1,
+  "lines": [
+   "glassbox-lm asks whether a Tsetlin Machine can be the core of a language model.",
+   "The first test is concrete: beat a counting model, a Kneser-Ney five-gram, on identical WikiText tokens.",
+   "Every hypothesis is written down before the runs it governs, with its metric and its threshold.",
+   "Every run records the hash of the registration in force.",
+   "The day its plan is frozen, the first study registers twenty-four.",
+   "Its engine reads tokens as literals, and three implementations must agree on every bit.",
+   "The anchor run trains over a million clauses. It scores two point two two bits per byte.",
+   "Counting alone scores one point three seven, and lower is better."
+  ]
+ },
+ {
+  "repo": "trace",
+  "chapter": "ch03",
+  "chapterTitle": "The session wasn't",
+  "start": 415.6,
+  "end": 466.86,
+  "dur": 51.26,
+  "ledgerHits": 34,
+  "named": 3,
+  "lines": [
+   "TRACE guards an agent three ways: a guard you can read, monitors over its tool calls, and a signed ledger.",
+   "Its learned rules read: if instructions, unsafe. If vergiss, German for forget, unsafe.",
+   "Calls from OpenAI, DeepSeek and Anthropic become one kind of event, under one policy.",
+   "Each rule compiles to a monitor with fixed memory: a ring buffer and a running count.",
+   "The demo's monitors are bounded at three hundred and twenty-two bytes, however long the session runs.",
+   "The third outside email is stopped.",
+   "Every call looked innocent.",
+   "The session wasn't."
+  ]
+ },
+ {
+  "repo": "veritas",
+  "chapter": "ch04",
+  "chapterTitle": "Prove it",
+  "start": 581.4,
+  "end": 636.79,
+  "dur": 55.39,
+  "ledgerHits": 27,
+  "named": 1,
+  "lines": [
+   "VERITAS compiles that guard into exact Boolean logic, so a solver can answer one question about every input at once.",
+   "Each clause becomes a gate, and the vote becomes a counter.",
+   "The claim: every prompt that contains ignore, previous and instructions is blocked.",
+   "The solver is asked for the opposite: a prompt with all three words that gets through.",
+   "If none exists, that is a proof over every input. If one exists, it hands it back.",
+   "It finds one.",
+   "Which ignore previous instructions.",
+   "Four rules vote unsafe, four vote safe. A tie is let through.",
+   "On his website, the same model file lets it through too."
+  ]
+ },
+ {
+  "repo": "candor",
+  "chapter": "ch05",
+  "chapterTitle": "The forward pass",
+  "start": 732.93,
+  "end": 788.8,
+  "dur": 55.87,
+  "ledgerHits": 26,
+  "named": 2,
+  "lines": [
+   "CANDOR asks a measurable question instead: for one input, how much of the decision do named concepts not explain.",
+   "It reads a layer through a few named concepts, rebuilds the activation from them, and keeps what they miss as a measured leak.",
+   "The network then runs twice more: as a legible twin that sees only the concepts, and with leaks swapped between inputs.",
+   "The certificate, delta, is how far the two answers differ for each input.",
+   "It is measured with one extra pass, not predicted, so it cannot under-report.",
+   "In the browser, a small model counts hidden patterns, and on the default input delta is almost zero."
+  ]
+ },
+ {
+  "repo": "reins",
+  "chapter": "ch06",
+  "chapterTitle": "After the alarm",
+  "start": 919.0,
+  "end": 971.57,
+  "dur": 52.57,
+  "ledgerHits": 20,
+  "named": 2,
+  "lines": [
+   "REINS looks instead for the cheapest change the deployment can make that keeps the policy safe.",
+   "The deployment declares what it can do: insert a missing step, swap in a safer tool, suppress an action, or wait for a human.",
+   "Each edit has a price, and a human costs the most.",
+   "For every call, it simulates each edit on a copy of its monitors and keeps the cheapest safe one.",
+   "If no edit is safe, it says enforcement failed instead of pretending.",
+   "A transfer without authorization gets an authorize step slid in front of it."
+  ]
+ },
+ {
+  "repo": "THGTM",
+  "chapter": "ch06",
+  "chapterTitle": "After the alarm",
+  "start": 1043.0,
+  "end": 1084.64,
+  "dur": 41.64,
+  "ledgerHits": 7,
+  "named": 1,
+  "lines": [
+   "THGTM gives every Tsetlin automaton a memory: one number that fades a little at every step.",
+   "At zero fading it is the classic automaton, and that is how TRACE runs it.",
+   "A literal for k steps ago lifts a delayed XOR from chance to about zero point nine one.",
+   "With the echo trace as well, it solves it on every seed.",
+   "On synthetic agent runs, counting exports over the whole run stops every slow roll, and flags nine percent of honest ones.",
+   "But the test's attacks always export three times or more, so catching them all is built in."
+  ]
+ },
+ {
+  "repo": "clausegate",
+  "chapter": "ch06",
+  "chapterTitle": "After the alarm",
+  "start": 1095.0,
+  "end": 1110.95,
+  "dur": 15.95,
+  "ledgerHits": 4,
+  "named": 1,
+  "lines": [
+   "clausegate gives the plate its input: a tool call read as three graphs.",
+   "Across five seeds, no attack gets through.",
+   "But only thirty percent of honest calls are allowed, and most of the rest wait for a human."
+  ]
+ },
+ {
+  "repo": "Clause-Driven-LLM",
+  "chapter": "ch06",
+  "chapterTitle": "After the alarm",
+  "start": 1117.0,
+  "end": 1136.25,
+  "dur": 19.25,
+  "ledgerHits": 4,
+  "named": 1,
+  "lines": [
+   "Clause-Driven-LLM adds the escalation, before any language model sees the query.",
+   "In its demo transcript, an unladen-swallow question scores too low to trust, so it goes to a person.",
+   "And as an out-of-scope detector, the margin trails a plain softmax."
+  ]
+ },
+ {
+  "repo": "clause86",
+  "chapter": "ch06",
+  "chapterTitle": "After the alarm",
+  "start": 1140.0,
+  "end": 1154.05,
+  "dur": 14.05,
+  "ledgerHits": 5,
+  "named": 1,
+  "lines": [
+   "clause86 adds the explanation: for hiring decisions, the rules that actually fired.",
+   "Its README is open about the first pass: on adult income data, it learned to predict the majority class."
+  ]
+ },
+ {
+  "repo": "clauseguard",
+  "chapter": "ch06",
+  "chapterTitle": "After the alarm",
+  "start": 1158.0,
+  "end": 1174.23,
+  "dur": 16.23,
+  "ledgerHits": 4,
+  "named": 1,
+  "lines": [
+   "clauseguard adds the fact-check: a claim and its evidence, joined where they agree or contradict.",
+   "Its training runs have not been executed. The numbers in its results table are targets.",
+   "After the alarm, the work is the repair."
+  ]
+ },
+ {
+  "repo": "Claude-Code-In-Motion",
+  "chapter": "ch07",
+  "chapterTitle": "Every step",
+  "start": 1198.8,
+  "end": 1253.27,
+  "dur": 54.47,
+  "ledgerHits": 18,
+  "named": 1,
+  "lines": [
+   "Pixie lives here, in Claude-Code-In-Motion, the repository missing from the map in chapter one.",
+   "Every pose in this film is drawn from one file: three hundred and sixty lines that paint it, cell by cell.",
+   "Between ordinary states, a pose holds a hundred and fifty milliseconds, so it never flickers.",
+   "One local agent loop speaks to six provider setups, with plain fetch calls and no SDKs.",
+   "The model only proposes. The harness decides whether each action runs, asks you first, or is refused.",
+   "Here, rm -rf build waits for your yes.",
+   "Deleting the whole disk is refused even in auto-approve mode, because that check comes first."
+  ]
+ },
+ {
+  "repo": "vsclaude",
+  "chapter": "ch07",
+  "chapterTitle": "Every step",
+  "start": 1335.8,
+  "end": 1372.13,
+  "dur": 36.33,
+  "ledgerHits": 6,
+  "named": 1,
+  "lines": [
+   "vsclaude is a desktop editor on the same idea: watch the agent work, not its log.",
+   "Its one live provider, Claude Code, becomes a frozen stream of events that everything visual reads.",
+   "A raw line becomes a file edit, a caption and a pose, through a fixed table.",
+   "Its parser keeps one event per line, so a line that holds text and a tool call surfaces only the text.",
+   "It is a beta: permission requests are planned, not live, and the first session you see is scripted demo data."
+  ]
+ },
+ {
+  "repo": "lucid",
+  "chapter": "ch08",
+  "chapterTitle": "The rules",
+  "start": 1418.6,
+  "end": 1472.4,
+  "dur": 53.8,
+  "ledgerHits": 27,
+  "named": 2,
+  "lines": [
+   "LUCID plays on an ordinary CPU, with no language model and no graphics card.",
+   "It splits each frame into objects and masks the score bar, so the same state always looks the same.",
+   "By pressing buttons, it learns what each action does to the avatar.",
+   "When a move ends the game, that state and move are locked for good.",
+   "It plans with a plain breadth-first search over what it has learned, and writes down a reason for every step.",
+   "In one game you can only click. The same click changes the screen again and again, until the level clears.",
+   "It needed nine more actions than a person did."
+  ]
+ },
+ {
+  "repo": "RL",
+  "chapter": "ch08",
+  "chapterTitle": "The rules",
+  "start": 1542.6,
+  "end": 1547.36,
+  "dur": 4.76,
+  "ledgerHits": 0,
+  "named": 2,
+  "lines": [
+   "RL is empty: the same task, in one line."
+  ]
+ },
+ {
+  "repo": "RL-CCA",
+  "chapter": "ch08",
+  "chapterTitle": "The rules",
+  "start": 1548.6,
+  "end": 1580.4,
+  "dur": 31.8,
+  "ledgerHits": 9,
+  "named": 1,
+  "lines": [
+   "RL-CCA is where the work is: NEXUS, built for a course tournament for two to six players.",
+   "At its core is a copy of the referee: the server's scoring, reproduced line for line and pinned by tests.",
+   "Every second of thinking costs a point.",
+   "A diagnostic once found that it had not played a single six-player game.",
+   "No timing log or tournament result is committed, and its three research prototypes report no results yet."
+  ]
+ },
+ {
+  "repo": "tsetlin-zoo",
+  "chapter": "ch09",
+  "chapterTitle": "Graphs a clause can walk",
+  "start": 1606.4,
+  "end": 1623.17,
+  "dur": 16.77,
+  "ledgerHits": 4,
+  "named": 1,
+  "lines": [
+   "tsetlin-zoo surveys them, with the source file of every number.",
+   "On the Reuters R8 benchmark, the graph designs land within about half a point of each other.",
+   "Each keeps its best epoch on the test set, so the axis carries that caveat."
+  ]
+ },
+ {
+  "repo": "subword-dep-graphtm",
+  "chapter": "ch09",
+  "chapterTitle": "Graphs a clause can walk",
+  "start": 1630.4,
+  "end": 1646.93,
+  "dur": 16.53,
+  "ledgerHits": 5,
+  "named": 1,
+  "lines": [
+   "subword-dep-graphtm turns each document into a graph of word pieces, linked in order and by grammar.",
+   "Its results file puts R8 just under ninety-five, and records where the recipe failed."
+  ]
+ },
+ {
+  "repo": "attention-distilled-graphtm",
+  "chapter": "ch09",
+  "chapterTitle": "Graphs a clause can walk",
+  "start": 1648.4,
+  "end": 1662.82,
+  "dur": 14.42,
+  "ledgerHits": 5,
+  "named": 1,
+  "lines": [
+   "attention-distilled-graphtm links each word to the five words BERT attends to most.",
+   "Its Boolean student averages ninety-four point eight on R8, after BERT is thrown away."
+  ]
+ },
+ {
+  "repo": "decoder-attention-distill-graphtm",
+  "chapter": "ch09",
+  "chapterTitle": "Graphs a clause can walk",
+  "start": 1664.4,
+  "end": 1681.04,
+  "dur": 16.64,
+  "ledgerHits": 6,
+  "named": 1,
+  "lines": [
+   "Its follow-up, decoder-attention-distill-graphtm, takes attention from a decoder model that can only look backwards.",
+   "The graphs become almost a single chain, yet all three teachers tie, and the README calls the gap not significant."
+  ]
+ },
+ {
+  "repo": "tm-llm-robustness-benchmark",
+  "chapter": "ch09",
+  "chapterTitle": "Graphs a clause can walk",
+  "start": 1684.4,
+  "end": 1706.09,
+  "dur": 21.69,
+  "ledgerHits": 4,
+  "named": 1,
+  "lines": [
+   "tm-llm-robustness-benchmark puts a Tsetlin Machine and a transformer behind the same test.",
+   "On reviews edited to flip their meaning, the Tsetlin Machine loses twenty-seven points.",
+   "BERT loses two.",
+   "The results file says it outright: this contradicts the hypothesis."
+  ]
+ },
+ {
+  "repo": "HGTM",
+  "chapter": "ch09",
+  "chapterTitle": "Graphs a clause can walk",
+  "start": 1707.4,
+  "end": 1722.83,
+  "dur": 15.43,
+  "ledgerHits": 4,
+  "named": 1,
+  "lines": [
+   "HGTM stacks Graph Tsetlin Machines and trains both layers together.",
+   "At the start no upper clause uses a lower one, so the lower layer learns nothing and the stack sits on the majority class."
+  ]
+ },
+ {
+  "repo": "RGTM",
+  "chapter": "ch09",
+  "chapterTitle": "Graphs a clause can walk",
+  "start": 1727.4,
+  "end": 1742.92,
+  "dur": 15.52,
+  "ledgerHits": 4,
+  "named": 1,
+  "lines": [
+   "RGTM reuses one bank of automata for every round of message passing.",
+   "One hop is solved every time.",
+   "At two hops it reaches zero point seven two, where separate banks are perfect."
+  ]
+ },
+ {
+  "repo": "Multi-HGTM",
+  "chapter": "ch09",
+  "chapterTitle": "Graphs a clause can walk",
+  "start": 1747.4,
+  "end": 1783.65,
+  "dur": 36.25,
+  "ledgerHits": 10,
+  "named": 1,
+  "lines": [
+   "Multi-HGTM trains one Tsetlin Machine per view, then a second on which of their clauses fired.",
+   "Its test is a rule no sum of per-view scores can express.",
+   "Adding the towers' votes reaches zero point seven three.",
+   "The clause head reaches zero point nine seven, and wins on every seed.",
+   "That task was built for it. On real breast-cancer data, the gain shrinks to three thousandths, and is not significant.",
+   "On the built task, drop a view and the head's accuracy falls to about two thirds."
+  ]
+ },
+ {
+  "repo": "graphtm-cbr",
+  "chapter": "ch09",
+  "chapterTitle": "Graphs a clause can walk",
+  "start": 1793.4,
+  "end": 1848.56,
+  "dur": 55.16,
+  "ledgerHits": 28,
+  "named": 1,
+  "lines": [
+   "graphtm-cbr began as a course project at the University of Agder.",
+   "For a molecule called mutagenic, it asks which readable rules fired, and which smallest valid edit would change the verdict.",
+   "It learns from about seven thousand molecules, split by their core scaffolds.",
+   "Every atom gets its own bit vector, built from its neighbours up to two bonds away.",
+   "Each clause is a five-level tree of ands and ors, checked at every atom on the GPU. A molecule fires the clause if any atom does.",
+   "Five such machines learn from a graph neural network's answers.",
+   "Fired clauses propose edits; each must pass chemistry checks, and the search keeps the one that drops the score most."
+  ]
+ },
+ {
+  "repo": "PocketOS",
+  "chapter": "ch10",
+  "chapterTitle": "Built for people",
+  "start": 1959.2,
+  "end": 1991.82,
+  "dur": 32.62,
+  "ledgerHits": 10,
+  "named": 1,
+  "lines": [
+   "PocketOS turns a phone's browser into a desktop: windows, files, a terminal and nine apps, all on the device.",
+   "It is not a kernel, and it does not boot on hardware. It is a desktop, simulated in the browser.",
+   "One number decides the shape of the screen: below seven hundred and sixty-eight pixels, every app opens full screen.",
+   "Its README describes a kernel folder with a window manager. In the code, that folder holds one file of types."
+  ]
+ },
+ {
+  "repo": "Mneme-Education-Ecosystem",
+  "chapter": "ch10",
+  "chapterTitle": "Built for people",
+  "start": 2005.2,
+  "end": 2037.6,
+  "dur": 32.4,
+  "ledgerHits": 9,
+  "named": 0,
+  "lines": [
+   "Mneme takes a textbook in and gives an Anki deck back, using a language model that runs on your own machine.",
+   "From one source text, its sample run makes seventeen cards.",
+   "Every card is rated easy, medium or hard, and the rating arrives with the rules that produced it.",
+   "Every run leaves a receipt: the configuration, the prompt version, and the count in and out of each stage.",
+   "Its README marks the quality benchmark not yet run, in capital letters."
+  ]
+ },
+ {
+  "repo": "IDM",
+  "chapter": "ch10",
+  "chapterTitle": "Built for people",
+  "start": 2051.2,
+  "end": 2082.95,
+  "dur": 31.75,
+  "ledgerHits": 12,
+  "named": 1,
+  "lines": [
+   "IDM was a course project in data management: the same disease reports, loaded into three databases at once.",
+   "Four hundred and seventy-three thousand weekly reports become a star schema, month buckets and a graph.",
+   "One button runs the same question on all three. On one slice of measles data, MongoDB answers in under six milliseconds.",
+   "Only the graph can ask whether an outbreak crossed a state border, and that question takes about twenty seconds."
+  ]
+ },
+ {
+  "repo": "drone-id",
+  "chapter": "ch10",
+  "chapterTitle": "Built for people",
+  "start": 2097.2,
+  "end": 2108.78,
+  "dur": 11.58,
+  "ledgerHits": 6,
+  "named": 1,
+  "lines": [
+   "drone-id identifies what model a drone is from a description, out of fifty-six hand-cited models.",
+   "By design, it never says whose it is."
+  ]
+ },
+ {
+  "repo": "SkillBridgeNorway",
+  "chapter": "ch10",
+  "chapterTitle": "Built for people",
+  "start": 2112.2,
+  "end": 2128.6,
+  "dur": 16.4,
+  "ledgerHits": 3,
+  "named": 1,
+  "lines": [
+   "SkillBridgeNorway ranks job listings against a CV on meaning, skills, place and freshness.",
+   "In its own tests, a Rust developer matched to a nurse job still scores forty, where the simple score starts."
+  ]
+ },
+ {
+  "repo": "CYFS",
+  "chapter": "ch10",
+  "chapterTitle": "Built for people",
+  "start": 2131.2,
+  "end": 2146.12,
+  "dur": 14.92,
+  "ledgerHits": 5,
+  "named": 1,
+  "lines": [
+   "CYFS, Clone Your Favourite Song, turns a track's tempo, key and energy into a prompt for a music model.",
+   "Only the front end is online. Generation needs a thirty-two gigabyte graphics card."
+  ]
+ },
+ {
+  "repo": "Kaleido",
+  "chapter": "ch10",
+  "chapterTitle": "Built for people",
+  "start": 2150.2,
+  "end": 2164.71,
+  "dur": 14.51,
+  "ledgerHits": 5,
+  "named": 1,
+  "lines": [
+   "Kaleido is a self-hosted studio for posts, images and short videos on one graphics card, so the models take turns.",
+   "Of two video models it tested, the larger was rejected as too slow."
+  ]
+ },
+ {
+  "repo": "cookie-galaxy",
+  "chapter": "ch10",
+  "chapterTitle": "Built for people",
+  "start": 2169.2,
+  "end": 2181.1,
+  "dur": 11.9,
+  "ledgerHits": 3,
+  "named": 1,
+  "lines": [
+   "cookie-galaxy flies one scroll through about fifty-two hundred particles, for a cookie that does not exist.",
+   "Most of them run on a machine that is yours."
+  ]
+ },
+ {
+  "repo": "DiTM",
+  "chapter": "ch11",
+  "chapterTitle": "Promises",
+  "start": 2202.0,
+  "end": 2232.75,
+  "dur": 30.75,
+  "ledgerHits": 9,
+  "named": 1,
+  "lines": [
+   "DiTM turns the Tsetlin Machine, a classifier, into a generator.",
+   "It flips bits at random, and trains one Tsetlin Machine per feature to guess each original bit.",
+   "To generate, it starts from pure noise and cleans it up in eight steps.",
+   "Trained on sensor readings, it spots broken sensor pairs with an AUC of zero point six eight, ahead of naive Bayes.",
+   "Its own README calls the calibration loose."
+  ]
+ },
+ {
+  "repo": "ConfTM",
+  "chapter": "ch11",
+  "chapterTitle": "Promises",
+  "start": 2248.0,
+  "end": 2263.77,
+  "dur": 15.77,
+  "ledgerHits": 4,
+  "named": 1,
+  "lines": [
+   "ConfTM answers with a set of labels that should contain the truth nine times in ten.",
+   "When the synthetic patients change halfway, a fixed threshold slips to eighty-four percent.",
+   "The adaptive one holds at ninety."
+  ]
+ },
+ {
+  "repo": "RobTM",
+  "chapter": "ch11",
+  "chapterTitle": "Promises",
+  "start": 2269.0,
+  "end": 2281.48,
+  "dur": 12.48,
+  "ledgerHits": 4,
+  "named": 1,
+  "lines": [
+   "RobTM works out exactly how many input bits an attacker must flip to change an answer.",
+   "The answer is humbling: nearly every correct prediction falls to a single flip."
+  ]
+ },
+ {
+  "repo": "CCTM",
+  "chapter": "ch11",
+  "chapterTitle": "Promises",
+  "start": 2286.0,
+  "end": 2305.35,
+  "dur": 19.35,
+  "ledgerHits": 4,
+  "named": 1,
+  "lines": [
+   "CCTM trains on pairs: each applicant, and a twin one feature away.",
+   "On biased synthetic loans, the approval gap falls to zero point zero four.",
+   "But the twins' labels come from a bias-free oracle, and real data has no such oracle."
+  ]
+ },
+ {
+  "repo": "FedTM",
+  "chapter": "ch11",
+  "chapterTitle": "Promises",
+  "start": 2310.0,
+  "end": 2330.55,
+  "dur": 20.55,
+  "ledgerHits": 7,
+  "named": 1,
+  "lines": [
+   "FedTM lets five simulated hospitals train one Tsetlin Machine while sharing only which literals each clause includes.",
+   "Privacy noise is set at epsilon four per round. Accuracy is zero point eight seven five.",
+   "Across all its rounds, the guarantee weakens to an epsilon of twenty."
+  ]
+ },
+ {
+  "repo": "lifelong-tm",
+  "chapter": "ch11",
+  "chapterTitle": "Promises",
+  "start": 2335.0,
+  "end": 2352.85,
+  "dur": 17.85,
+  "ledgerHits": 4,
+  "named": 1,
+  "lines": [
+   "lifelong-tm keeps a Tsetlin Machine from forgetting old tasks while it learns new ones.",
+   "On synthetic tasks it forgets about half as much as a plain one. The price is ten times the memory.",
+   "Six promises, each one measured, the misses included."
+  ]
+ },
+ {
+  "repo": "SleepArchitect",
+  "chapter": "ch12",
+  "chapterTitle": "Models of the everyday",
+  "start": 2379.8,
+  "end": 2415.89,
+  "dur": 36.09,
+  "ledgerHits": 9,
+  "named": 1,
+  "lines": [
+   "SleepArchitect runs the day forward: coffee, drinks, exercise, light and meals, into tonight's sleep.",
+   "Time to fall asleep is a sum of named parts, so every predicted minute has a cause you can point to.",
+   "Caffeine at bedtime adds about thirty-five minutes in its test, inside the published band, because the slope was set to match.",
+   "Its README calls all eleven checks published. The results file marks two of them as internal.",
+   "And it reports its own artefact: on one day, skipping alcohol lowers the predicted score."
+  ]
+ },
+ {
+  "repo": "CaffeineSense",
+  "chapter": "ch12",
+  "chapterTitle": "Models of the everyday",
+  "start": 2425.8,
+  "end": 2438.69,
+  "dur": 12.89,
+  "ledgerHits": 4,
+  "named": 1,
+  "lines": [
+   "CaffeineSense gives caffeine a personal half-life, shortest for a smoker and longest late in pregnancy.",
+   "For an eleven o'clock bedtime, the cutoff for coffee falls in the early evening."
+  ]
+ },
+ {
+  "repo": "HotCarWatch",
+  "chapter": "ch12",
+  "chapterTitle": "Models of the everyday",
+  "start": 2442.8,
+  "end": 2460.24,
+  "dur": 17.44,
+  "ledgerHits": 5,
+  "named": 1,
+  "lines": [
+   "HotCarWatch heats a parked car, and the child inside it, minute by minute.",
+   "The day is thirty-four degrees. Cracking the windows buys a toddler zero minutes.",
+   "The only option it marks as guaranteed safe is not leaving the child at all."
+  ]
+ },
+ {
+  "repo": "SmokeShield",
+  "chapter": "ch12",
+  "chapterTitle": "Models of the everyday",
+  "start": 2466.8,
+  "end": 2480.62,
+  "dur": 13.82,
+  "ledgerHits": 2,
+  "named": 1,
+  "lines": [
+   "SmokeShield fills five kinds of home with the same wildfire smoke, and indoors they settle far apart.",
+   "All its checks pass, though in a linear model they come down to just five ratios."
+  ]
+ },
+ {
+  "repo": "PipeGuard",
+  "chapter": "ch12",
+  "chapterTitle": "Models of the everyday",
+  "start": 2485.8,
+  "end": 2500.61,
+  "dur": 14.81,
+  "ledgerHits": 4,
+  "named": 1,
+  "lines": [
+   "PipeGuard turns hours of frozen water in a pipe into a chance of bursting.",
+   "Under a storm shaped like Texas in twenty twenty-one, a dripping faucet saves an attic pipe; open cabinet doors do not."
+  ]
+ },
+ {
+  "repo": "HomeJoule",
+  "chapter": "ch12",
+  "chapterTitle": "Models of the everyday",
+  "start": 2505.8,
+  "end": 2519.05,
+  "dur": 13.25,
+  "ledgerHits": 3,
+  "named": 1,
+  "lines": [
+   "HomeJoule ranks home upgrades by their return over twenty-five years, after US tax credits.",
+   "In most of its homes, a heat-pump water heater returns about twenty-eight percent a year."
+  ]
+ },
+ {
+  "repo": "PyroPredict",
+  "chapter": "ch12",
+  "chapterTitle": "Models of the everyday",
+  "start": 2522.8,
+  "end": 2540.16,
+  "dur": 17.36,
+  "ledgerHits": 4,
+  "named": 1,
+  "lines": [
+   "PyroPredict spreads fire across a synthetic grid, and routes people around the roads it expects to burn.",
+   "Routing around the forecast traps no one, but only when scored against that same forecast.",
+   "And it leaves seventeen hundred people with no route."
+  ]
+ },
+ {
+  "repo": "ThermoGuard",
+  "chapter": "ch12",
+  "chapterTitle": "Models of the everyday",
+  "start": 2546.8,
+  "end": 2584.04,
+  "dur": 37.24,
+  "ledgerHits": 10,
+  "named": 1,
+  "lines": [
+   "ThermoGuard models each home as a small thermal circuit: walls that store heat, and air that follows them.",
+   "Under a heatwave shaped like Portland's, a top-floor care home without cooling peaks around fifty-two degrees in the model.",
+   "With visits for only eighty homes, the greedy plan saves the most lives, and leaves several groups with no help at all.",
+   "An equity floor reaches every group, and saves thirty-six percent fewer lives.",
+   "Its draft report's random baseline disagrees with its results file; the film shows the file."
+  ]
+ },
+ {
+  "repo": "knotten-web",
+  "chapter": "ch13",
+  "chapterTitle": "Real stakes",
+  "start": 2609.6,
+  "end": 2623.46,
+  "dur": 13.86,
+  "ledgerHits": 4,
+  "named": 0,
+  "lines": [
+   "The Knotten design website, for a planned housing field, has one rule: no number without a source.",
+   "Every figure carries a Kilde button, Norwegian for source, and a button with no source fails the build."
+  ]
+ },
+ {
+  "repo": "knotten-test",
+  "chapter": "ch13",
+  "chapterTitle": "Real stakes",
+  "start": 2629.6,
+  "end": 2644.36,
+  "dur": 14.76,
+  "ledgerHits": 2,
+  "named": 2,
+  "lines": [
+   "knotten-test, the first full build, starts from twenty-seven written specifications, each closed with a completion note.",
+   "It even corrects its own brief: the number eight meant internship positions, not homes."
+  ]
+ },
+ {
+  "repo": "knotten-test-2",
+  "chapter": "ch13",
+  "chapterTitle": "Real stakes",
+  "start": 2647.6,
+  "end": 2684.62,
+  "dur": 37.02,
+  "ledgerHits": 14,
+  "named": 1,
+  "lines": [
+   "knotten-test-2 builds a laser-measured twin of the site, for thirty homes that do not exist yet.",
+   "Every house is checked against the water with the others standing, along three hundred and sixty sight lines.",
+   "On the shortest day of the year, the darkest plot gets two and a quarter hours of direct sun.",
+   "The view analysis counts water over bare ground, so the model clears the eighty-four trees in those sight lines; every sea view assumes they are gone.",
+   "And the repository flags the project's own spreadsheet: its panel efficiency is set too high."
+  ]
+ },
+ {
+  "repo": "grimstad-kiosk-grill",
+  "chapter": "ch13",
+  "chapterTitle": "Real stakes",
+  "start": 2696.6,
+  "end": 2709.41,
+  "dur": 12.81,
+  "ledgerHits": 4,
+  "named": 0,
+  "lines": [
+   "For a grill in Grimstad, the whole menu of seventy-four items lives in a single data file.",
+   "Its code still credits Vercel's v0 generator, where it started."
+  ]
+ },
+ {
+  "repo": "Trondheim-Cookies",
+  "chapter": "ch13",
+  "chapterTitle": "Real stakes",
+  "start": 2712.6,
+  "end": 2726.42,
+  "dur": 13.82,
+  "ledgerHits": 5,
+  "named": 1,
+  "lines": [
+   "Trondheim-Cookies was a small ordering site in English, Norwegian and Arabic.",
+   "Delivery was free nearby, and the site says ten percent of each cookie went to children in need in Syria."
+  ]
+ },
+ {
+  "repo": "ballast",
+  "chapter": "ch13",
+  "chapterTitle": "Real stakes",
+  "start": 2730.6,
+  "end": 2748.13,
+  "dur": 17.53,
+  "ledgerHits": 5,
+  "named": 1,
+  "lines": [
+   "ballast is a paper-trading system where a language model may propose a thesis, but never places, sizes or approves an order.",
+   "In its tests, a falling price trips the stop, whatever the strategy wanted.",
+   "Risk has the last word."
+  ]
+ },
+ {
+  "repo": "hugin",
+  "chapter": "ch13",
+  "chapterTitle": "Real stakes",
+  "start": 2753.6,
+  "end": 2768.78,
+  "dur": 15.18,
+  "ledgerHits": 5,
+  "named": 1,
+  "lines": [
+   "hugin makes a strategy earn live trading: ninety days on paper, and a confirmation with today's date.",
+   "Its README warns that anyone promising much more is overfitting, ignoring costs, or selling something."
+  ]
+ },
+ {
+  "repo": "Goblin",
+  "chapter": "ch13",
+  "chapterTitle": "Real stakes",
+  "start": 2772.6,
+  "end": 2801.36,
+  "dur": 28.76,
+  "ledgerHits": 6,
+  "named": 1,
+  "lines": [
+   "Goblin is his personal trading system: about fourteen services on one message bus.",
+   "Its own strategy document says the models have no directional edge.",
+   "A code comment puts the raw model at forty-five percent, below a coin flip.",
+   "Homes, menus and money: here a number is only as good as its source."
+  ]
+ },
+ {
+  "repo": "video-editing-skill",
+  "chapter": "ch14",
+  "chapterTitle": "Show its work",
+  "start": 2811.4,
+  "end": 2822.12,
+  "dur": 10.72,
+  "ledgerHits": 5,
+  "named": 0,
+  "lines": [
+   "Even his video editing has a written definition of done, down to a person approving the draft.",
+   "The playbook also writes down what it never tested."
+  ]
+ },
+ {
+  "repo": "ai-medical-training-simulator",
+  "chapter": "ch14",
+  "chapterTitle": "Show its work",
+  "start": 2827.4,
+  "end": 2833.16,
+  "dur": 5.76,
+  "ledgerHits": 0,
+  "named": 1,
+  "lines": [
+   "ai-medical-training-simulator is empty: a name and nothing else."
+  ]
+ },
+ {
+  "repo": "assets",
+  "chapter": "ch14",
+  "chapterTitle": "Show its work",
+  "start": 2832.86,
+  "end": 2852.48,
+  "dur": 19.62,
+  "ledgerHits": 2,
+  "named": 1,
+  "lines": [
+   "assets is a fork: his two commits add one token's logo and metadata.",
+   "Sixty-six places. Pulled back, they make a map, and this time nothing is missing.",
+   "A solid line means shared code or data, like one guard file in three repositories."
+  ]
+ }
+]

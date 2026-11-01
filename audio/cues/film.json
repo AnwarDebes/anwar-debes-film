@@ -2090,7 +2090,14 @@
   "wordsFrom": "src/data/timeline.json"
  },
  "duck": {
-  "depthDb": 19
+  "underVoiceLU": 18.5,
+  "mergeGapS": 2.5,
+  "fullSwellGapS": 6,
+  "swellMinGapS": 6,
+  "preS": 0.1,
+  "attackS": 0.3,
+  "holdS": 0.3,
+  "releaseS": 1
  },
  "music": {
   "level": -5,
@@ -14133,7 +14140,7 @@
   ]
  },
  "master": {
-  "lufs": -15,
+  "lufs": -14,
   "ceilingDb": -2,
   "truePeakMaxDb": -1.5
  },

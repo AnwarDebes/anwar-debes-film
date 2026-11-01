@@ -5,12 +5,22 @@
   python scripts/audio/mix.py audio/cues/demo.json --no-master     stems and report only (fast)
 
 Pipeline (every stage is a pure function of the cue sheet and the source files):
-  voice   decode, mono, high-pass, normalise to the voice target (-16 LUFS integrated)
-  words   -> phrases -> music automation (duck_env.music_curve): -10 dB under speech, partial
-          swells in short gaps, lifts in long holds; the voice-activity depth drives an EQ pocket
-          on the music (-2.5 dB at 2.5 kHz, only while the narrator speaks) and the SFX shield
+  voice   decode, mono, high-pass, normalise to the voice target (-16 LUFS integrated), then a
+          transparent look-ahead peak limiter (voice.peakCeilingDb, -4.5 dBTP) so the master
+          limiter never has to touch speech
+  words   -> phrases -> music automation (duck_env.music_curve): partial swells in short gaps,
+          lifts in long holds; the voice-activity depth drives an EQ pocket on the music (-4 dB
+          at 3 kHz, broad, only while the narrator speaks) and the SFX shield
   music   each cue: slice of a track, level-matched (LU relative to the voice target), fades or
-          equal-power crossfades, automation points; summed, pocketed, ducked
+          equal-power crossfades, automation points; summed, pocketed, then RIDDEN under speech:
+          under every phrase the bed is held duck.underVoiceLU (18.5 LU) under that phrase's own
+          loudness (3 s short-term), with its 400 ms loudness kept at least 13 LU under, looking
+          0.6 s ahead and behind so a crescendo is lowered before it arrives (rider_gain)
+  balance speech-to-background difference, voice minus (music + sfx), on the final stems
+          (measure_balance); the mix FAILS (exit 2) if the 3 s median inside narration is outside
+          16.5-21.5 LU, its 10th percentile is under 13 LU, any 3 s window is under 10 LU or has the
+          background as loud as the voice, or the 400 ms 5th percentile on spoken blocks is under
+          10 LU; and if the master limiter takes more than 3 dB or works over 1 dB for 1 % of the time
   sfx     each cue: a sfx_synth recipe (key-aware: degree notes follow the music under them),
           level-matched by its maximum momentary loudness, aligned start|end|peak to its frame,
           transitions shielded (-4 dB, 150 Hz-8 kHz) while the narrator speaks; one shared hall
@@ -38,6 +48,7 @@ import time
 import numpy as np
 import scipy
 from scipy import signal
+from scipy.ndimage import maximum_filter1d, minimum_filter1d
 
 sys.path.insert(0, os.path.dirname(__file__))
 import audio_io as aio  # noqa: E402
@@ -48,6 +59,22 @@ import sfx_synth as S  # noqa: E402
 
 SR = aio.SR
 VERSION = 1
+HOP = 800  # one video frame at 60 fps: the block every meter in this file reports on
+
+# Music under narration (duck.* in the cue sheet overrides any of these).
+RIDER = {"underVoiceLU": 18.5,       # bed short-term loudness under the phrase's voice loudness
+         "momentaryFloorLU": 13.0,   # the bed's 400 ms loudness never closer to the voice than this
+         "lookaroundS": 0.6,         # look-ahead/behind: a crescendo is lowered before it arrives
+         "smoothS": 0.8,             # Hann smoothing of the ride: slow, so it never pumps
+         "maxCutDb": 36.0}
+POCKET = {"freqHz": 3000, "q": 0.7, "gainDb": -4.0}
+VOICE_PEAK_CEILING_DB = -4.5
+# Pass/fail for the speech-to-background loudness difference (LU, voice minus music+SFX, positive =
+# the background is under the voice). Targets from the listening research summarised in audio.md:
+# about 18 LU for a narrated film (Shorts mixed at 20), never under 10 LU, never a window where the
+# background is as loud as the voice; the duck.balance object in a cue sheet overrides these.
+BALANCE_TARGET = {"median": [16.5, 21.5], "p10Min": 13.0, "minInterior": 10.0, "momentaryP5Min": 10.0}
+LIMITER_TARGET = {"maxGainReductionDb": 3.0, "pctTimeOver1Db": 1.0}
 
 
 class Ctx:
@@ -533,31 +560,138 @@ def build_sfx(sheet, N, depth, voice_s, music_info, ctx):
     return dry, placed
 
 
+# ---------- meters on video-frame blocks ----------
+def centred(v: np.ndarray, shift: int) -> np.ndarray:
+    """A trailing-window meter (value i = window ending at block i) re-indexed so value i describes
+    the window centred on block i: shift = half the window in blocks (90 for 3 s, 12 for 400 ms)."""
+    if len(v) == 0:
+        return v
+    return np.concatenate([v[shift:], np.full(min(shift, len(v)), v[-1])])
+
+
+def block_meters(x: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    """Centred short-term (3 s) and momentary (400 ms) loudness of x, one value per 800-sample block."""
+    bp = loudness.block_power(x, HOP)
+    return centred(loudness.short_term(x, bp, HOP), 90), centred(loudness.momentary(x, bp, HOP), 12)
+
+
+def phrase_levels(voice: np.ndarray, phrases, nb: int) -> tuple[np.ndarray, list]:
+    """Per block, the gated loudness of the narration phrase it belongs to (between phrases: the
+    nearer one). A phrase's own level, not a moving meter, so the music does not follow syllables."""
+    vbp = loudness.block_power(voice, HOP)
+    lv, spans = [], []
+    for s, e in phrases:
+        a, b = max(0, int(s * SR / HOP)), min(len(vbp), int(np.ceil(e * SR / HOP)))
+        L = loudness.integrated(None, bp=vbp[a:b]) if b - a >= 24 else float("-inf")
+        lv.append(L)
+        spans.append((a, max(b, a + 1)))
+    good = [x for x in lv if np.isfinite(x)]
+    fallback = float(np.median(good)) if good else -16.0
+    lv = np.array([x if np.isfinite(x) else fallback for x in lv])
+    out = np.full(nb, fallback)
+    if not spans:
+        return out, []
+    starts = np.array([a for a, _ in spans])
+    ends = np.array([b for _, b in spans])
+    i = np.arange(nb)
+    k = np.clip(np.searchsorted(starts, i, side="right") - 1, 0, len(spans) - 1)
+    k2 = np.clip(k + 1, 0, len(spans) - 1)
+    dist_prev = np.where(i < ends[k], 0, i - ends[k])
+    dist_next = np.where(starts[k2] > i, starts[k2] - i, 0)
+    pick = np.where((dist_next < dist_prev) & (k2 != k), k2, k)
+    out[:] = lv[pick]
+    return out, [round(float(x), 2) for x in lv]
+
+
+def hann_smooth(v: np.ndarray, seconds: float) -> np.ndarray:
+    n = max(3, int(round(seconds * SR / HOP)) | 1)
+    k = signal.windows.hann(n + 2)[1:-1]
+    k /= k.sum()
+    return np.convolve(np.pad(v, n // 2, mode="edge"), k, mode="valid")
+
+
+# ---------- music rider ----------
+def rider_gain(bed: np.ndarray, voice: np.ndarray, phrases, rp: dict, N: int) -> tuple[np.ndarray, dict]:
+    """Gain in dB (<= 0, one value per sample) that holds the music bed under the narration:
+    short-term (3 s) loudness at rp['underVoiceLU'] under the phrase's voice level, and momentary
+    (400 ms, max over +-lookaround) at least rp['momentaryFloorLU'] under it. The cut is min-filtered
+    over the same +-lookaround (it lands before a loud bar, not on it) and Hann-smoothed, so the
+    ride is slow and never pumps. Only applied in proportion to voice activity (depth)."""
+    Ls, Lm = block_meters(bed)
+    nb = len(Ls)
+    lv, levels = phrase_levels(voice, phrases, nb)
+    look = max(1, int(round(rp["lookaroundS"] * SR / HOP)))
+    Lm_env = maximum_filter1d(Lm, size=2 * look + 1, mode="nearest")
+    need = np.minimum.reduce([np.zeros(nb), (lv - rp["underVoiceLU"]) - Ls, (lv - rp["momentaryFloorLU"]) - Lm_env])
+    need = np.maximum(need, -float(rp["maxCutDb"]))
+    need = minimum_filter1d(need, size=2 * look + 1, mode="nearest")
+    g = np.minimum(hann_smooth(need, rp["smoothS"]), 0.0)
+    tb = np.arange(nb) * HOP + HOP / 2
+    under = np.interp(np.arange(N, dtype=np.float64), tb, g).astype(np.float32)
+    info = {"params": rp, "phraseVoiceLufs": {"median": r3(np.median(levels)) if levels else None,
+                                               "min": r3(min(levels)) if levels else None,
+                                               "max": r3(max(levels)) if levels else None}}
+    return under, info
+
+
 # ---------- balance ----------
-def measure_balance(voice_s, music, depth, gain_db, sheet, kw):
-    """How the music actually sits against the narration (audio.md 5.1 compares centred 3 s
-    short-term loudness): under speech, and in the long holds where the bed swells."""
-    bp = loudness.block_power(music)
-    st = loudness.short_term(music, bp)
-    mus_s = np.concatenate([st[90:], np.full(min(90, len(st)), st[-1] if len(st) else -90.0)])
-    n = min(len(mus_s), len(voice_s))
-    centre = (np.arange(n) * 800 + 400).clip(0, len(depth) - 1)
-    d = depth[centre]
-    g = gain_db[centre]
+def measure_balance(voice: np.ndarray, music: np.ndarray, depth: np.ndarray, gain_db: np.ndarray, sheet, kw,
+                    phrases, sfx: np.ndarray | None = None) -> dict:
+    """Voice-over-music separation in LU, positive = the music sits under the voice, measured on the
+    final stems the way audio.md 5.1 does (centred 3 s short-term loudness of each stem, compared on
+    every 800-sample block where the narration is fully active and the bed is playing), plus a
+    400 ms (momentary) check on the blocks that carry speech energy, so a short crescendo cannot
+    hide inside a 3 s average. pass = all three targets in BALANCE_TARGET are met."""
+    vS, vM = block_meters(voice)
+    # the background a listener has to hear the narrator through: music plus sound effects
+    mS, mM = block_meters(music if sfx is None else music + sfx)
+    n = min(len(vS), len(mS))
+    centre = (np.arange(n) * HOP + HOP // 2).clip(0, len(depth) - 1)
+    d, g = depth[centre], gain_db[centre]
     swell = float(kw.get("swell_db") if kw.get("swell_db") is not None else duck_env.DEFAULTS["swell_db"])
     vt = float(sheet.get("voiceTargetLufs", -16.0))
-    speaking = (d >= 0.999) & (voice_s[:n] > -50) & (mus_s[:n] > -60)
-    holds = (d <= 0.001) & (g >= swell - 0.05) & (mus_s[:n] > -60)
-    out = {"method": "centred 3 s short-term loudness per 800-sample block"}
-    if speaking.any():
-        rel = voice_s[:n][speaking] - mus_s[:n][speaking]
-        out["musicUnderVoiceLU"] = {"median": r3(np.median(rel)), "p10": r3(np.percentile(rel, 10)),
-                                    "p90": r3(np.percentile(rel, 90)), "seconds": r3(speaking.sum() * 800 / SR),
-                                    "target": [12, 15]}
+    speaking = (d >= 0.999) & (vS[:n] > -50)
+    # a 3 s window that straddles a phrase edge compares half a phrase of voice with the open bed
+    # before the duck; the short-term check therefore uses blocks whose whole window is narration
+    # (interior), and the 400 ms check covers every block that carries speech energy
+    interior = minimum_filter1d((d >= 0.999).astype(np.uint8), size=181, mode="nearest").astype(bool) & speaking
+    with_music = interior & (mS[:n] > -60)
+    tgt = {**BALANCE_TARGET, **((sheet.get("duck") or {}).get("balance") or {})}
+    out = {"method": "voice - (music + sfx) in LU (positive = the background is under the voice): centred 3 s short-term "
+                     "loudness on blocks whose whole window is narration, and 400 ms momentary loudness on every "
+                     "block of the narration that carries speech energy; 800-sample blocks",
+           "target": tgt, "speechSeconds": r3(speaking.sum() * HOP / SR),
+           "interiorWithMusicSeconds": r3(with_music.sum() * HOP / SR)}
+    ok = True
+    spoken = speaking & (mS[:n] > -60)
+    if spoken.any():
+        energy = spoken & (vM[:n] > np.median(vM[:n][spoken]) - 8)
+        sm = vM[:n][energy] - mM[:n][energy]
+        mo = {"median": r3(np.median(sm)), "p5": r3(np.percentile(sm, 5)), "p10": r3(np.percentile(sm, 10)),
+              "min": r3(sm.min()), "seconds": r3(energy.sum() * HOP / SR)}
+        out["voiceOverMusicMomentaryLU"] = mo
+        ok = mo["p5"] >= tgt["momentaryP5Min"]
+    if with_music.any():
+        sep = vS[:n][with_music] - mS[:n][with_music]
+        st = {"median": r3(np.median(sep)), "p5": r3(np.percentile(sep, 5)), "p10": r3(np.percentile(sep, 10)),
+              "p90": r3(np.percentile(sep, 90)), "min": r3(sep.min())}
+        st["criticalPct"] = r3(100.0 * float(np.mean(sep < 0.0)))
+        ok = (ok and tgt["median"][0] <= st["median"] <= tgt["median"][1] and st["p10"] >= tgt["p10Min"]
+              and st["min"] >= tgt["minInterior"] and st["criticalPct"] == 0.0)
+        out["voiceOverMusicLU"] = st
+        # the five weakest minutes, so a failing film says where to look
+        sec = (np.arange(n) * HOP / SR)[with_music]
+        mins = {}
+        for t, v in zip(sec.astype(int) // 60, sep):
+            mins.setdefault(int(t), []).append(float(v))
+        worst = sorted(((float(np.median(v)), m) for m, v in mins.items() if len(v) >= 120))[:5]
+        out["weakestMinutes"] = [{"minute": m, "medianLU": r3(v)} for v, m in worst]
+    holds = (d <= 0.001) & (g >= swell - 0.05) & (mS[:n] > -60)
     if holds.any():
-        rel = mus_s[:n][holds] - vt
+        rel = mS[:n][holds] - vt
         out["musicInHoldsLU"] = {"median": r3(np.median(rel)), "p90": r3(np.percentile(rel, 90)),
-                                 "seconds": r3(holds.sum() * 800 / SR), "target": [-2, 0]}
+                                 "seconds": r3(holds.sum() * HOP / SR), "target": [-2, 0]}
+    out["pass"] = bool(ok)
     return out
 
 
@@ -602,12 +736,40 @@ def master(premix, sheet, out_dir, ctx):
     st = loudness.stats(y)
     ok = abs(st["I"] - target) <= 0.5 and (ff.get("TP") is None or ff["TP"] <= tp_max) and (
         aac is None or aac.get("TP") is None or aac["TP"] <= tp_max)
+    # the limiter is a safety device: it may catch peaks, never carry the mix
+    lim_ok = (lim_info is not None and lim_info["maxGainReductionDb"] <= LIMITER_TARGET["maxGainReductionDb"]
+              and lim_info.get("pctTimeOver1Db", 0.0) < LIMITER_TARGET["pctTimeOver1Db"])
+    if not lim_ok:
+        ctx.warn(f"limiter worked too hard: max {lim_info['maxGainReductionDb']} dB, "
+                 f"{lim_info.get('pctTimeOver1Db')} % of the time over 1 dB (limits {LIMITER_TARGET})")
     return y, {"target": {"lufs": target, "truePeakMaxDb": tp_max}, "premixLufs": r3(I0), "gainDb": r3(gain),
-               "limiter": lim_info, "stats": st, "ffmpeg": ff, "aac": aac, "pass": bool(ok)}
+               "limiter": lim_info, "limiterTarget": LIMITER_TARGET, "stats": st, "ffmpeg": ff, "aac": aac,
+               "pass": bool(ok and lim_ok)}
 
 
 # ---------- main ----------
-def mix(sheet_path: str, out_dir: str | None = None, do_master: bool = True) -> dict:
+def cached(cache_dir: str | None, name: str, spec, build):
+    """build() -> (array, info), reused across runs when a cache folder is given and the input spec
+    is unchanged (tuning the ride or the master then skips the long voice and music builds).
+    Release renders run without a cache, so every stage is rebuilt from the sources."""
+    if not cache_dir:
+        return build()
+    key = hashlib.sha256(json.dumps([name, spec, VERSION], sort_keys=True, default=str).encode()).hexdigest()[:16]
+    npy = os.path.join(cache_dir, f"{name}-{key}.npy")
+    meta = npy[:-4] + ".json"
+    if os.path.exists(npy) and os.path.exists(meta):
+        print(f"  {name}: cached {os.path.basename(npy)}")
+        with open(meta, encoding="utf-8") as f:
+            return np.load(npy), json.load(f)
+    x, info = build()
+    os.makedirs(cache_dir, exist_ok=True)
+    np.save(npy, np.asarray(x, dtype=np.float32))
+    with open(meta, "w", encoding="utf-8") as f:
+        json.dump(info, f, default=str)
+    return x, info
+
+
+def mix(sheet_path: str, out_dir: str | None = None, do_master: bool = True, cache_dir: str | None = None) -> dict:
     ctx = Ctx()
     t_all = time.time()
     sheet_path = os.path.abspath(sheet_path)
@@ -625,8 +787,14 @@ def mix(sheet_path: str, out_dir: str | None = None, do_master: bool = True) -> 
     print(f"mix {sheet.get('name', os.path.basename(sheet_path))}: {dur:.2f} s at {fps:g} fps -> {aio.rel(out_dir)}")
 
     t = time.time()
-    voice, vinfo = build_voice(sheet, base, N, ctx)
+    voice, vinfo = cached(cache_dir, "voice", sheet.get("voice"), lambda: build_voice(sheet, base, N, ctx))
     vs = sheet.get("voice") or {}
+    vpc = vs.get("peakCeilingDb", VOICE_PEAK_CEILING_DB)
+    if vpc is not None:
+        # transparent look-ahead peak control on the narration alone: fast release, so the few
+        # syllables above the ceiling lose a dB or two for a few milliseconds and nothing else moves
+        voice, vlim = limiter.limit(voice, ceiling_db=float(vpc), lookahead_ms=3.0, release_db_s=120.0)
+        vinfo = {**vinfo, "peakControl": vlim}
     if vs.get("words") is not None:
         words = words_from(vs["words"])
     elif vs.get("wordsFrom"):
@@ -645,18 +813,32 @@ def mix(sheet_path: str, out_dir: str | None = None, do_master: bool = True) -> 
           "attack": dk.get("attackS"), "hold": dk.get("holdS"), "release": dk.get("releaseS"),
           "full_gap": dk.get("fullSwellGapS"), "swell_db": dk.get("swellDb"), "swell_min_gap": dk.get("swellMinGapS"),
           "swell_rise": dk.get("swellRiseS"), "swell_fall": dk.get("swellFallS")}
+    rp = {**RIDER, **{k: dk[k] for k in RIDER if k in dk}}
+    rider_on = rp.get("underVoiceLU") is not None
+    if kw["depth_db"] is not None and float(kw["depth_db"]) > 0:
+        ctx.warn(f"duck.depthDb {float(kw['depth_db']):+g} read as a cut of {abs(float(kw['depth_db'])):g} dB "
+                 "(a positive value used to raise the music under speech)")
     if words:
-        gain_db, depth, ph = duck_env.music_curve(words, dur, rate=SR, **kw)
+        # with the rider on, music_curve supplies only the open-level automation (swells, lifts) and
+        # the voice activity; the cut under speech comes from rider_gain below
+        ckw = {**kw, "depth_db": 0.0} if rider_on else kw
+        open_db, depth, ph = duck_env.music_curve(words, dur, rate=SR, **ckw)
     else:
-        gain_db, depth, ph = np.zeros(N), np.zeros(N), []
-    gain_db, depth = S.fit(gain_db, N), S.fit(depth, N)
+        open_db, depth, ph = np.zeros(N), np.zeros(N), []
+    open_db, depth = S.fit(open_db, N), S.fit(depth, N)
     manifest = load_manifest()
     mcues = resolve_music(sheet, ctx, manifest)
-    bed, minfo = build_music(sheet, base, N, mcues, ctx, manifest)
-    pk = dk.get("pocket", {"freqHz": 2500, "q": 1.0, "gainDb": -2.5})
-    if pk and pk.get("gainDb"):
+    bed, minfo = cached(cache_dir, "bed", sheet.get("music"), lambda: build_music(sheet, base, N, mcues, ctx, manifest))
+    pk = {**POCKET, **(dk.get("pocket") or {})}
+    if pk.get("gainDb"):
         eq = signal.sosfilt(biquad_peak(float(pk["freqHz"]), float(pk.get("q", 1.0)), float(pk["gainDb"])), bed, axis=0)
         bed = (bed + depth[:, None] * (eq - bed)).astype(np.float32)
+    rinfo = None
+    if rider_on and words:
+        under_db, rinfo = rider_gain(bed, voice, ph, rp, N)
+        gain_db = (open_db + depth * under_db).astype(np.float32)
+    else:
+        gain_db = open_db
     music = (bed * S.db(gain_db)[:, None]).astype(np.float32)
     ctx.timing["music"] = round(time.time() - t, 2)
 
@@ -668,7 +850,7 @@ def mix(sheet_path: str, out_dir: str | None = None, do_master: bool = True) -> 
     sfx, sinfo = build_sfx(sheet, N, depth, voice_s, minfo, ctx)
     ctx.timing["sfx"] = round(time.time() - t, 2)
 
-    balance = measure_balance(voice_s, music, depth, gain_db, sheet, kw)
+    balance = measure_balance(voice, music, depth, gain_db, sheet, kw, ph, sfx=sfx)
 
     premix = voice + music + sfx
     if np.abs(premix).max() >= 1.0:
@@ -695,6 +877,11 @@ def mix(sheet_path: str, out_dir: str | None = None, do_master: bool = True) -> 
     if do_master:
         y, minfo_master = master(premix, sheet, out_dir, ctx)
         files["master"] = os.path.join(out_dir, "master" + ext)
+        # loudness-to-dialogue difference: the mix should be about as loud as its narration
+        ldr = minfo_master["stats"]["I"] - (stems["voice"]["I"] + minfo_master["gainDb"])
+        minfo_master["ldrLU"] = r3(ldr)
+        if ldr > 2.0:
+            ctx.warn(f"mix is {ldr:.1f} LU louder than its narration (target <= 2)")
     else:
         y = premix
     ctx.timing["master"] = round(time.time() - t, 2)
@@ -718,7 +905,8 @@ def mix(sheet_path: str, out_dir: str | None = None, do_master: bool = True) -> 
                          "synth": _synth_hash()},
         "files": {k: rel_pub(v) for k, v in files.items()},
         "voice": {**vinfo, "words": len(words), "phrases": [[r3(a), r3(b)] for a, b in ph]},
-        "duck": {"params": {**duck_env.DEFAULTS, **{k: v for k, v in kw.items() if v is not None}}, "pocket": pk},
+        "duck": {"params": {**duck_env.DEFAULTS, **{k: v for k, v in kw.items() if v is not None}}, "pocket": pk,
+                 "rider": rinfo},
         "music": minfo,
         "sfx": sinfo,
         "balance": balance,
@@ -739,10 +927,18 @@ def mix(sheet_path: str, out_dir: str | None = None, do_master: bool = True) -> 
         print(f"  master {m['stats']['I']:7.2f} LUFS  LRA {m['stats']['LRA']:.1f}  TP {m['stats']['TP']:.2f} dBTP"
               f"  | ffmpeg I {m['ffmpeg']['I']} TP {m['ffmpeg']['TP']}  | AAC 320k TP {aac.get('TP')}"
               f"  | limiter max GR {m['limiter']['maxGainReductionDb']} dB  {'PASS' if m['pass'] else 'FAIL'}")
-    uv, ih = balance.get("musicUnderVoiceLU"), balance.get("musicInHoldsLU")
-    if uv or ih:
-        print("  music " + (f"{uv['median']:.1f} LU under the voice while it speaks (target 12-15)" if uv else "")
-              + ("; " if uv and ih else "") + (f"{ih['median']:+.1f} LU against the voice target in holds (target -2..0)" if ih else ""))
+    uv, um, ih = balance.get("voiceOverMusicLU"), balance.get("voiceOverMusicMomentaryLU"), balance.get("musicInHoldsLU")
+    if uv or um:
+        tg = balance["target"]
+        tm = tg["median"]
+        st_txt = (f"median {uv['median']:.1f} LU (target {tm[0]:g}-{tm[1]:g}), p10 {uv['p10']:.1f} "
+                  f"(min {tg['p10Min']:g}), worst {uv['min']:.1f} (min {tg['minInterior']:g})"
+                  if uv else "no 3 s window inside narration")
+        mo_txt = (f"momentary median {um['median']:.1f}, p5 {um['p5']:.1f} (min {tg['momentaryP5Min']:g})"
+                  if um else "")
+        print(f"  background under the voice while it speaks: {st_txt}; {mo_txt}  {'PASS' if balance['pass'] else 'FAIL'}")
+    if ih:
+        print(f"  music in holds: {ih['median']:+.1f} LU against the voice target (target -2..0)")
     print(f"  {len(sinfo)} sfx cues, {len(minfo)} music cues, {len(ph)} phrases, {len(ctx.warnings)} warnings, {ctx.timing['total']:.1f} s")
     return report
 
@@ -752,9 +948,12 @@ def main(argv):
     ap.add_argument("cuesheet")
     ap.add_argument("--out", default=None, help="output folder (default: the sheet's 'out')")
     ap.add_argument("--no-master", action="store_true", help="skip mastering (stems and report only)")
+    ap.add_argument("--cache", default=None, help="reuse the built voice and music bed from this folder (tuning only)")
     a = ap.parse_args(argv)
-    rep = mix(a.cuesheet, a.out, not a.no_master)
-    return 0 if (rep["master"] is None or rep["master"]["pass"]) else 2
+    rep = mix(a.cuesheet, a.out, not a.no_master, a.cache)
+    master_ok = rep["master"] is None or rep["master"]["pass"]
+    balance_ok = rep["balance"].get("pass", True)
+    return 0 if (master_ok and balance_ok) else 2
 
 
 if __name__ == "__main__":
