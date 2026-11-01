@@ -62,39 +62,54 @@ def build(args):
     ov = bs.overlay(slug, repos, hook)
     dur = sum(e - s for s, e in segs)
     n = len(segs)
-    # pass 0: loudness of this Short's sound as it will be cut and faded
+    # sound first: cut and faded as delivered, normalised to -14 LUFS, then trimmed until the
+    # true peak measured AFTER the AAC encode is at or under the ceiling
     I0, TP0 = ebur(audio_inputs(segs), audio_filter(n, 0, dur), "m")
     gain = min(TARGET_I - I0, (TARGET_TP - AAC_MARGIN) - TP0)
+    m4a = bs.OUT / f"a-{slug}.m4a"
+    for _ in range(4):
+        run([FF, "-hide_banner", "-loglevel", "error", "-y"] + audio_inputs(segs)
+            + ["-filter_complex", audio_filter(n, 0, dur, gain) + "[a]", "-map", "[a]", "-t", f"{dur:.3f}",
+               "-c:a", "aac", "-b:a", f"{ABITRATE // 1000}k", str(m4a)])
+        I1, TP1 = ebur(["-i", str(m4a)], "[0:a]anull", "m")
+        if TP1 <= TARGET_TP:
+            break
+        gain -= TP1 - TARGET_TP + 0.05
+    # picture: two-pass x264 sized so picture + sound stay under the upload limit
     inputs = []
     for s, e in segs:
         inputs += ["-ss", f"{s:.3f}", "-t", f"{e - s:.3f}", "-i", str(FILM)]
-    inputs += audio_inputs(segs)
     if n > 1:
         fc = "".join(f"[{k}:v]" for k in range(n)) + f"concat=n={n}:v=1:a=0[cv];"
         v = "[cv]"
     else:
         fc, v = "", "[0:v]"
     fc += (f"{v}fps=30,scale=1080:608:flags=lanczos,setsar=1[fv];"
-           f"[{2 * n}:v]format=rgba[ov];"
+           f"[{n}:v]format=rgba[ov];"
            f"color=c=black:s={bs.W}x{bs.H}:r=30:d={dur:.3f}[base];"
            f"[base][fv]overlay=0:{bs.VID_Y}:shortest=1[b1];"
-           f"[b1][ov]overlay=0:0:shortest=1,format=yuv420p[vout];"
-           + audio_filter(n, n, dur, gain) + "[aout]")
-    kbps = int(min(4200, max(500, (bs.MAX_BYTES * 8 * 0.96 / dur - ABITRATE) / 1000)))
+           f"[b1][ov]overlay=0:0:shortest=1,format=yuv420p[vout]")
+    budget = bs.MAX_BYTES - m4a.stat().st_size - 60_000
+    kbps = int(min(4200, max(500, budget * 8 * 0.96 / dur / 1000)))
+    vid = bs.OUT / f"v-{slug}.mp4"
     base = [FF, "-hide_banner", "-loglevel", "error", "-y"] + inputs + ["-loop", "1", "-i", str(ov),
-            "-filter_complex", fc, "-map", "[vout]", "-map", "[aout]", "-t", f"{dur:.3f}",
+            "-filter_complex", fc, "-map", "[vout]", "-t", f"{dur:.3f}", "-an",
             "-c:v", "libx264", "-preset", "medium", "-b:v", f"{kbps}k", "-pix_fmt", "yuv420p", "-profile:v", "high",
-            "-g", "60", "-threads", "6", "-c:a", "aac", "-b:a", f"{ABITRATE // 1000}k", "-movflags", "+faststart"]
+            "-g", "60", "-threads", "6"]
     logbase = str(bs.OUT / f"x264-{slug}")
-    run(base + ["-pass", "1", "-passlogfile", logbase, "-an", "-f", "mp4", "/dev/null"])
-    run(base + ["-pass", "2", "-passlogfile", logbase, str(out)])
+    run(base + ["-pass", "1", "-passlogfile", logbase, "-f", "mp4", "/dev/null"])
+    run(base + ["-pass", "2", "-passlogfile", logbase, str(vid)])
+    mux = [FF, "-hide_banner", "-loglevel", "error", "-y", "-i", str(vid), "-i", str(m4a), "-map", "0:v", "-map", "1:a",
+           "-c", "copy", "-shortest", "-movflags", "+faststart", str(out)]
+    run(mux)
     size = out.stat().st_size
     if size > bs.MAX_BYTES:
         kbps = int(kbps * bs.MAX_BYTES / size * 0.95)
         base[base.index("-b:v") + 1] = f"{kbps}k"
-        run(base + ["-pass", "2", "-passlogfile", logbase, str(out)])
+        run(base + ["-pass", "2", "-passlogfile", logbase, str(vid)])
+        run(mux)
         size = out.stat().st_size
-    for f in bs.OUT.glob(f"x264-{slug}*"):
+    for f in list(bs.OUT.glob(f"x264-{slug}*")) + [vid, m4a]:
         f.unlink()
     I1, TP1 = ebur(["-i", str(out)], "[0:a]anull", "m")
     main = repos[0]
