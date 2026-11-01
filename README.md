@@ -1,10 +1,10 @@
 # Show Its Work
 
-<a href="https://youtu.be/AAQG61EsGcM"><img src="docs/film-preview.webp" width="100%" alt="Show Its Work: Pixie on a wall of steel pins, acting out each step of the work. Click to watch the 49-minute film on YouTube."></a>
+<a href="https://youtu.be/pefnyZ-oCcM"><img src="docs/film-preview.webp" width="100%" alt="Show Its Work: Pixie on a wall of steel pins, acting out each step of the work. Click to watch the 49-minute film on YouTube."></a>
 
 A 49-minute film about all 66 of my public repositories. A wall of steel pins plays every scene, Pixie from [Claude Code, in motion](https://github.com/AnwarDebes/Claude-Code-In-Motion) is the guide, and every word of the narration is on screen as it is spoken. Every number carries a chip with the repository, file and line it came from, and the last chapter checks the film's own sources.
 
-**[▶ Watch it on YouTube (49:27)](https://youtu.be/AAQG61EsGcM)** · [Download it in 1080p60](https://github.com/AnwarDebes/anwar-debes-film/releases/latest)
+**[▶ Watch it on YouTube (49:27)](https://youtu.be/pefnyZ-oCcM)** · [Download it in 1080p60](https://github.com/AnwarDebes/anwar-debes-film/releases/latest)
 
 A short film about each repository: [YouTube](https://www.youtube.com/@anwardebes) · [TikTok](https://www.tiktok.com/@anwardebes)
 

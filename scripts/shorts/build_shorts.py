@@ -24,7 +24,7 @@ WALL = HERE / 'wall.jpg'  # the film's pin wall with nothing on it
 FONTS = ROOT / 'public' / 'fonts'
 OUT = Path(os.environ.get('SHORTS_OUT', ROOT / 'out' / 'shorts'))
 OUT.mkdir(parents=True, exist_ok=True)
-FILM_URL = 'https://youtu.be/AAQG61EsGcM'
+FILM_URL = 'https://youtu.be/pefnyZ-oCcM'
 MAX_BYTES = 9_400_000
 W, H = 1080, 1920
 VID_Y = 560  # top of the 1080x608 film window
