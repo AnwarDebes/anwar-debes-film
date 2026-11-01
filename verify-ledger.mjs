@@ -4,6 +4,7 @@
 // commit, every capture and API snapshot is read from this repository, and the chain is
 // recomputed: link = SHA-256(prev + newline + type + ' ' + id + ' ' + hash), from the
 // genesis SHA-256('film-ledger v0'). The last line it prints is the head hash.
+// A pinned commit that was re-published with the identical tree is read from its successor.
 //   node verify-ledger.mjs [--dir=DIR] [--keep]     (Node 18 or later, and git)
 import {execFile} from 'node:child_process';
 import {createHash} from 'node:crypto';
@@ -39,6 +40,26 @@ await pool(repos, 8, async (repo) => {
 });
 out('fresh clones: ' + repos.length + ' repositories, ' + commits.size + ' pinned commits');
 
+// A pinned commit that was later re-published under a new id with the identical tree is read from
+// its successor. The ledger keeps the original id, and the successor's tree is checked first.
+const republished = {
+  'video-editing-skill@cd5970d3c426d2c83517862cd67ab27138be4c15': {commit: '0970ec60b8f2392207a4beeb34faa686c5f09621', tree: '9cf3121eaade1a5666e92d33b08ab6e3eda6f561'},
+};
+const resolved = new Map();
+const refOf = (e) => {
+  const key = e.repo + '@' + e.ref;
+  if (!resolved.has(key)) resolved.set(key, (async () => {
+    try { await git(e.repo, ['cat-file', '-e', e.ref + '^{commit}']); return e.ref; } catch {}
+    const r = republished[key];
+    if (!r) return e.ref;
+    const tree = (await git(e.repo, ['rev-parse', r.commit + '^{tree}'])).toString().trim();
+    if (tree !== r.tree) return e.ref;
+    out(e.repo + '@' + e.ref.slice(0, 7) + ': re-published as ' + r.commit.slice(0, 7) + ' with the identical tree ' + r.tree.slice(0, 7) + ', read from there');
+    return r.commit;
+  })());
+  return resolved.get(key);
+};
+
 // recompute every entry's hash
 const got = new Map();
 await pool(ledger.entries, 8, async (e) => {
@@ -47,11 +68,11 @@ await pool(ledger.entries, 8, async (e) => {
     if (e.type === 'file@commit' && e.path.includes('*')) {
       const dirp = e.path.slice(0, e.path.indexOf('*')).replace(/[^/]*$/, '').replace(/\/$/, '');
       const re = globRe(e.path);
-      const lines = (await git(e.repo, ['ls-tree', '-r', e.ref, '--', dirp || '.'])).toString().split('\n').filter((l) => l && re.test(l.split('\t')[1]));
+      const lines = (await git(e.repo, ['ls-tree', '-r', await refOf(e), '--', dirp || '.'])).toString().split('\n').filter((l) => l && re.test(l.split('\t')[1]));
       h = sha(Buffer.from(lines.join('\n') + '\n'));
     } else if (e.type === 'file@commit') {
-      const ty = (await git(e.repo, ['cat-file', '-t', e.ref + ':' + e.path])).toString().trim();
-      h = sha(ty === 'tree' ? await git(e.repo, ['ls-tree', '-r', e.ref + ':' + e.path]) : await git(e.repo, ['show', e.ref + ':' + e.path]));
+      const ty = (await git(e.repo, ['cat-file', '-t', (await refOf(e)) + ':' + e.path])).toString().trim();
+      h = sha(ty === 'tree' ? await git(e.repo, ['ls-tree', '-r', (await refOf(e)) + ':' + e.path]) : await git(e.repo, ['show', (await refOf(e)) + ':' + e.path]));
     } else if (e.type === 'commit') {
       h = (await git(e.repo, ['rev-parse', '--verify', e.ref + '^{commit}'])).toString().trim();
     } else {
