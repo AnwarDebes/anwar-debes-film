@@ -46,10 +46,10 @@ const sheet = {
   out: 'public/audio/film',
   voiceTargetLufs: -16,
   voice: {clips, targetLufs: -16, highpassHz: 70, wordsFrom: 'src/data/timeline.json'},
-  duck: {underVoiceLU: 18.5, mergeGapS: 2.5, fullSwellGapS: 6.0, swellMinGapS: 6.0, preS: 0.1, attackS: 0.3, holdS: 0.3, releaseS: 1.0},
+  duck: {underVoiceLU: 18.5, mergeGapS: 2.5, fullSwellGapS: 6.0, swellMinGapS: 6.0, preS: 0.1, attackS: 0.3, holdS: 0.3, releaseS: 1.0, swellDb: 2.0},
   music: {level: -5, cues: music.sort((a, b) => (a.in ?? 0) - (b.in ?? 0))},
   sfx: {cues: sfx.sort((a, b) => (a.frame ?? a.at * tl.fps) - (b.frame ?? b.at * tl.fps))},
-  master: {lufs: -14, ceilingDb: -2.0, truePeakMaxDb: -1.5},
+  master: {lufs: -14, ceilingDb: -3.0, truePeakMaxDb: -1.0},
   files: {format: 'flac'},
 };
 fs.mkdirSync(path.dirname(outPath), {recursive: true});

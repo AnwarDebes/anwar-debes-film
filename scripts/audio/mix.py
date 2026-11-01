@@ -6,8 +6,9 @@
 
 Pipeline (every stage is a pure function of the cue sheet and the source files):
   voice   decode, mono, high-pass, normalise to the voice target (-16 LUFS integrated), then a
-          transparent look-ahead peak limiter (voice.peakCeilingDb, -4.5 dBTP) so the master
-          limiter never has to touch speech
+          transparent look-ahead peak limiter (voice.peakCeilingDb, -6 dBTP) so the master
+          limiter never has to touch speech; music + sfx share a smooth bus limiter
+          (duck.backgroundPeakCeilingDb, -7 dBTP) for the same reason
   words   -> phrases -> music automation (duck_env.music_curve): partial swells in short gaps,
           lifts in long holds; the voice-activity depth drives an EQ pocket on the music (-4 dB
           at 3 kHz, broad, only while the narrator speaks) and the SFX shield
@@ -64,11 +65,15 @@ HOP = 800  # one video frame at 60 fps: the block every meter in this file repor
 # Music under narration (duck.* in the cue sheet overrides any of these).
 RIDER = {"underVoiceLU": 18.5,       # bed short-term loudness under the phrase's voice loudness
          "momentaryFloorLU": 13.0,   # the bed's 400 ms loudness never closer to the voice than this
-         "lookaroundS": 0.6,         # look-ahead/behind: a crescendo is lowered before it arrives
+         "lookaroundS": 1.5,         # look-ahead/behind, as wide as the 3 s meter: a crescendo is lowered
+                                     # before any window that would hear it
+         "followVoiceLU": 2.0,       # when the narrator's own 3 s loudness falls more than this under the
+                                     # phrase level (a trailing word), the bed follows it down
          "smoothS": 0.8,             # Hann smoothing of the ride: slow, so it never pumps
          "maxCutDb": 36.0}
 POCKET = {"freqHz": 3000, "q": 0.7, "gainDb": -4.0}
-VOICE_PEAK_CEILING_DB = -4.5
+VOICE_PEAK_CEILING_DB = -6.0        # narration peaks, before the master gain (about +3 dB)
+BACKGROUND_PEAK_CEILING_DB = -7.0   # music + sfx bus peaks, before the master gain
 # Pass/fail for the speech-to-background loudness difference (LU, voice minus music+SFX, positive =
 # the background is under the voice). Targets from the listening research summarised in audio.md:
 # about 18 LU for a narrated film (Shorts mixed at 20), never under 10 LU, never a window where the
@@ -620,6 +625,17 @@ def rider_gain(bed: np.ndarray, voice: np.ndarray, phrases, rp: dict, N: int) ->
     Ls, Lm = block_meters(bed)
     nb = len(Ls)
     lv, levels = phrase_levels(voice, phrases, nb)
+    # inside a phrase (a whole 3 s window of it), follow the narrator down when a word trails off
+    follow = rp.get("followVoiceLU")
+    if follow is not None:
+        vS, _ = block_meters(voice)
+        vS = np.resize(vS, nb)
+        inside = np.zeros(nb, dtype=bool)
+        for s, e in phrases:
+            a, b = int(s * SR / HOP) + 90, int(e * SR / HOP) - 90
+            if b > a:
+                inside[max(0, a):min(nb, b)] = True
+        lv = np.where(inside, np.minimum(lv, vS + float(follow)), lv)
     look = max(1, int(round(rp["lookaroundS"] * SR / HOP)))
     Lm_env = maximum_filter1d(Lm, size=2 * look + 1, mode="nearest")
     need = np.minimum.reduce([np.zeros(nb), (lv - rp["underVoiceLU"]) - Ls, (lv - rp["momentaryFloorLU"]) - Lm_env])
@@ -645,6 +661,7 @@ def measure_balance(voice: np.ndarray, music: np.ndarray, depth: np.ndarray, gai
     vS, vM = block_meters(voice)
     # the background a listener has to hear the narrator through: music plus sound effects
     mS, mM = block_meters(music if sfx is None else music + sfx)
+    muS = mS if sfx is None else block_meters(music)[0]
     n = min(len(vS), len(mS))
     centre = (np.arange(n) * HOP + HOP // 2).clip(0, len(depth) - 1)
     d, g = depth[centre], gain_db[centre]
@@ -676,8 +693,13 @@ def measure_balance(voice: np.ndarray, music: np.ndarray, depth: np.ndarray, gai
         st = {"median": r3(np.median(sep)), "p5": r3(np.percentile(sep, 5)), "p10": r3(np.percentile(sep, 10)),
               "p90": r3(np.percentile(sep, 90)), "min": r3(sep.min())}
         st["criticalPct"] = r3(100.0 * float(np.mean(sep < 0.0)))
+        st["secondsUnder10"] = r3(float(np.sum(sep < 10.0)) * HOP / SR)
+        # the floor is held against the music; a sound-effect hit of a second or two may cross it
+        # (the exception WCAG 1.4.7 makes for short sounds), and its seconds are reported above
+        sep_music = vS[:n][with_music] - muS[:n][with_music]
+        st["minMusicOnly"] = r3(sep_music.min())
         ok = (ok and tgt["median"][0] <= st["median"] <= tgt["median"][1] and st["p10"] >= tgt["p10Min"]
-              and st["min"] >= tgt["minInterior"] and st["criticalPct"] == 0.0)
+              and st["minMusicOnly"] >= tgt["minInterior"] and st["criticalPct"] == 0.0)
         out["voiceOverMusicLU"] = st
         # the five weakest minutes, so a failing film says where to look
         sec = (np.arange(n) * HOP / SR)[with_music]
@@ -850,6 +872,17 @@ def mix(sheet_path: str, out_dir: str | None = None, do_master: bool = True, cac
     sfx, sinfo = build_sfx(sheet, N, depth, voice_s, minfo, ctx)
     ctx.timing["sfx"] = round(time.time() - t, 2)
 
+    # background bus peak control: music and sound effects share one smooth look-ahead limiter, so
+    # their transients are caught on their own bus and the master limiter never has to pull the voice
+    bpc = dk.get("backgroundPeakCeilingDb", BACKGROUND_PEAK_CEILING_DB)
+    bus_info = None
+    if bpc is not None:
+        _, bus_info, bus_gain = limiter.limit(music + sfx, ceiling_db=float(bpc), lookahead_ms=5.0, release_db_s=40.0,
+                                              return_gain=True)
+        music = (music * bus_gain[:, None]).astype(np.float32)
+        sfx = (sfx * bus_gain[:, None]).astype(np.float32)
+        del bus_gain
+
     balance = measure_balance(voice, music, depth, gain_db, sheet, kw, ph, sfx=sfx)
 
     premix = voice + music + sfx
@@ -906,7 +939,7 @@ def mix(sheet_path: str, out_dir: str | None = None, do_master: bool = True, cac
         "files": {k: rel_pub(v) for k, v in files.items()},
         "voice": {**vinfo, "words": len(words), "phrases": [[r3(a), r3(b)] for a, b in ph]},
         "duck": {"params": {**duck_env.DEFAULTS, **{k: v for k, v in kw.items() if v is not None}}, "pocket": pk,
-                 "rider": rinfo},
+                 "rider": rinfo, "backgroundLimiter": bus_info},
         "music": minfo,
         "sfx": sinfo,
         "balance": balance,

@@ -36,9 +36,10 @@ def gain_curve(env: np.ndarray, ceiling: float, lookahead: int, release_db_s: fl
 
 
 def limit(x: np.ndarray, ceiling_db: float = -2.0, lookahead_ms: float = 4.0, release_db_s: float = 14.0,
-          max_iter: int = 4) -> tuple[np.ndarray, dict]:
+          max_iter: int = 4, return_gain: bool = False):
     """Limit x (N, C) so its 4x-oversampled true peak stays at or below ceiling_db.
-    Returns (y, info) with the gain-reduction statistics the mix report prints."""
+    Returns (y, info) with the gain-reduction statistics the mix report prints, plus the per-sample
+    gain when return_gain is set (a bus limiter applies it to every stem on the bus)."""
     x = np.asarray(x, dtype=np.float32)
     L = max(1, int(round(lookahead_ms * 1e-3 * SR)))
     env = loudness.peak_envelope(x)
@@ -64,4 +65,4 @@ def limit(x: np.ndarray, ceiling_db: float = -2.0, lookahead_ms: float = 4.0, re
         "pctTimeOver1Db": round(100.0 * float(np.mean(gr > 1.0)), 3),
         "truePeakDb": round(loudness.true_peak(y), 2),
     }
-    return y, info
+    return (y, info, g) if return_gain else (y, info)

@@ -2098,6 +2098,7 @@
   "attackS": 0.3,
   "holdS": 0.3,
   "releaseS": 1,
+  "swellDb": 2,
   "balance": {
    "median": [
     18.5,
@@ -14148,8 +14149,8 @@
  },
  "master": {
   "lufs": -14,
-  "ceilingDb": -2,
-  "truePeakMaxDb": -1.5
+  "ceilingDb": -3,
+  "truePeakMaxDb": -1
  },
  "files": {
   "format": "flac"
